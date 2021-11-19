@@ -22,6 +22,10 @@
 
   &:not(:last-child) {
     margin-bottom: 25px;
+
+    @include for-width(-mobile-sl) {
+      margin-bottom: rem(15);
+    }
   }
 
   &:focus {

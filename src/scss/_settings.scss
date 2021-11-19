@@ -36,7 +36,11 @@ body {
   background-repeat: no-repeat;
 
   &--wellcome {
-    padding-top: 60px;
+    padding-top: rem(60);
+
+    @include for-width(-mobile-sl) {
+      padding-top: rem(30);
+    }
   }
 }
 

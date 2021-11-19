@@ -5,6 +5,7 @@
     justify-content: center;
     grid-gap: rem(130);
     grid-template-columns: 575px 345px;
+    margin-bottom: rem(40);
     min-height: calc(100vh - 115px);
 
     @include for-width(-tablet) {
@@ -82,6 +83,10 @@
   &--register {
     .social {
       margin-bottom: rem(80);
+
+      @include for-width(-mobile-sl) {
+        margin-bottom: rem(50);
+      }
     }
   }
 }
