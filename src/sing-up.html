@@ -1,0 +1,115 @@
+@include('html/_head.html',{
+pageTitle:'Sing up'
+})
+
+<body class="scroller">
+  <div class="site-container">
+    <main class="main main--wellcome" style="background-image: url('img/sing-bg.svg');">
+
+      <div class="wellcome wellcome--register container container--sing">
+
+        <a class="logo" href="#">
+          <img class="logo__img" src="img/logo.svg" alt="Tradelize porlal" width="150" height="20">
+        </a>
+
+        <h1 class="sr-only">
+          Sing un to portal Tradelize
+        </h1>
+
+        <div class="wellcome__inner">
+
+          <div class="wellcome__img">
+            <img src="img/wellcome.jpg" alt="Trade portal app">
+          </div>
+
+          <div class="wellcome__form">
+            <h2 class="wellcome__title wellcome__title--register">
+              Create account in
+              <span class="wellcome__title-color">
+                Tradelize
+              </span>
+            </h2>
+
+            <form class="form-in" action="#">
+              @loop("html/parts/_input.html",[ {
+              id:"nickname",
+              text:"nickname",
+              type:"text",
+              name:"nickname",
+              placeholder:"Enter your nickname",
+              required:"required",
+              btn:''
+              },{
+              id:"email",
+              text:"email",
+              type:"email",
+              name:"email",
+              placeholder:"Enter your email",
+              required:"required",
+              btn:''
+              },{
+              id:"password",
+              text:"password",
+              type:"password",
+              name:"password",
+              placeholder:"Enter your password here",
+              required:"required",
+              btn:"<button class='field-btn' type='button' aria-label='Click for hide/show password'></button>"
+              },{
+              id:"confirm-pass",
+              text:"confirm password",
+              type:"password",
+              name:"confirm-pass",
+              placeholder:"Confirm your password here",
+              required:"required",
+              btn:"<button class='field-btn' type='button' aria-label='Click for hide/show password'></button>"
+              }])
+
+              <label class="custom-checkbox">
+                <input type="checkbox" class="custom-checkbox__field">
+                <span class="custom-checkbox__content">
+                  Accept the
+
+                  <a class="custom-checkbox__link" href="#">
+                    terms of use
+                  </a>
+                </span>
+
+                <span class="field-error">
+                  You not accepted terms of use
+                </span>
+              </label>
+
+              <button class="btn form-in__btn" type="submit">
+                Sign up
+              </button>
+
+            </form>
+
+            @include('html/parts/_social.html',{
+            text:"Have an account?",
+            link:"Sign In"
+            })
+
+            <p class="wellcome__contact">
+              If you have some problems, please contact us:
+              <a class="wellcome__contact-link" href="#">
+                support@tradelize.com
+              </a>
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </main>
+  </div>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

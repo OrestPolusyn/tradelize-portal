@@ -1,0 +1,20 @@
+$browser-context: 16; // Default
+$percent: 100%;
+$myFullHD: 1920;
+
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels / $context}rem;
+}
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels / $context}em;
+}
+
+@function width($num, $ful: $myFullHD) {
+  @return #{$num * $percent / $ful};
+}
+
+@mixin font_sizes($size, $line_height) {
+  font-size: rem($size);
+  line-height: rem($line_height);
+}

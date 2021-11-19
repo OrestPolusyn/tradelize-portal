@@ -1,0 +1,19 @@
+@mixin main {
+  font-weight: 700;
+  font-size: rem(26);
+}
+
+@mixin secondary {
+  font-weight: 500;
+  font-size: rem(18);
+}
+
+@mixin text {
+  font-weight: 400;
+  font-size: rem(13);
+}
+
+@mixin minor {
+  font-weight: 400;
+  font-size: rem(11);
+}

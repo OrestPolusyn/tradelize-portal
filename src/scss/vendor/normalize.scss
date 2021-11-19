@@ -1,0 +1,310 @@
+html {
+  position: relative;
+  box-sizing: border-box;
+  line-height: 1.15;
+  text-size-adjust: 100%;
+  scrollbar-color: var(--color-main) var(--color-gray-100);
+  scrollbar-width: thin;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  word-wrap: break-word;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: block;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button,
+br {
+  vertical-align: baseline;
+  margin: 0;
+  outline: transparent;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 100%;
+  background: transparent;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+img {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+sub,
+sup {
+  margin: 0;
+  outline: transparent;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  background: transparent;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  outline: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 100%;
+  background: transparent;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul,
+li {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote {
+
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+
+q {
+
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+
+:focus {
+  outline: transparent;
+}
+
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+a,
+button,
+input {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button {
+  overflow: visible;
+  margin: 0;
+  border: none;
+  padding: 0;
+  width: auto;
+  line-height: normal;
+  background-color: transparent;
+  -webkit-font-smoothing: inherit;
+  -webkit-appearance: none;
+  -moz-osx-font-smoothing: inherit;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+
+input,
+input:hover,
+input:focus,
+input:active,
+button,
+button:hover,
+button:focus,
+button:active {
+  outline: transparent;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+textarea {
+  resize: none;
+}
+
+::-webkit-scrollbar-button {
+  width: 5px;
+  height: 0;
+  background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: var(--color-main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-main);
+}
+
+::-webkit-resizer {
+  width: 5px;
+  height: 0;
+  background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+address {
+  font-style: normal;
+}

@@ -1,0 +1,78 @@
+@include('html/_head.html',{
+pageTitle:'Forgot Password'
+})
+
+<body class="scroller">
+  <div class="site-container">
+    <main class="main main--wellcome" style="background-image: url('img/sing-bg.svg');">
+
+      <div class="wellcome wellcome container container--sing">
+
+        <a class="logo" href="#">
+          <img class="logo__img" src="img/logo.svg" alt="Tradelize porlal" width="150" height="20">
+        </a>
+
+        <h1 class="sr-only">
+          Forgot password from Tradelize account
+        </h1>
+
+        <div class="wellcome__inner">
+
+          <div class="wellcome__img">
+            <img src="img/wellcome.jpg" alt="Trade portal app">
+          </div> 
+
+          <div class="wellcome__form">
+            
+            <a class="link link--back" href="#">
+              back
+            </a>
+
+            <h2 class="wellcome__title wellcome__title--register">
+              Forgot Password?
+            </h2>
+
+            <p class="wellcome__text">
+              Enter the email address you used when you joined and we’ll send you instructions to reset your password.
+            </p>
+
+            <form class="form-in" action="#">
+
+              @loop("html/parts/_input.html",[ {
+              id:"email",
+              text:"email",
+              type:"email",
+              name:"email",
+              placeholder:"Enter your email here",
+              required:"required",
+              btn:''
+              }])
+
+              <button class="btn form-in__btn" type="submit">
+                Continue
+              </button>
+
+            </form>
+
+            <p class="wellcome__contact">
+              If you have some problems, please contact us:
+              <a class="wellcome__contact-link" href="#">
+                support@tradelize.com
+              </a>
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </main>
+  </div>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
