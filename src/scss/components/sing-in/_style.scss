@@ -89,4 +89,14 @@
       }
     }
   }
+
+  &--forgot {
+    .wellcome__inner {
+      margin-bottom: 0;
+    }
+
+    .wellcome__form {
+      margin-bottom: rem(90);
+    }
+  }
 }
