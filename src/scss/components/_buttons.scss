@@ -1,14 +1,16 @@
 .btn {
   display: block;
+  border: 1px solid transparent;
   border-radius: var(--radius-main);
-  padding: 13px;
+  padding: rem(6) rem(20);
   font-weight: 500;
-  font-size: 13px;
+  font-size: var(--size-m);
   line-height: 1.5;
   letter-spacing: 0.015em;
   text-align: center;
   color: var(--color-white);
   background-color: var(--color-main);
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
 
   &:focus {
     background-color: var(--color-secondary);
@@ -43,6 +45,86 @@
     &.disabled {
       color: var(--color-gray-400);
       background-color: var(--color-gray-200);
+    }
+  }
+
+  &--reverse {
+    border-color: var(--color-main);
+    color: var(--color-main);
+    background-color: var(--color-white);
+
+    &:focus {
+      border-color: var(--color-hover);
+      color: var(--color-white);
+      background-color: var(--color-main);
+    }
+
+    &:hover {
+      border-color: var(--color-hover);
+      color: var(--color-white);
+      background-color: var(--color-main);
+    }
+
+    &:active {
+      color: var(--color-white);
+      background-color: var(--color-secondary);
+    }
+
+    &.disabled {
+      border-color: transparent;
+    }
+  }
+
+  &--icon {
+    padding: rem(7) rem(10);
+    width: 100%;
+    min-width: 27px;
+    min-height: 27px;
+    max-width: 33px;
+    line-height: 1;
+    background-color: var(--color-gray-100);
+
+    &:focus {
+      background-color: var(--color-gray-100);
+
+      .icon {
+        fill: var(--color-main);
+      }
+    }
+
+    &:hover {
+      background-color: var(--color-gray-100);
+
+      .icon {
+        fill: var(--color-main);
+      }
+    }
+
+    &:active {
+      background-color: var(--color-gray-100);
+
+      .icon {
+        fill: var(--color-secondary);
+      }
+    }
+
+    &.disabled {
+      background-color: var(--color-gray-100);
+      pointer-events: none;
+
+      .icon {
+        fill: var(--color-gray-300);
+      }
+    }
+
+    @include for-width(-tablet) {
+      width: 27px;
+      height: 27px;
+    }
+
+    @include for-width(-mobile-l) {
+      width: 25px;
+      height: 25px;
     }
   }
 }

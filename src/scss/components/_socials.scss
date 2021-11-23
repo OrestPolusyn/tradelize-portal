@@ -5,7 +5,7 @@
     margin-bottom: 30px;
     border-top: 1px solid var(--color-gray-300);
     padding-top: 40px;
-    font-size: 13px;
+    font-size: var(--size-m);
     line-height: 1.5;
     color: var(--color-gray-400);
   }
@@ -33,7 +33,7 @@
   &__link {
     @include flex-all-center;
     padding: 11px rem(16);
-    font-size: 11px;
+    font-size: var(--size-s);
     line-height: 1;
     text-transform: capitalize;
 

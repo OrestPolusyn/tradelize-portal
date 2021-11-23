@@ -1,13 +1,13 @@
 html {
   min-height: 100%;
-  font-size: 0.85vw;
+  font-size: 0.8vw;
 
   @include for-width(+desktop-xl) {
     font-size: 16px;
   }
 
   @include for-width(-mobile-l) {
-    font-size: 13px;
+    font-size: 6px;
   }
 }
 
@@ -34,6 +34,13 @@ body {
   background-position: center 80px;
   background-size: 830px 825px;
   background-repeat: no-repeat;
+
+  &__content {
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1000px;
+  }
 
   &--wellcome {
     padding-top: rem(60);
@@ -95,4 +102,5 @@ body {
 .icon {
   width: 12px;
   height: 12px;
+  transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
