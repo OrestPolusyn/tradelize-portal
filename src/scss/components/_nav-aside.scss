@@ -30,12 +30,12 @@
     display: block;
     width: 100%;
     max-width: 80px;
-    font-size: var(--size-m);
-    line-height: 1.2;
+    @include font_sizes(14, 15);
     text-transform: uppercase;
 
     small {
-      font-size: 10px;
+      display: block;
+      font-size: rem(10);
       text-transform: none;
     }
 

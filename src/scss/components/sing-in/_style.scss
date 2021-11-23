@@ -1,6 +1,4 @@
 .wellcome {
-
-
   &__inner {
     display: grid;
     align-items: center;
@@ -8,7 +6,7 @@
     grid-gap: rem(130);
     grid-template-columns: 575px 345px;
     margin-bottom: rem(40);
-    min-height: calc(100vh - 115px);
+    min-height: calc(100vh - 125px);
 
     @include for-width(-tablet) {
       grid-template-columns: repeat(2, 1fr);
