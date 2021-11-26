@@ -1,12 +1,12 @@
 @mixin custom-checkbox {
   position: relative;
 
-  &__field {
+  &-field {
     appearance: none;
     position: absolute;
   }
 
-  &__content {
+  &-content {
     padding-left: 25px;
     cursor: pointer;
 
@@ -42,20 +42,20 @@
   }
 }
 
-.custom-checkbox__field:checked+.custom-checkbox__content::after {
+.custom-checkbox-field:checked+.custom-checkbox-content::after {
   opacity: 1;
 }
 
-.custom-checkbox__field:focus+.custom-checkbox__content::before {
+.custom-checkbox-field:focus+.custom-checkbox-content::before {
   outline: transparent;
 }
 
-.custom-checkbox__field:checked+.custom-checkbox__content::before {
+.custom-checkbox-field:checked+.custom-checkbox-content::before {
   background-color: var(--color-main);
   border-color: var(--color-main);
 }
 
-.custom-checkbox__field:disabled+.custom-checkbox__content {
+.custom-checkbox-field:disabled+.custom-checkbox-content {
   opacity: 0.4;
   pointer-events: none;
 }
@@ -64,7 +64,7 @@
   &.disabled {
     pointer-events: none;
 
-    .custom-checkbox__content {
+    .custom-checkbox-content {
       &::before {
         border: none;
         background-color: var(--color-gray-200);

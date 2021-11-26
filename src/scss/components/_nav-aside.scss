@@ -7,13 +7,36 @@
   background-color: var(--color-white);
   @include flex;
 
-  &__list {
-    overflow-y: auto;
-    padding: rem(15) 0 0;
-    height: calc(100% - rem(100));
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: -200%;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background-color: var(--color-black);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s linear;
   }
 
-  &__item {
+  &-list {
+    overflow-y: auto;
+    padding: rem(15) 0 0;
+    width: 100%;
+    height: calc(100% - rem(100));
+    scrollbar-color: transparent;
+    -webkit-box-shadow: transparent;
+    scrollbar-width: thin;
+    background-color: var(--color-white);
+
+    @include for-width(-mobile-l) {
+      height: 100%;
+    }
+  }
+
+  &-item {
     margin: 0 rem(18);
 
     &:not(:last-child) {
@@ -26,7 +49,7 @@
     }
   }
 
-  &__link {
+  &-link {
     display: block;
     width: 100%;
     max-width: 80px;
@@ -35,8 +58,12 @@
 
     small {
       display: block;
-      font-size: rem(10);
+      @include font_sizes(10, 16);
       text-transform: none;
+
+      @include for-width(-mobile-l) {
+        padding-left: rem(5);
+      }
     }
 
     &:focus {
@@ -46,13 +73,11 @@
         fill: var(--color-main);
 
         &--dex {
-          fill: transparent;
-          stroke: var(--color-main);
+          fill: var(--color-main);
         }
 
         &--set {
-          fill: transparent;
-          stroke: var(--color-main);
+          fill: var(--color-main);
         }
       }
     }
@@ -61,26 +86,43 @@
       color: var(--color-main);
 
       .icon-nav {
-        fill: var(--color-main);
-
-        &--dex {
-          fill: transparent;
-          stroke: var(--color-main);
-        }
-
-        &--set {
-          fill: transparent;
-          stroke: var(--color-main);
-        }
+        fill: currentColor;
       }
     }
 
-    &--active {
+    &-active {
       color: var(--color-main);
 
       .icon-nav {
-        fill: var(--color-main);
+        fill: currentColor;
       }
+    }
+
+    @include for-width(-mobile-l) {
+      font-size: rem(13);
+      max-width: 100%;
+      @include flex-s;
+    }
+  }
+
+
+  @include for-width(-mobile-l) {
+    position: absolute;
+    left: -150%;
+    z-index: 5;
+    width: 70%;
+    max-width: rem(250);
+    background-color: #fff;
+    transition: left 0.5s ease-in-out;
+  }
+
+  &-open {
+    left: 0;
+
+    &::before {
+      right: 0;
+      width: 100vw;
+      opacity: 0.4;
     }
   }
 }
@@ -97,13 +139,11 @@
   fill: var(--color-icon);
   transition: fill 0.3s ease-out, fill 0.3s ease-out;
 
-  &--dex {
-    fill: transparent;
-    stroke: var(--color-icon);
-  }
-
-  &--set {
-    fill: transparent;
-    stroke: var(--color-icon);
+  @include for-width(-mobile-l) {
+    margin-right: rem(15);
+    margin-bottom: 0;
+    margin-left: 0;
+    min-width: 20px;
+    min-height: 20px;
   }
 }

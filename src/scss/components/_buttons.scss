@@ -2,7 +2,7 @@
   display: block;
   border: 1px solid transparent;
   border-radius: var(--radius-main);
-  padding: rem(6) rem(20);
+  padding: rem(9) rem(20);
   font-weight: 500;
   font-size: var(--size-m);
   line-height: 1.5;
@@ -30,7 +30,7 @@
     pointer-events: none;
   }
 
-  &.social__link {
+  &.social-link {
     background-color: var(--color-white);
 
     &:hover {
@@ -48,7 +48,7 @@
     }
   }
 
-  &--reverse {
+  &-reverse {
     border-color: var(--color-main);
     color: var(--color-main);
     background-color: var(--color-white);
@@ -75,12 +75,12 @@
     }
   }
 
-  &--icon {
-    padding: rem(7) rem(10);
-    width: 100%;
-    min-width: 27px;
-    min-height: 27px;
-    max-width: 33px;
+  &-icon {
+    padding: 0;
+    width: rem(34);
+    height: rem(34);
+    min-width: 14px;
+    min-height: 14px;
     line-height: 1;
     background-color: var(--color-gray-100);
 
@@ -115,16 +115,6 @@
       .icon {
         fill: var(--color-gray-300);
       }
-    }
-
-    @include for-width(-tablet) {
-      width: 27px;
-      height: 27px;
-    }
-
-    @include for-width(-mobile-l) {
-      width: 25px;
-      height: 25px;
     }
   }
 }

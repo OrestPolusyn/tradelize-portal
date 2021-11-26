@@ -10,7 +10,7 @@ pageTitle:'Advanced Search'
       <h1 class="sr-only">Advanced Search</h1>
       @include('html/_nav-side.html')
 
-      <div class="main__content">
+      <div class="main-content">
         @include('html/_search-line.html')
 
         <h2 class="sr-only">
@@ -20,7 +20,7 @@ pageTitle:'Advanced Search'
         <ul class="tabs">
           @loop('html/_tabs.html',[{
           tabText: "Posts",
-          classActive:"tab--active"
+          classActive:"tab-active"
           },
           {
           tabText: "Traders",
@@ -38,20 +38,24 @@ pageTitle:'Advanced Search'
 
         <div class="posts">
 
-          <ul class="posts__list">
-            <li class="posts__item">
+          <ul class="posts-list">
+            <li class="posts-item">
               @include('html/_post.html',{
-               img:""
+              img:"",
+              dataUserLike:"unlike",
+              dataPath:"1",
+              shareId:"1"
               })
             </li>
-            <li class="posts__item">
+            <li class="posts-item">
               @include('html/_post.html',{
-               img:"<img class='post__img' src='img/trade-graph.jpg' alt='Post image' height='353' width='880'>"
+              img:"<img class='post-img' src='img/trade-graph.jpg' alt='Post image' height='353' width='880'>",
+              dataUserLike:"unlike",
+              dataPath:"2",
+              shareId:"2"
               })
             </li>
           </ul>
-
-
         </div>
 
       </div>

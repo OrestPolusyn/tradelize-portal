@@ -1,6 +1,7 @@
 .tabs {
-  @include flex-s;
+  overflow-y: auto;
   margin-bottom: rem(30);
+  @include flex-s;
 }
 
 .tab {
@@ -9,10 +10,10 @@
   text-align: center;
 
   &:not(:last-child) {
-    margin-right: rem(40);
+    margin-right: rem(20);
   }
 
-  &__link {
+  &-link {
     display: block;
     border-radius: var(--radius-main);
     padding: rem(5) rem(30);
@@ -27,8 +28,8 @@
     }
   }
 
-  &--active {
-    .tab__link {
+  &-active {
+    .tab-link {
       font-weight: 500;
       color: var(--color-dark);
       background-color: #fff;

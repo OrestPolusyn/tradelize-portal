@@ -31,3 +31,12 @@
 //     enScroll();
 //   }
 // });
+
+
+const burger = document.querySelector('.burger'),
+  asideMobile = document.querySelector('.aside-nav');
+
+burger.addEventListener('click', (e) => {
+  e.currentTarget.classList.toggle('burger--active');
+  asideMobile.classList.toggle('aside-nav-open');
+});

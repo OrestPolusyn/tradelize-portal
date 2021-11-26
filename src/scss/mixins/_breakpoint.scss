@@ -1,40 +1,10 @@
-// @mixin laptop {
-//   @media (max-width: (1440px)) {
-//     @content;
-//   }
-// }
-
-// @mixin desktop {
-//   @media (max-width: (1200px)) {
-//     @content;
-//   }
-// }
-
-// @mixin tablet {
-//   @media (max-width: (1024px)) {
-//     @content;
-//   }
-// }
-
-// @mixin mobile-l {
-//   @media (max-width: (768px)) {
-//     @content;
-//   }
-// }
-
-// @mixin mobile {
-//   @media (max-width: (576px)) {
-//     @content;
-//   }
-// }
-
 $mqs: (
   //name breakpoint
   'mobile-sm': 320,
   'mobile-s': 375,
   'mobile-sl': 475,
   'mobile-md': 576,
-  'mobile-l': 768,
+  'mobile-l': 769,
   'tablet': 992,
   'desktop-sm': 1100,
   'desktop-med': 1280,

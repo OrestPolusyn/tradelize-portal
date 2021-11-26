@@ -1,0 +1,15 @@
+.burger {
+  --burger-width: 22px;
+  --burger-height: 14px;
+  --burger-line-height: 2px;
+
+  @include burger;
+
+  margin-right: rem(15);
+
+  display: none;
+
+  @include for-width(-mobile-l) {
+    display: flex;
+  }
+}

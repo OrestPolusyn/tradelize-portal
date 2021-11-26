@@ -1,11 +1,11 @@
 .wellcome {
-  &__inner {
+  &-inner {
     display: grid;
     align-items: center;
     justify-content: center;
     grid-gap: rem(130);
     grid-template-columns: 575px 345px;
-    margin-bottom: rem(40);
+    margin-bottom: rem(30);
     min-height: calc(100vh - 125px);
 
     @include for-width(-tablet) {
@@ -18,7 +18,7 @@
     }
   }
 
-  &__img {
+  &-img {
     margin: auto;
     width: 100%;
     max-width: 575px;
@@ -28,38 +28,45 @@
     }
   }
 
-  &__title {
+  &-title {
     margin-bottom: rem(70);
-    font-size: 29px;
-    line-height: 1.2;
+    @include font_sizes(32, 34);
 
-    &--register {
-      margin-bottom: rem(20);
-      font-size: 26px;
+    &-register {
+      margin-bottom: rem(40);
+      @include font_sizes(28, 34);
 
-      @include for-width(-mobile-s) {
-        font-size: 22px;
+      @include for-width(+desktop-xl) {
+        font-size: 27px;
       }
+    }
+
+    @include for-width(-desktop-lg) {
+      font-size: 27px;
+    }
+
+    @include for-width(-tablet) {
+      font-size: 24px;
     }
   }
 
-  &__title-color {
+  &-title-color {
     font-weight: 500;
     color: var(--color-main);
   }
 
-  &__text {
+  &-text {
     margin-bottom: 25px;
     font-size: var(--size-m);
   }
 
-  &__form {
+  &-form {
     margin: 0 auto;
     width: 100%;
     max-width: 350px;
   }
 
-  &__forgot {
+  &-forgot {
     display: inline-block;
     margin-bottom: 40px;
     padding-left: 0;
@@ -68,22 +75,22 @@
     color: var(--color-gray-400);
   }
 
-  &__contact {
+  &-contact {
     font-size: 10px;
     letter-spacing: 0.02em;
     color: var(--color-gray-400);
   }
 
-  &__contact-link {
+  &-contact-link {
     display: inline;
     font-size: var(--size-s);
     text-transform: inherit;
     color: var(--color-main);
   }
 
-  &--register {
+  &-register {
     .social {
-      margin-bottom: rem(80);
+      margin-bottom: rem(20);
 
       @include for-width(-mobile-sl) {
         margin-bottom: rem(50);
@@ -91,22 +98,22 @@
     }
   }
 
-  &--forgot {
+  &-forgot {
 
-    .wellcome__inner {
+    .wellcome-inner {
       margin-bottom: 0;
     }
 
-    .wellcome__form {
+    .wellcome-form {
       margin-bottom: rem(90);
     }
   }
 
   .field-area {
-    padding: 14px 20px;
+    padding: rem(14) rem(20);
 
     &:not(:last-child) {
-      margin-bottom: 25px;
+      margin-bottom: rem(25);
     }
   }
 }

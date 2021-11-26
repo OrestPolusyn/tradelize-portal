@@ -1,0 +1,127 @@
+.trader-card {
+  border-radius: var(--radius-main);
+  padding: rem(30) rem(40);
+  width: 100%;
+  box-shadow: 0 0 30px rgba(24, 0, 174, 0.05);
+  text-align: center;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+
+  &-top {
+    margin-bottom: rem(18);
+  }
+
+  &-avatar {
+    margin: 0 auto rem(7);
+    border-radius: var(--radius-main);
+    height: rem(45);
+    max-width: rem(45);
+    background-color: var(--color-avatar);
+  }
+
+  &-title {
+    font-weight: 500;
+    text-transform: capitalize;
+    @include font_sizes(13, 20);
+  }
+
+  &-icon {
+    width: 100%;
+    height: rem(20);
+    max-width: rem(60);
+  }
+
+  &-numbers {
+    margin-bottom: rem(20);
+    text-align: left;
+    @include flex-all-sb;
+  }
+
+  &-number {
+    &:last-child {
+      margin-right: rem(15);
+    }
+  }
+
+  &-number-item {
+    position: relative;
+    font-weight: 700;
+    @include font_sizes(17, 18);
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: rem(-10);
+      top: 50%;
+      width: rem(8);
+      height: rem(10);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      content: "%";
+    }
+
+    &-profit {
+      &::before {
+        background-image: url("../img/sprite.svg#arrow-profit");
+      }
+    }
+
+    &-loss {
+      &::before {
+        background-image: url("../img/sprite.svg#arrow-lose");
+      }
+    }
+  }
+
+  &-text {
+    display: block;
+    @include font_sizes(11, 18);
+
+    &-drawdown {
+      margin-bottom: rem(22);
+    }
+
+    &-subscribers {
+      text-transform: capitalize;
+      color: var(--color-gray-400);
+    }
+  }
+
+  &-symbol {
+    font-weight: 700;
+  }
+
+  &-graph {
+    width: 100%;
+    height: rem(60);
+  }
+
+  &-drawdown {
+    display: block;
+    line-height: 1.5;
+  }
+
+  &-drawdown-item {
+    &::after {
+      content: "%";
+    }
+  }
+
+  &-btn {
+    margin-bottom: rem(20);
+  }
+
+  &-cost {
+    @include font_sizes(11, 15);
+  }
+
+  &-canvas {
+    width: 100%;
+    height: inherit;
+  }
+}
