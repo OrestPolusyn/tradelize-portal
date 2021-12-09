@@ -2,16 +2,19 @@
 pageTitle:'Advanced Traders Search'
 })
 
-<body class="scroller">
+<body>
   <div class="site-container">
     @include('html/_header.html')
 
     <main class="main">
       <h1 class="sr-only">Traders page</h1>
-      @include('html/_nav-side.html')
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
 
       <div class="main-content">
-        @include('html/_search-line.html')
+
 
         <h2 class="sr-only">
           Cards of traders
@@ -40,6 +43,7 @@ pageTitle:'Advanced Traders Search'
           <li class="trader-item">
             @include('html/_trader-card.html',{
             subscribe:"",
+            idGraph:"1",
             logoIcon:"<svg class='trader-card-icon'><use xlink:href='img/sprite.svg#binance-icon'></use></svg>"
             })
           </li>
@@ -47,6 +51,7 @@ pageTitle:'Advanced Traders Search'
           <li class="trader-item">
             @include('html/_trader-card.html',{
             subscribe:"",
+            idGraph:"2",
             logoIcon:"<svg class='trader-card-icon'><use xlink:href='img/sprite.svg#binance-icon'></use></svg>"
             })
           </li>
@@ -54,12 +59,16 @@ pageTitle:'Advanced Traders Search'
           <li class="trader-item">
             @include('html/_trader-card.html',{
             subscribe:"",
-            logoIcon:"<svg class='trader-card-icon'><use xlink:href='img/sprite.svg#binance-icon'></use> </svg>"
+            idGraph:"3",
+            logoIcon:"<svg class='trader-card-icon'><use xlink:href='img/sprite.svg#binance-icon'></use></svg>"
             })
           </li>
         </ul>
       </div>
     </main>
+
+    @include('html/_footer.html')
+
 
   </div>
   <script src="js/vendor.js"></script>

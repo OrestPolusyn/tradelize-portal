@@ -1,19 +1,16 @@
 $mqs: (
-  //name breakpoint
-  'mobile-sm': 320,
-  'mobile-s': 375,
-  'mobile-sl': 475,
-  'mobile-md': 576,
-  'mobile-l': 769,
-  'tablet': 992,
-  'desktop-sm': 1100,
-  'desktop-med': 1280,
-  'desktop-lg': 1440,
-  'desktop-xl': 1921
-);
+  "mobile-sm": 320,
+  "mobile-s": 375,
+  "mobile-sl": 475,
+  "mobile-md": 576,
+  "mobile-l": 768,
+  "tablet": 992,
+  "desktop-sm": 1100,
+  "desktop-med": 1280,
+  "desktop-lg": 1440,
+  "desktop-xl": 1921);
 
 @mixin for-width($size, $size2: null) {
-
   @each $name, $bp in $mqs {
     $max: calc(#{em($bp)} - #{em(1)});
     $min: em($bp);
@@ -31,7 +28,6 @@ $mqs: (
     }
 
     @if $size2 == "#{$name}" {
-
       @each $name, $bp in $mqs {
         $min: em($bp);
 
@@ -54,7 +50,6 @@ $mqs: (
 */
 
 @mixin for-height($size, $size2: null) {
-
   @each $name, $bp in $mqs {
     $max: calc(#{em($bp)} - #{em(1)});
     $min: em($bp);
@@ -72,7 +67,6 @@ $mqs: (
     }
 
     @if $size2 == "#{$name}" {
-
       @each $name, $bp in $mqs {
         $min: em($bp);
 

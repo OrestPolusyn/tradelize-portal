@@ -1,0 +1,23 @@
+.copy-trader {
+  &-nav {
+    @include flex-all-sb;
+  }
+
+  &-list {
+    .tab-link {
+      @include flex-v-center;
+
+      font-weight: 600;
+    }
+
+    .tab-icon {
+      margin-left: 10px;
+      width: 16px;
+      height: 10px;
+      fill: transparent;
+      stroke: currentColor;
+      stroke-width: 1.5px;
+    }
+  }
+
+}

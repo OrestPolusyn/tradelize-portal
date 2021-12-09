@@ -2,13 +2,16 @@
 pageTitle:'Advanced Search'
 })
 
-<body class="scroller">
+<body>
   <div class="site-container">
     @include('html/_header.html')
 
     <main class="main">
       <h1 class="sr-only">Advanced Search</h1>
-      @include('html/_nav-side.html')
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
 
       <div class="main-content">
         @include('html/_search-line.html')
@@ -61,6 +64,9 @@ pageTitle:'Advanced Search'
       </div>
 
     </main>
+
+    @include('html/_footer.html')
+
 
   </div>
   <script src="js/vendor.js"></script>

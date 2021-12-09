@@ -1,6 +1,6 @@
 .comments {
   overflow: hidden;
-  margin-bottom: rem(30);
+  margin-bottom: rem(38);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   max-height: 0;
   box-sizing: content-box;
@@ -19,14 +19,36 @@
 
   &-item {
     position: relative;
-    margin-bottom: rem(30);
+    margin-bottom: rem(20);
+
+    &-top {
+      @include flex-s;
+
+      position: relative;
+      margin-bottom: rem(23);
+    }
 
     &-box {
-      @include flex;
+      padding: rem(18) rem(20) rem(28);
+      background-color: var(--color-gray-50);
+
+      @include for-width(-mobile-md) {
+        display: block;
+        padding: rem(15);
+      }
     }
 
     &-reply {
       margin-left: rem(60);
+
+      @include for-width(-mobile-sl) {
+        margin-left: 0;
+      }
+    }
+
+    .post-title {
+      margin-bottom: 0;
+      font-size: 13px;
     }
   }
 
@@ -36,13 +58,9 @@
     max-width: rem(40);
   }
 
-  &-block {
-    padding: rem(10) rem(20) rem(20);
-    background-color: var(--color-gray-100);
-  }
-
   .post-text {
-    margin-bottom: rem(20);
+    margin-bottom: rem(18);
+    letter-spacing: 0;
   }
 
   .post-comments-link {
@@ -53,6 +71,12 @@
       top: 0;
       width: rem(40);
       height: rem(40);
+    }
+  }
+
+  .post-action {
+    &:not(:last-child) {
+      margin-right: rem(28);
     }
   }
 }

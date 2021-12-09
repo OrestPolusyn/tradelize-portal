@@ -18,3 +18,9 @@ $myFullHD: 1920;
   font-size: rem($size);
   line-height: rem($line_height);
 }
+
+@mixin adaptive_size($property, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+
+  #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$myFullHD - 320}));
+}

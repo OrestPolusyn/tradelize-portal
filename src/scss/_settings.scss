@@ -24,7 +24,8 @@ body {
 }
 
 .is-hidden {
-  display: none !important; // stylelint-disable-line declaration-no-important
+  // stylelint-disable-next-line declaration-no-important
+  display: none !important;
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -32,22 +33,23 @@ body {
 }
 
 .main {
+  overflow-x: hidden;
   overflow-y: scroll;
+  box-shadow: none;
   background-position: center 80px;
   background-size: 830px 825px;
   background-repeat: no-repeat;
   scrollbar-color: transparent;
-  -webkit-box-shadow: transparent;
   scrollbar-width: thin;
 
   &-content {
     margin: 0 auto;
-    padding: rem(40) rem(20);
+    padding: rem(23);
     width: 100%;
-    max-width: 1000px;
+    max-width: 1005px;
 
     @include for-width(-mobile-md) {
-      padding: rem(40) 0;
+      padding: 0;
     }
   }
 
@@ -67,7 +69,7 @@ body {
   max-width: 960px;
 
   &-sing {
-    max-width: 1080px;
+    max-width: 1160px;
   }
 }
 
@@ -112,4 +114,32 @@ body {
   width: 12px;
   height: 12px;
   transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+}
+
+.open-mobile {
+  .logo {
+    transform: scale(0);
+  }
+
+  .aside-nav {
+    height: 100%;
+
+    &::before {
+      right: 0;
+    }
+
+    &-list {
+      transform: translateX(0);
+    }
+  }
+}
+
+.scroller {
+  overflow-y: auto;
+}
+
+.myChart {
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none;
 }

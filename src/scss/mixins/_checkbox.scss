@@ -42,20 +42,20 @@
   }
 }
 
-.custom-checkbox-field:checked+.custom-checkbox-content::after {
+.custom-checkbox-field:checked + .custom-checkbox-content::after {
   opacity: 1;
 }
 
-.custom-checkbox-field:focus+.custom-checkbox-content::before {
+.custom-checkbox-field:focus + .custom-checkbox-content::before {
   outline: transparent;
 }
 
-.custom-checkbox-field:checked+.custom-checkbox-content::before {
-  background-color: var(--color-main);
+.custom-checkbox-field:checked + .custom-checkbox-content::before {
   border-color: var(--color-main);
+  background-color: var(--color-main);
 }
 
-.custom-checkbox-field:disabled+.custom-checkbox-content {
+.custom-checkbox-field:disabled + .custom-checkbox-content {
   opacity: 0.4;
   pointer-events: none;
 }

@@ -18,6 +18,7 @@
     "@babel/preset-env": "^7.15.0",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.27.5",
+    "chart.js": "^3.6.1",
     "del": "^6.0.0",
     "editorconfig-checker": "^4.0.2",
     "gulp": "^4.0.2",

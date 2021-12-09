@@ -3,10 +3,10 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-gap: rem(130);
-    grid-template-columns: 575px 345px;
+    grid-gap: rem(40);
+    grid-template-columns: 590px 520px;
     margin-bottom: rem(30);
-    min-height: calc(100vh - 125px);
+    min-height: calc(100vh - 135px);
 
     @include for-width(-tablet) {
       grid-template-columns: repeat(2, 1fr);
@@ -29,24 +29,18 @@
   }
 
   &-title {
-    margin-bottom: rem(70);
-    @include font_sizes(32, 34);
+    @include adaptive_size("font-size", 29, 23);
+
+    margin-bottom: rem(60);
 
     &-register {
+      @include adaptive_size("font-size", 26, 23);
+
       margin-bottom: rem(40);
-      @include font_sizes(28, 34);
-
-      @include for-width(+desktop-xl) {
-        font-size: 27px;
-      }
     }
 
-    @include for-width(-desktop-lg) {
-      font-size: 27px;
-    }
-
-    @include for-width(-tablet) {
-      font-size: 24px;
+    @include for-width(+desktop-xl) {
+      font-size: 32px;
     }
   }
 
@@ -61,18 +55,31 @@
   }
 
   &-form {
+    @include flex-column;
+
     margin: 0 auto;
     width: 100%;
     max-width: 350px;
   }
 
+  &-form-in {
+    margin-top: auto;
+  }
+
   &-forgot {
-    display: inline-block;
+    display: block;
     margin-bottom: 40px;
-    padding-left: 0;
     font-size: var(--size-m);
     letter-spacing: 0.015em;
     color: var(--color-gray-400);
+
+    .wellcome-inner {
+      margin-bottom: 0;
+    }
+
+    .wellcome-form {
+      margin-bottom: rem(90);
+    }
   }
 
   &-contact {
@@ -90,22 +97,11 @@
 
   &-register {
     .social {
-      margin-bottom: rem(20);
+      margin-bottom: rem(50);
 
       @include for-width(-mobile-sl) {
         margin-bottom: rem(50);
       }
-    }
-  }
-
-  &-forgot {
-
-    .wellcome-inner {
-      margin-bottom: 0;
-    }
-
-    .wellcome-form {
-      margin-bottom: rem(90);
     }
   }
 
@@ -114,6 +110,10 @@
 
     &:not(:last-child) {
       margin-bottom: rem(25);
+    }
+
+    @include for-width(-tablet) {
+      padding: rem(20);
     }
   }
 }

@@ -1,16 +1,26 @@
 .tabs {
-  overflow-y: auto;
-  margin-bottom: rem(30);
   @include flex-s;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-bottom: rem(20);
+
+  &::-webkit-scrollbar {
+    height: 0;
+  }
+
+  @include for-width(-mobile-md) {
+    margin-bottom: rem(20);
+    padding: 0 rem(24);
+  }
 }
 
 .tab {
-  width: 100%;
-  max-width: 118px;
+  width: fit-content;
   text-align: center;
 
   &:not(:last-child) {
-    margin-right: rem(20);
+    margin-right: rem(17);
   }
 
   &-link {
@@ -19,6 +29,7 @@
     padding: rem(5) rem(30);
     font-size: var(--size-m);
     line-height: 1.8;
+    letter-spacing: 0;
     color: var(--color-gray-400);
     transition: color 0.3s ease, font 0.2s ease-in;
 

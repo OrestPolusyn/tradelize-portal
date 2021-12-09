@@ -1,0 +1,127 @@
+<div class="feed-side">
+
+  <h2 class="sr-only">
+    Traders tabs
+  </h2>
+
+  @include('../_search-line.html')
+
+
+  <ul class="tabs">
+    @loop('../_tabs.html',[
+    {
+    tabText: "All",
+    classActive:"tab-active"
+    },
+    {
+    tabText: "Channels",
+    classActive:""
+    },
+    {
+    tabText: "Traders",
+    classActive:""
+    }])
+  </ul>
+
+  <ul class="feed-side-list">
+    @loop('_feed-list.html',[
+    {
+    dataColor: "1",
+    avatar:"",
+    avatarContent:"DC",
+    name:"DeCenter",
+    numberSubscr:"86 830",
+    datetime:"11:47",
+    classActive:""
+    },
+     {
+     dataColor: "2",
+     avatar:"<img class='feed-side-avatar-img' src='img/avatar.png' width='37' height='37' alt='Avatar user'>",
+     avatarContent:"",
+     name:"Cointelegraph",
+     numberSubscr:"86 830",
+     datetime:"11:47",
+     classActive:"feed-side-item-active"
+     },
+     {
+     dataColor: "3",
+     avatar:"",
+     avatarContent:"BA",
+     name:"BitAssist",
+     numberSubscr:"86 830",
+     datetime:"11:47",
+     classActive:""
+     },
+     {
+     dataColor: "4",
+     avatar:"",
+     avatarContent:"CM",
+     name:"Crypto Moon",
+     numberSubscr:"86 830",
+     datetime:"11:47",
+     classActive:""
+     },
+     {
+     dataColor: "5",
+     avatar:"",
+     avatarContent:"ID",
+     name:"IcoDrops",
+     numberSubscr:"86 830",
+     datetime:"11:47",
+     classActive:""
+     },
+     {
+     dataColor: "6",
+     avatar:"",
+     avatarContent:"BB",
+     name:"ByBit",
+     numberSubscr:"86 830",
+     datetime:"11:47",
+     classActive:""
+     },
+     {
+     dataColor: "7",
+     avatar:"",
+     avatarContent:"BG",
+     name:"Binance Group",
+     numberSubscr:"86 830",
+     datetime:"11:47",
+     classActive:""
+     },
+     {
+     dataColor: "8",
+     avatar:"",
+     avatarContent:"NY",
+     name:"New York Times",
+     numberSubscr:"86 830",
+     datetime:"11:47",
+     classActive:""
+     },
+     {
+     dataColor: "7",
+     avatar:"",
+     avatarContent:"BG",
+     name:"Binance Group",
+     numberSubscr:"86 830",
+     datetime:"11:47",
+     classActive:""
+     },{
+     dataColor: "5",
+     avatar:"",
+     avatarContent:"ID",
+     name:"IcoDrops",
+     numberSubscr:"86 830",
+     datetime:"11:47",
+     classActive:""
+     },{
+     dataColor: "8",
+     avatar:"",
+     avatarContent:"NY",
+     name:"New York Times",
+     numberSubscr:"86 830",
+     datetime:"11:47",
+     classActive:""
+     },])
+  </ul>
+
+</div>

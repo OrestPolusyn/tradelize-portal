@@ -1,0 +1,97 @@
+@include('html/_head.html',{
+pageTitle:'Copy traders'
+})
+
+<body>
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main">
+      <h1 class="sr-only">Copy Traders page</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <div class="main-content copy-trader">
+
+        @include('html/_search-line.html')
+
+        <h2 class="sr-only">
+          Cards of traders
+        </h2>
+
+        <div class="copy-trader-nav">
+
+
+          <ul class="tabs">
+            @loop('html/_tabs.html',[{
+            tabText: "Copy trading",
+            classActive:""
+            },
+            {
+            tabText: "Reverse copy",
+            classActive:"tab-active"
+            },
+            {
+            tabText: "Channels",
+            classActive:""
+            }])
+          </ul>
+
+          <ul class="tabs copy-trader-list">
+            <li class="tab tab-active">
+              <a class="tab-link" href="https://tradelize.com/mirroring-guides">
+                Guides
+              </a>
+            </li>
+
+            <li class="tab tab-active">
+              <button class="tab-link" type="button" data-traders-filter="filter">
+                Filters
+
+                <svg class='tab-icon icon'>
+                  <use xlink:href='img/sprite.svg#filter-icon'></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+
+        </div>
+
+        <ul class="trader-list">
+          <li class="trader-item">
+            @include('html/_trader-card.html',{
+            subscribe:"",
+            idGraph:"1",
+            logoIcon:"<svg class='trader-card-icon'><use xlink:href='img/sprite.svg#binance-icon'></use></svg>"
+            })
+          </li>
+
+          <li class="trader-item">
+            @include('html/_trader-card.html',{
+            subscribe:"",
+            idGraph:"2",
+            logoIcon:"<svg class='trader-card-icon'><use xlink:href='img/sprite.svg#binance-icon'></use></svg>"
+            })
+          </li>
+
+          <li class="trader-item">
+            @include('html/_trader-card.html',{
+            subscribe:"",
+            idGraph:"3",
+            logoIcon:"<svg class='trader-card-icon'><use xlink:href='img/sprite.svg#binance-icon'></use></svg>"
+            })
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    @include('html/_footer.html')
+
+  </div>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

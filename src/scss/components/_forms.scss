@@ -1,8 +1,14 @@
 .form-in {
   &-btn {
     margin-bottom: 20px;
-    padding: rem(12);
+    padding: rem(19) rem(12);
     width: 100%;
+
+    @include for-width(-tablet) {
+      @include adaptive_size("font-size", 14, 12);
+
+      padding: rem(15);
+    }
   }
 }
 
@@ -13,5 +19,16 @@
   &-area {
     padding: rem(12) rem(20);
     max-width: 100%;
+    font-size: 13px;
+
+    @include for-width(-mobile-md) {
+      background-color: var(--color-gray-100);
+    }
+  }
+
+  @include for-width(-mobile-md) {
+    margin-bottom: rem(20);
+    padding: rem(20) rem(24);
+    background-color: var(--color-white);
   }
 }

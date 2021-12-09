@@ -1,0 +1,131 @@
+@include('html/_head.html',{
+pageTitle:'Feed'
+})
+
+<body>
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main feed-main">
+      <h1 class="sr-only">Feed</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+
+        @include('html/feed/_feed-side.html')
+
+      </aside>
+
+      <div class="main-content">
+
+        <h2 class="sr-only">
+          Posts of traders
+        </h2>
+
+        <ul class="tabs">
+          @loop('html/_tabs.html',[{
+          tabText: "All",
+          classActive:"tab-active"
+          },
+          {
+          tabText: "Posts",
+          classActive:""
+          },
+          {
+          tabText: "Trades",
+          classActive:""
+          }])
+        </ul>
+
+        <div class="posts">
+
+          <div class="posts-publish">
+
+            <form class="posts-publish-form" action="#">
+              <div class="posts-publish-inner">
+
+                <img class="post-owner-avatar" src="img/post-avatar.png" alt="Profile avatar" height="40" width="40">
+
+                <label class="sr-only" for="new-comment">
+                  Leave comment at textarea
+                </label>
+
+                <textarea class="post-write-area field-area" name="new-comment" id="new-comment"
+                  placeholder="What’s new, Priscilla Mckinney?" maxlength="1000"></textarea>
+                <span class="post-write-warning">Maximum length of symbols 800</span>
+              </div>
+
+              <div class="posts-publish-inner">
+
+                <div class="posts-publish-gallery">
+                  <ul class="posts-publish-gallery-list"></ul>
+
+                  <label class="posts-publish-btn btn-icon">
+                    + Photo
+                    <input class="posts-publish-add-img sr-only" type="file">
+                  </label>
+
+                  <div class="posts-publish-dropdown btn btn-dropdown btn-gray">
+                    <span class="posts-publish-dropdown-text"> Only Me</span>
+
+                    <ul class="posts-publish-dropdown-list">
+                      <li class="posts-publish-dropdown-item">Only me</li>
+
+                      <li class="posts-publish-dropdown-item">Channel</li>
+
+                      <li class="posts-publish-dropdown-item">Diary</li>
+                    </ul>
+                  </div>
+
+                  <div class="posts-publish-number">
+                    Max characters:
+                    <span>1000</span>
+                  </div>
+                </div>
+
+                <div class="posts-publish-btns">
+                  <button class="posts-publish-submit posts-publish-cancel btn btn-gray" type="button">
+                    Cancel
+                  </button>
+
+                  <button class="posts-publish-submit btn" type="button">
+                    Publish
+                  </button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <ul class="posts-list">
+            <li class="posts-item">
+              @include('html/_post.html',{
+              img:"",
+              dataUserLike:"unlike",
+              dataPath:"1",
+              shareId:"1"
+              })
+            </li>
+            <li class="posts-item">
+              @include('html/_post.html',{
+              img:"<img class='post-img' src='img/trade-graph.jpg' alt='Post image' height='353' width='880'>",
+              dataUserLike:"unlike",
+              dataPath:"2",
+              shareId:"2"
+              })
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')
+
+  </div>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

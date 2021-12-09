@@ -12,25 +12,31 @@ if (formComment.length > 0) {
       checkLenght();
     })
   });
+
+
+  function checkLenght() {
+    formTextarea.forEach(item => {
+      if (item.value.length === 800) {
+        item.nextElementSibling.classList.add('post-write-warning-active');
+      } else {
+        item.nextElementSibling.classList.remove('post-write-warning-active');
+      }
+    });
+  }
 }
 
-function checkLenght() {
-  formTextarea.forEach(item => {
-    if (item.value.length === 800) {
-      item.nextElementSibling.classList.add('post-write-warning-active');
-    } else {
-      item.nextElementSibling.classList.remove('post-write-warning-active');
-    }
-  });
-}
+const textarea = Array.from(document.querySelectorAll('textarea'));
 
-var tx = document.getElementsByTagName('textarea');
+textarea.forEach(element => {
+  element.addEventListener('keydown', autosize);
+});
 
-for (var i = 0; i < tx.length; i++) {
-  tx[i].addEventListener("input", OnInput, false);
-}
-
-function OnInput() {
-  this.style.height = 'auto';
-  this.style.height = (this.scrollHeight) + 'px';
+function autosize() {
+  var el = this;
+  setTimeout(function () {
+    el.style.cssText = 'height:auto; padding:0';
+    // for box-sizing other than "content-box" use:
+    el.style.cssText = '-moz-box-sizing:content-box';
+    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+  }, 0);
 }

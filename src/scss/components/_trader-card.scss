@@ -1,6 +1,6 @@
 .trader-card {
   border-radius: var(--radius-main);
-  padding: rem(30) rem(40);
+  padding: rem(30) rem(45) rem(35);
   width: 100%;
   box-shadow: 0 0 30px rgba(24, 0, 174, 0.05);
   text-align: center;
@@ -8,53 +8,79 @@
   background-color: var(--color-white);
 
   &-top {
-    margin-bottom: rem(18);
+    margin-bottom: rem(20);
+
+    @include for-width(-mobile-md) {
+      margin-bottom: 0;
+    }
   }
 
   &-avatar {
-    margin: 0 auto rem(7);
+    margin: 0 auto 11px;
     border-radius: var(--radius-main);
-    height: rem(45);
-    max-width: rem(45);
+    width: 100%;
+    height: 45px;
+    max-width: 45px;
     background-color: var(--color-avatar);
+
+    @include for-width(-tablet) {
+      height: 33px;
+      max-width: 33px;
+    }
   }
 
   &-title {
     font-weight: 500;
+    font-size: 13px;
+    line-height: 1.7;
+    letter-spacing: 0;
     text-transform: capitalize;
-    @include font_sizes(13, 20);
   }
 
   &-icon {
     width: 100%;
-    height: rem(20);
-    max-width: rem(60);
+    height: 20px;
+    max-width: 60px;
   }
 
   &-numbers {
-    margin-bottom: rem(20);
-    text-align: left;
     @include flex-all-sb;
+
+    margin-bottom: rem(15);
+    text-align: left;
   }
 
   &-number {
+    position: relative;
+    font-size: 17px;
+
     &:last-child {
-      margin-right: rem(15);
+      margin-right: 8px;
+
+      @include for-width(-mobile-md) {
+        margin-right: 5px;
+      }
+    }
+
+    @include for-width(-tablet) {
+      font-size: 13px;
     }
   }
 
   &-number-item {
     position: relative;
+    padding-left: 8px;
     font-weight: 700;
-    @include font_sizes(17, 18);
+    line-height: 1.2;
+    letter-spacing: 0;
 
     &::before {
       content: "";
       position: absolute;
-      right: rem(-10);
+      right: -10px;
       top: 50%;
-      width: rem(8);
-      height: rem(10);
+      width: 8px;
+      height: 10px;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -80,10 +106,16 @@
 
   &-text {
     display: block;
-    @include font_sizes(11, 18);
+    padding-top: 2px;
+    padding-left: 5px;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0;
+    color: var(--color-gray-400);
 
     &-drawdown {
-      margin-bottom: rem(22);
+      margin-bottom: rem(20);
+      padding: 0;
     }
 
     &-subscribers {
@@ -93,22 +125,27 @@
   }
 
   &-symbol {
+    position: absolute;
+    left: -1px;
     font-weight: 700;
   }
 
   &-graph {
     width: 100%;
-    height: rem(60);
+    height: 60px;
   }
 
   &-drawdown {
     display: block;
     line-height: 1.5;
-  }
+    letter-spacing: 0;
 
-  &-drawdown-item {
-    &::after {
-      content: "%";
+    &-item {
+      @include adaptive_size("font-size", 17, 13);
+
+      &::after {
+        content: "%";
+      }
     }
   }
 
@@ -117,11 +154,21 @@
   }
 
   &-cost {
-    @include font_sizes(11, 15);
+    font-size: 11px;
+    line-height: 1.2;
+    letter-spacing: 0;
   }
 
   &-canvas {
     width: 100%;
     height: inherit;
+  }
+
+  @include for-width(-desktop-med) {
+    padding: rem(40);
+  }
+
+  @include for-width(-mobile-md) {
+    padding: rem(20);
   }
 }
