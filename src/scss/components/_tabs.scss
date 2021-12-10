@@ -1,9 +1,8 @@
 .tabs {
-  @include flex-s;
-
-  overflow-x: auto;
-  overflow-y: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
   margin-bottom: rem(20);
+  gap: 0 rem(20);
 
   &::-webkit-scrollbar {
     height: 0;
@@ -16,17 +15,14 @@
 }
 
 .tab {
-  width: fit-content;
+  width: 100%;
   text-align: center;
-
-  &:not(:last-child) {
-    margin-right: rem(17);
-  }
 
   &-link {
     display: block;
     border-radius: var(--radius-main);
     padding: rem(5) rem(30);
+    width: 100%;
     font-size: var(--size-m);
     line-height: 1.8;
     letter-spacing: 0;
@@ -44,6 +40,7 @@
       font-weight: 500;
       color: var(--color-dark);
       background-color: #fff;
+      letter-spacing: 0;
     }
   }
 }

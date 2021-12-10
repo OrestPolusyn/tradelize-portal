@@ -6,5 +6,4 @@ mainContentWidth();
 
 function mainContentWidth() {
   contentWidth.style.paddingLeft = asideMenuWidth.clientWidth + 'px';
-
 }

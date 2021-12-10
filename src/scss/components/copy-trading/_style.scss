@@ -4,10 +4,14 @@
   }
 
   &-list {
+    grid-template-columns: repeat(2, auto);
+
     .tab-link {
       @include flex-v-center;
 
-      font-weight: 600;
+      &-btn {
+        font-weight: bold;
+      }
     }
 
     .tab-icon {
@@ -19,5 +23,6 @@
       stroke-width: 1.5px;
     }
   }
+
 
 }
