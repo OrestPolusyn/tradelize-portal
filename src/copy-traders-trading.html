@@ -15,7 +15,9 @@ pageTitle:'Copy traders'
 
       <div class="main-content copy-trader">
 
-        @include('html/_search-line.html')
+        @include('html/_search-line.html',{
+        placeholder:"Search..."
+        })
 
         <h2 class="sr-only">
           Cards of traders
@@ -24,7 +26,7 @@ pageTitle:'Copy traders'
         <div class="copy-trader-nav">
 
 
-          <ul class="tabs">
+          <ul class="tabs tabs-filter">
             @loop('html/_tabs.html',[{
             tabText: "Copy trading",
             classActive:""
@@ -47,12 +49,13 @@ pageTitle:'Copy traders'
             </li>
 
             <li class="tab tab-active">
-              <button class="tab-link tab-link-btn" type="button" data-traders-filter="filter">
-                Filters
+              <button class="tab-link tab-link-btn btn-modal" type="button" data-modals="modals"
+                data-modal-filter="modal-filter">
+                <span>
+                  filters
+                </span>
 
-                <svg class='tab-icon icon'>
-                  <use xlink:href='img/sprite.svg#filter-icon'></use>
-                </svg>
+                <svg class='tab-icon icon'><use xlink:href='img/sprite.svg#filter-icon'></use></svg>
               </button>
             </li>
           </ul>

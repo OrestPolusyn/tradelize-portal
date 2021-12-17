@@ -54,6 +54,12 @@
     position: relative;
     font-size: 17px;
 
+    .trader-card-symbol {
+      position: absolute;
+      left: -1px;
+      font-weight: 700;
+    }
+
     &:last-child {
       margin-right: 8px;
 
@@ -122,12 +128,6 @@
       text-transform: capitalize;
       color: var(--color-gray-400);
     }
-  }
-
-  &-symbol {
-    position: absolute;
-    left: -1px;
-    font-weight: 700;
   }
 
   &-graph {

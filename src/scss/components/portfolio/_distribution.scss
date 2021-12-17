@@ -1,0 +1,120 @@
+.profile-distribution {
+  margin-bottom: rem(30);
+  border-radius: var(--radius-main);
+  background-color: var(--color-white);
+
+  &-top {
+    @include flex-all-sb;
+
+    border-bottom: 1px solid var(--color-gray-200);
+    padding: rem(30) rem(40);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-gray-400);
+
+    @include for-width(-mobile-l) {
+      padding: rem(20) rem(40);
+    }
+  }
+
+  &-link {
+    position: relative;
+    padding-right: 15px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      mask-image: url('../img/sprite.svg#arrow-back');
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      width: 10px;
+      height: 16px;
+      background-color: currentColor;
+      transform: scale(-1, 1) translateY(-50%);
+    }
+
+    &:hover {
+      color: var(--color-dark);
+    }
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: rem(45) rem(90);
+    gap: 0 rem(130);
+
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    @include for-width(-mobile-l) {
+      padding: rem(20) rem(40);
+      gap: 0 rem(40);
+    }
+  }
+
+  &-item {
+    text-align: center;
+  }
+
+  &-doghnut {
+    margin-bottom: rem(20);
+
+    &-title {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 2;
+      color: var(--color-dark);
+
+      &::before {
+        content: "$";
+      }
+
+      @include for-width(-mobile-l) {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &-time {
+    @include flex-all-center;
+
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--color-gray-400);
+  }
+
+  &-elem {
+    @include flex;
+
+    position: relative;
+    font-weight: 500;
+    color: var(--color-dark);
+
+    &:first-child {
+      margin-right: 10px;
+      padding-left: 3px;
+
+      &::before {
+        content: "/";
+        position: absolute;
+        right: -16%;
+      }
+
+      &::after {
+        content: "%";
+      }
+    }
+
+    &:last-child {
+      &::after {
+        content: "k";
+      }
+    }
+  }
+}

@@ -13,14 +13,18 @@ pageTitle:'Advanced Traders Search'
         @include('html/_nav-side.html')
       </aside>
 
-      <div class="main-content">
+      <div class="main-content main-content-traders">
+
+        @include('html/_search-line.html',{
+        placeholder:"Search..."
+        })
 
 
         <h2 class="sr-only">
           Cards of traders
         </h2>
 
-        <ul class="tabs">
+        <ul class="tabs ">
           @loop('html/_tabs.html',[{
           tabText: "Posts",
           classActive:""

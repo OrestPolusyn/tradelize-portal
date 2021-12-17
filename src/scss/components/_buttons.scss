@@ -1,12 +1,12 @@
 .btn {
-  @include adaptive_size("font-size", 12, 9);
+  @include adaptive_size("font-size", 12, 10);
 
   display: block;
   border: 1px solid transparent;
   border-radius: var(--radius-main);
-  padding: rem(10) rem(20);
+  padding: rem(9) rem(20);
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.2;
   letter-spacing: 0.015em;
   text-align: center;
   color: var(--color-white);
@@ -45,8 +45,8 @@
     padding: 0;
     width: rem(34);
     height: rem(34);
-    min-width: 20px;
-    min-height: 20px;
+    min-width: 22px;
+    min-height: 22px;
     line-height: 1;
     background-color: var(--color-gray-100);
 
@@ -87,8 +87,6 @@
       }
     }
   }
-
-
 
   &:focus {
     background-color: var(--color-secondary);
@@ -140,7 +138,7 @@
     &::after {
       content: "";
       position: absolute;
-      right: 14px;
+      right: rem(12);
       mask-image: url("../img/sprite.svg#arrow-back");
       mask-position: center;
       mask-repeat: no-repeat;
@@ -169,6 +167,4 @@
       background-color: var(--color-gray-200);
     }
   }
-
-
 }

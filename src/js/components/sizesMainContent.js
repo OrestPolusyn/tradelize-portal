@@ -13,8 +13,17 @@ if (asideMenuWidth) {
     contentSize.style.height = window.innerHeight - headerHeight.clientHeight + 'px'
 
     if (window.innerWidth >= 768) {
-      contentSize.style.paddingLeft = asideMenuWidth.clientWidth + 5 + 'px'
+      if (sideBarFeed) {
+        contentSize.style.paddingLeft = asideMenuWidth.clientWidth + sideBarFeed.clientWidth + 'px';
+        sideBarFeed.style.left = asideMenuWidth.clientWidth + 'px'
+
+      } else {
+        contentSize.style.paddingLeft = asideMenuWidth.clientWidth + 5 + 'px';
+      }
     } else {
+      if (sideBarFeed) {
+        sideBarFeed.style.left = 0 + 'px'
+      } 
       contentSize.style.paddingLeft = 0 + 'px'
     }
   }

@@ -6,6 +6,7 @@
 }
 
 .trade {
+  overflow: hidden;
   background-color: var(--color-white);
 
   &-top {
@@ -13,17 +14,21 @@
 
     flex-wrap: wrap;
     border-bottom: 1px solid var(--color-gray-200);
-    padding: rem(25) rem(42) rem(25);
+    padding: rem(25) rem(45) rem(25);
 
     @include for-width(-mobile-l) {
       padding: rem(20) rem(24);
+    }
+
+    @include for-width(-mobile-sl) {
+      border-bottom: none;
     }
   }
 
   &-avatar {
     @include flex-v-center;
 
-    margin-right: rem(15);
+    margin-right: 12px;
     border-radius: var(--radius-main);
     width: 45px;
     height: 45px;
@@ -72,6 +77,22 @@
     position: relative;
     margin-right: auto;
 
+    &::before {
+      content: " ";
+      position: absolute;
+      left: -20%;
+      right: 0;
+      top: 0;
+      display: none;
+      width: 200%;
+      height: 1px;
+      background-color: var(--color-gray-300);
+
+      @include for-width(-mobile-sl) {
+        display: block;
+      }
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -79,6 +100,11 @@
       width: 1px;
       height: 15px;
       background-color: var(--color-gray-300);
+    }
+
+    @include for-width(-tablet) {
+      margin-right: 0;
+      margin-left: auto;
     }
 
     @include for-width(-mobile-l) {
@@ -89,12 +115,74 @@
     @include for-width(-mobile-sl) {
       justify-content: center;
       margin-bottom: rem(30);
+      padding: 25px 0;
       width: 100%;
     }
   }
 
   &-info {
+    position: relative;
     margin-left: rem(20);
+
+    &::before {
+      content: " ";
+      position: absolute;
+      left: -20%;
+      right: 0;
+      top: -25px;
+      display: none;
+      width: 200%;
+      height: 1px;
+      background-color: var(--color-gray-300);
+
+      @include for-width(-mobile-sl) {
+        display: block;
+      }
+    }
+
+    &-item {
+      position: relative;
+      font-size: 14px;
+      letter-spacing: 0;
+
+      &:not(:last-child) {
+        margin-right: rem(40);
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: rem(-20);
+          top: 3px;
+          width: 1px;
+          height: 15px;
+          background-color: var(--color-gray-300);
+        }
+      }
+
+      &-img {
+        transform: translateY(-2px);
+
+        .trade-img {
+          display: block;
+          height: 24px;
+          min-width: 60px;
+        }
+
+        @include for-width(-mobile-sl) {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    &-pair {
+      text-transform: uppercase;
+    }
+
+    @include for-width(-tablet) {
+      margin-right: 0;
+      margin-left: auto;
+      padding-left: 20px;
+    }
 
     @include for-width(-mobile-l) {
       justify-content: flex-end;
@@ -104,7 +192,8 @@
     }
 
     @include for-width(-mobile-sl) {
-      justify-content: space-between;
+      justify-content: center;
+      padding: 0;
       width: 100%;
     }
   }
@@ -174,40 +263,6 @@
     cursor: pointer;
   }
 
-  &-info {
-    &-item {
-      position: relative;
-      font-size: 14px;
-      letter-spacing: 0;
-
-      &:not(:last-child) {
-        margin-right: rem(40);
-
-        &::after {
-          content: "";
-          position: absolute;
-          right: rem(-20);
-          top: 3px;
-          width: 1px;
-          height: 15px;
-          background-color: var(--color-gray-300);
-        }
-      }
-
-      &-img {
-        .trade-img {
-          display: block;
-          height: 24px;
-          min-width: 60px;
-        }
-      }
-    }
-
-    &-pair {
-      text-transform: uppercase;
-    }
-  }
-
   &-finance {
     @include flex-all-sb;
 
@@ -218,23 +273,22 @@
       column-count: 2;
       column-gap: rem(50);
       width: 100%;
-      min-width: 350px;
-      max-width: rem(450);
+      max-width: 440px;
       font-size: 11px;
       line-height: 1.8;
       color: var(--color-gray-400);
 
       @include for-width(-mobile-l) {
-        column-count: 1;
-        width: auto;
+        column-gap: rem(0);
         min-width: 0;
+      }
+
+      @include for-width(-mobile-md) {
+        column-count: 1;
       }
 
       @include for-width(-mobile-sl) {
         column-count: 2;
-        column-gap: rem(40);
-        width: 100%;
-        min-width: 0;
       }
     }
 
@@ -270,6 +324,19 @@
       &::first-letter {
         text-transform: uppercase;
       }
+
+      span {
+        display: inline;
+
+        @include for-width(-mobile-l) {
+          display: none;
+        }
+      }
+
+      @include for-width(-mobile-l) {
+        margin-right: 0;
+        max-width: fit-content;
+      }
     }
 
     &-date {
@@ -279,6 +346,10 @@
 
     &-btns {
       @include flex;
+
+      @include for-width(-mobile-md) {
+        display: block;
+      }
 
       @include for-width(-mobile-sl) {
         position: absolute;
@@ -291,8 +362,9 @@
       &:not(:last-child) {
         margin-right: rem(20);
 
-        @include for-width(-mobile-sl) {
+        @include for-width(-mobile-md) {
           margin-right: 0;
+          margin-bottom: 20px;
         }
       }
     }
@@ -331,6 +403,15 @@
     &-btn-trades {
       position: relative;
       padding: rem(8) rem(35) rem(8) rem(20);
+      white-space: nowrap;
+
+      @include for-width(-tablet) {
+        padding: rem(8) rem(45) rem(8) rem(20);
+      }
+
+      @include for-width(-mobile-l) {
+        padding: rem(8) rem(30) rem(8) rem(20);
+      }
 
       @include for-width(-mobile-sl) {
         display: none;

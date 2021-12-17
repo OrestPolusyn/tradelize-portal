@@ -1,0 +1,144 @@
+.dex-copy {
+  padding: rem(120) 20px;
+
+  &-top {
+    margin-bottom: rem(125);
+    border-radius: var(--radius-main);
+    padding: rem(40);
+    background-color: var(--color-white);
+
+    .search {
+      padding: 0;
+
+      &-area {
+        padding: 10px 20px;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+    }
+
+    .search-btn {
+      right: 10px;
+    }
+
+    @include for-width(-mobile-l) {
+      margin-bottom: rem(80);
+      padding: rem(30);
+    }
+
+    @include for-width(-mobile-sl) {
+      margin-bottom: rem(40);
+      padding: rem(20);
+    }
+  }
+
+  &-title {
+    margin-bottom: rem(25);
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1.15;
+    color: var(--color-dark);
+
+    &-subtitle {
+      margin-right: 20px;
+      margin-bottom: 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  }
+
+  .field-area {
+    background-color: var(--color-gray-100);
+  }
+
+  &-nav {
+    @include flex-all-sb;
+
+    margin-bottom: 20px;
+  }
+
+  &-link {
+    padding: 5px rem(45);
+    font-weight: 500;
+    font-size: 13px;
+    background-color: var(--color-white);
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 30px;
+
+    @include for-width(-mobile-l) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    @include for-width(-mobile-md) {
+      gap: 15px;
+    }
+
+    @include for-width(-mobile-sl) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      margin: 0 auto;
+      gap: 15px 0;
+    }
+  }
+
+  &-item {
+    counter-increment: list;
+    position: relative;
+    padding: rem(40) rem(30);
+    text-align: center;
+    background-color: var(--color-white);
+
+    &-title {
+      margin: 0 auto rem(20);
+      width: 100%;
+      min-height: 45px;
+      max-width: 180px;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    &-number {
+      font-weight: 700;
+      line-height: 1.6;
+      color: var(--color-main);
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--color-gray-400);
+    }
+
+    &:nth-child(3) {
+      @include for-width(-mobile-l) {
+        grid-column: 1/3;
+      }
+
+      @include for-width(-mobile-sl) {
+        grid-column: auto;
+      }
+    }
+
+    @include for-width(-mobile-l) {
+      padding: rem(20);
+    }
+  }
+
+  &-icon {
+    margin-bottom: rem(30);
+    width: 100%;
+    height: 58px;
+    max-width: 70px;
+  }
+
+  @include for-width(-mobile-l) {
+    padding: rem(60) 20px;
+  }
+}

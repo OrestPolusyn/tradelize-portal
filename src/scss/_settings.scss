@@ -44,9 +44,19 @@ body {
 
   &-content {
     margin: 0 auto;
-    padding: rem(23);
+    padding: 20px;
     width: 100%;
     max-width: 1005px;
+
+    &-traders {
+      @include for-width(-mobile-l) {
+        width: 90%;
+      }
+
+      @include for-width(-mobile-md) {
+        width: 100%;
+      }
+    }
 
     @include for-width(-mobile-md) {
       padding: 0;

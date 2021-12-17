@@ -13,7 +13,7 @@
 }
 
 .search {
-  margin-bottom: 40px;
+  position: relative;
   width: 100%;
 
   &-area {
@@ -21,13 +21,34 @@
     max-width: 100%;
     font-size: 13px;
 
+    @include for-width(-desktop-sm) {
+      padding: rem(15) rem(20);
+    }
+
     @include for-width(-mobile-md) {
       background-color: var(--color-gray-100);
     }
   }
 
+  &-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    padding: rem(10);
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    .icon {
+      width: 14px;
+      height: 14px;
+    }
+
+    @include for-width(-mobile-md) {
+      right: 30px;
+    }
+  }
+
   @include for-width(-mobile-md) {
-    margin-bottom: rem(20);
     padding: rem(20) rem(24);
     background-color: var(--color-white);
   }

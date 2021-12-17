@@ -1,4 +1,4 @@
-<div class="modals-copy-filters">
+<div class="modals-copy-filters modal" data-target-filter="modal-filter">
   <div class="modals-copy-filters-top">
     <h3 class="modals-title">
       Filters
@@ -18,7 +18,7 @@
 
     </div>
 
-    <button class="modals-close" type="button">
+    <button class="modals-close" type="button" data-close="modals-copy-filters">
       <svg class='icon'>
         <use xlink:href='img/sprite.svg#close'></use>
       </svg>
@@ -51,7 +51,7 @@
     </li>
   </ul>
 
-  <form class="modals-copy-form" action="#">
+  <form class="modals-copy-form" >
     <ul class="modals-copy-contents">
       <li class="modals-copy-content modals-copy-content-open" data-content-filer="exchange">
 
@@ -224,7 +224,7 @@
 
     <div class="modals-copy-form-btns">
       <button class="modals-copy-form-btn btn btn-gray" type="reset">
-        Clear all filters
+        Clear filters
       </button>
 
       <button class="modals-copy-form-btn btn " type="submit">

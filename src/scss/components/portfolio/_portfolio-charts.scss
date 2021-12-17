@@ -1,0 +1,53 @@
+.profile-chart {
+  &-nav {
+    margin-bottom: rem(40);
+
+    &-list {
+      @include flex-v-center;
+    }
+  }
+
+  &-switch {
+    position: relative;
+    background-color: var(--color-gray-100);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 1px;
+      height: 15px;
+      background-color: var(--color-gray-300);
+      transform: translateY(-50%)
+    }
+
+    &-label {
+      position: relative;
+      display: inline-block;
+      padding: 9px 17px;
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: capitalize;
+      color: var(--color-gray-400);
+      cursor: pointer;
+    }
+
+    &-btn[type="radio"] {
+      display: none;
+
+      &:checked+.profile-chart-switch-label {
+        font-weight: 400;
+        color: var(--color-dark);
+      }
+    }
+
+    &:first-child {
+      margin-right: rem(40);
+
+      &::before {
+        left: 56%;
+      }
+    }
+  }
+}

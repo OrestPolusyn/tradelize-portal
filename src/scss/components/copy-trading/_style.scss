@@ -1,16 +1,48 @@
 .copy-trader {
   &-nav {
     @include flex-all-sb;
+
+    padding-bottom: 20px;
+
+    .tabs {
+      margin-bottom: 0;
+
+      &.tabs-filter {
+        @include for-width(-mobile-sl) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    @include for-width(-mobile-md) {
+      padding: 20px 15px;
+    }
+
+    @include for-width(-mobile-sl) {
+      flex-wrap: wrap;
+    }
   }
 
   &-list {
-    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(1, 1fr);
 
     .tab-link {
-      @include flex-v-center;
+      @include flex-all-center;
+
+      padding: 5px 15px;
+      text-transform: capitalize;
 
       &-btn {
-        font-weight: bold;
+        width: 100%;
+
+        span {
+          z-index: 0;
+          font-weight: 500;
+        }
+      }
+
+      @include for-width(-mobile-md) {
+        padding: 5px 10px;
       }
     }
 
@@ -22,7 +54,13 @@
       stroke: currentColor;
       stroke-width: 1.5px;
     }
+
+    @include for-width(-mobile-md) {
+      padding: 0 5px;
+    }
+
+    @include for-width(-mobile-sl) {
+      width: 100%;
+    }
   }
-
-
 }

@@ -11,10 +11,10 @@ pageTitle:'Feed'
 
       <aside class="aside-nav">
         @include('html/_nav-side.html')
-
-        @include('html/feed/_feed-side.html')
-
       </aside>
+
+      @include('html/feed/_feed-side.html')
+
 
       <div class="main-content">
 
@@ -84,11 +84,11 @@ pageTitle:'Feed'
                 </div>
 
                 <div class="posts-publish-btns">
-                  <button class="posts-publish-submit posts-publish-cancel btn btn-gray" type="button">
+                  <button class="posts-publish-submit posts-publish-cancel btn btn-gray" type="reset">
                     Cancel
                   </button>
 
-                  <button class="posts-publish-submit btn" type="button">
+                  <button class="posts-publish-submit posts-publish-apply btn disabled" type="button">
                     Publish
                   </button>
                 </div>

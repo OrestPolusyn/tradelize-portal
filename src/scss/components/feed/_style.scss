@@ -1,7 +1,7 @@
 .posts {
   &-publish {
     margin-bottom: rem(20);
-    padding: rem(15) rem(45);
+    padding: 15px rem(45);
     background-color: var(--color-white);
 
     &-gallery {
@@ -13,6 +13,10 @@
 
       @include for-width(-desktop-med) {
         padding-left: 0;
+      }
+
+      @include for-width(-mobile-md) {
+        margin-bottom: 20px;
       }
     }
 
@@ -28,6 +32,11 @@
       white-space: nowrap;
       text-align: center;
       color: var(--color-main);
+
+      @include for-width(-mobile-md) {
+        width: fit-content;
+        min-width: 60px;
+      }
     }
 
     &-btns {
@@ -43,6 +52,12 @@
         opacity: 1;
         visibility: visible;
       }
+
+      @include for-width(-mobile-md) {
+        justify-content: flex-end;
+        opacity: 1;
+        visibility: visible;
+      }
     }
 
     &-submit {
@@ -55,6 +70,10 @@
 
       &:not(:last-child) {
         margin-right: rem(20);
+      }
+
+      @include for-width(-mobile-l) {
+        padding: 5px 10px;
       }
     }
 
@@ -150,6 +169,11 @@
         opacity: 1;
         visibility: visible;
       }
+
+      @include for-width(-mobile-md) {
+        opacity: 1;
+        visibility: visible;
+      }
     }
 
     .post-write-area {
@@ -165,9 +189,21 @@
         box-shadow: none;
       }
 
+      &:focus::placeholder {
+        color: transparent;
+      }
+
       &:hover {
         box-shadow: none;
       }
+
+      @include for-width(-mobile-md) {
+        padding-top: 0;
+      }
+    }
+
+    @include for-width(-mobile-l) {
+      padding: 15px;
     }
   }
 
@@ -207,6 +243,12 @@
       border-bottom: 1px solid var(--color-gray-100);
       padding-bottom: 15px;
       width: 100%;
+    }
+
+    &:last-child {
+      @include for-width(-mobile-md) {
+        display: block;
+      }
     }
   }
 

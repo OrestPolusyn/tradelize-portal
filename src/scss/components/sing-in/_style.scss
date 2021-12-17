@@ -8,6 +8,10 @@
     margin-bottom: rem(30);
     min-height: calc(100vh - 135px);
 
+    @include for-width(-desktop-med) {
+      grid-template-columns: 450px 450px;
+    }
+
     @include for-width(-tablet) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -34,7 +38,7 @@
     margin-bottom: rem(60);
 
     &-register {
-      @include adaptive_size("font-size", 26, 23);
+      @include adaptive_size("font-size", 24, 18);
 
       margin-bottom: rem(40);
     }
@@ -60,6 +64,14 @@
     margin: 0 auto;
     width: 100%;
     max-width: 350px;
+
+    @include for-width(-tablet) {
+      width: 70%;
+    }
+
+    @include for-width(-mobile-l) {
+      width: 100%;
+    }
   }
 
   &-form-in {
@@ -79,6 +91,14 @@
 
     .wellcome-form {
       margin-bottom: rem(90);
+    }
+
+    @include for-width(-tablet) {
+      padding: 0 rem(40);
+    }
+
+    @include for-width(-mobile-sl) {
+      padding: 0 rem(20);
     }
   }
 

@@ -1,6 +1,10 @@
 .feed-side {
+  position: fixed;
+  z-index: 10;
   border-left: 1px solid var(--color-gray-100);
   padding: rem(30) 0;
+  height: 100%;
+  max-width: 365px;
   background: var(--color-white);
 
   .search {
@@ -13,16 +17,26 @@
   }
 
   .tabs {
-    margin-bottom: rem(25);
-    padding: 0 rem(30);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding: rem(30) rem(30) rem(18);
+    gap: 0 10px;
+
+    @include for-width(-mobile-l) {
+      gap: 0 10px;
+    }
   }
 
   .tab {
     .tab-link {
-
       &:hover {
         font-weight: 400;
         color: var(--color-dark);
+      }
+
+      @include for-width(-mobile-l) {
+        padding: 10px 20px;
+        line-height: 1.2;
       }
     }
 
@@ -46,6 +60,14 @@
     &::-webkit-scrollbar {
       width: 0;
     }
+
+    @include for-width(-mobile-l) {
+      @include flex;
+
+      overflow-x: auto;
+      padding: 20px 20px 0;
+      background-color: var(--color-gray-100);
+    }
   }
 
   &-item {
@@ -60,6 +82,23 @@
 
     &-active {
       background-color: var(--color-gray-100);
+
+      @include for-width(-mobile-l) {
+        background-color: transparent;
+      }
+    }
+
+    &:not(:last-child) {
+      @include for-width(-mobile-l) {
+        margin-right: 30px;
+      }
+    }
+
+    @include for-width(-mobile-l) {
+      display: block;
+      padding: 0;
+      width: 100%;
+      max-width: 67px;
     }
   }
 
@@ -170,6 +209,13 @@
         background-color: var(--color-bg-eight);
       }
     }
+
+    @include for-width(-mobile-l) {
+      margin: 0 auto 10px;
+      width: 47px;
+      height: 47px;
+      max-width: 47px;
+    }
   }
 
   &-name {
@@ -179,13 +225,62 @@
     line-height: 1.4;
     text-align: left;
     color: var(--color-dark);
+
+    @include for-width(-mobile-l) {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 
   &-number {
     letter-spacing: 0.03em;
+
+    @include for-width(-mobile-l) {
+      display: none;
+    }
   }
 
   &-time {
     margin-left: auto;
+
+    @include for-width(-mobile-l) {
+      display: none;
+    }
+  }
+
+  .search-btn {
+    right: 30px;
+  }
+
+  +.main-content {
+    .tabs {
+      @include for-width(-mobile-l) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        padding-top: 0;
+        gap: 0 5px;
+      }
+    }
+
+    .tab-link {
+      @include for-width(-mobile-l) {
+        padding: 10px 20px;
+        line-height: 1.2;
+      }
+    }
+
+    @include for-width(-mobile-l) {
+      padding-top: 0;
+    }
+  }
+
+  @include for-width(-mobile-l) {
+    position: relative;
+    left: 0;
+    padding-bottom: 0;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
   }
 }

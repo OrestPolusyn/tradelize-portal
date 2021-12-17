@@ -1,0 +1,60 @@
+@include('html/_head.html',{
+pageTitle:'My profile'
+})
+
+<body>
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main profile">
+      <h1 class="sr-only">profile page</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <div class="main-content">
+
+        <h2 class="sr-only">
+          my profile
+        </h2>
+
+        <ul class="tabs">
+          @loop('html/_tabs.html',[{
+          tabText: "Statistics",
+          classActive:"tab-active"
+          },
+          {
+          tabText: "Copy trading",
+          classActive:""
+          },
+          {
+          tabText: "Diary",
+          classActive:""
+          },
+          {
+          tabText: "Channel",
+          classActive:""
+          }])
+        </ul>
+
+        @include('html/portfolio/_total-performance.html')
+
+        @include('html/portfolio/_distribution-block.html')
+
+        @include('html/portfolio/_portfolio-chart.html')
+
+        @include('html/portfolio/_trading-data.html')
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')
+
+  </div>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

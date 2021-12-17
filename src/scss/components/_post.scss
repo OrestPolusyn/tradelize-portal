@@ -26,6 +26,14 @@
     position: relative;
     margin-bottom: rem(20);
     width: fit-content;
+
+    @include for-width(-desktop-med) {
+      margin-bottom: rem(30);
+    }
+
+    @include for-width(-mobile-l) {
+      margin-bottom: rem(15);
+    }
   }
 
   &-owner-avatar {
@@ -34,6 +42,14 @@
 
     margin-right: rem(15);
     width: 100%;
+
+    @include for-width(-desktop-med) {
+      margin-right: rem(25);
+    } 
+
+    @include for-width(-mobile-l) {
+      margin-right: 12px;
+    }
   }
 
   &-owner-text {
@@ -43,7 +59,7 @@
   }
 
   &-title {
-    @include adaptive_size("font-size", 14, 10);
+    @include adaptive_size("font-size", 14, 11);
 
     margin-bottom: rem(10);
     padding-top: rem(5);
@@ -75,7 +91,7 @@
     display: block;
     width: 100%;
     line-height: 1;
-    color: var(--color-gray-300);
+    color: var(--color-gray-400);
 
     @include for-width(-mobile-md) {
       font-size: 11px;
@@ -197,14 +213,18 @@
     @include adaptive_size("font-size", 13, 10);
 
     overflow-y: auto;
-    padding: rem(12) rem(50) rem(8) rem(20);
+    padding: rem(8) rem(50) rem(8) rem(20);
     min-height: 33px;
     max-width: 100%;
     max-height: 100px;
     font-family: inherit;
-    line-height: 1.5;
+    line-height: 1.8;
     letter-spacing: 0;
     resize: none;
+
+    @include for-width(-mobile-l) {
+      line-height: 2;
+    }
   }
 
   &-btn {
