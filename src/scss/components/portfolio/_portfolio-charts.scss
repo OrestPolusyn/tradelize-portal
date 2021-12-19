@@ -19,13 +19,14 @@
       width: 1px;
       height: 15px;
       background-color: var(--color-gray-300);
-      transform: translateY(-50%)
+      transform: translateY(-50%);
     }
 
     &-label {
       position: relative;
       display: inline-block;
       padding: 9px 17px;
+      font-size: 12px;
       line-height: 1;
       letter-spacing: 0;
       text-transform: capitalize;

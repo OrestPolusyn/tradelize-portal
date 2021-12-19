@@ -10,10 +10,21 @@
       font-size: 15px;
       line-height: 1.7;
       color: var(--color-dark);
+
+      @include for-width(-desktop-med) {
+        margin-bottom: rem(30);
+        width: 100%;
+      }
     }
 
     &-list {
       @include flex-all-sb;
+
+      &:not(.profile-total-performance) {
+        @include for-width(-desktop-med) {
+          width: 100%;
+        }
+      }
     }
 
     &-performance {
@@ -23,7 +34,7 @@
       &::before {
         content: "";
         position: absolute;
-        left: calc(50% - 5px);
+        left: calc(50% + 10px);
         top: 0;
         width: 1px;
         height: 12px;
@@ -35,11 +46,14 @@
     &-item {
       position: relative;
       display: inherit;
-      margin-right: 30px;
       font-weight: 700;
       font-size: 17px;
       line-height: 1.4;
       letter-spacing: 0.01em;
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
 
       &:first-child {
         padding-left: 20px;
@@ -79,12 +93,18 @@
       line-height: 1.2;
       background-color: var(--color-gray-100);
 
+      .modals-copy-filters-radiobtn {
+        border: none;
+      }
+
       &:not(:last-child) {
         margin-right: 15px;
       }
 
-      .modals-copy-filters-radiobtn {
-        border: none;
+      &:first-child {
+        @include for-width(-desktop-med) {
+          margin-right: auto;
+        }
       }
     }
 

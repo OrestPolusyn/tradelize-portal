@@ -52,6 +52,10 @@
       height: 100% !important;
     }
 
+    @include for-width(-tablet) {
+      padding: rem(30);
+    }
+
     @include for-width(-mobile-l) {
       padding: rem(20) rem(40);
       gap: 0 rem(40);

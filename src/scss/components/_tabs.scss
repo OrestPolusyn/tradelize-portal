@@ -1,8 +1,7 @@
 .tabs {
-  @include flex;
-
+  display: grid;
+  grid-template-columns: repeat(4, 117px);
   padding: 20px 0;
-
   gap: 0 rem(20);
 
   &::-webkit-scrollbar {

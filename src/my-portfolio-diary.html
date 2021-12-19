@@ -14,7 +14,7 @@ pageTitle:'My profile'
       </aside>
 
       <aside class="aside-nav portfolio-side">
-        @include('html/portfolio/_portfolio-side.html')
+        @include('html/portfolio/_portfolio-side-follow.html')
       </aside>
 
       <div class="main-content">
@@ -26,7 +26,7 @@ pageTitle:'My profile'
         <ul class="tabs">
           @loop('html/_tabs.html',[{
           tabText: "Statistics",
-          classActive:"tab-active"
+          classActive:""
           },
           {
           tabText: "Copy trading",
@@ -34,7 +34,7 @@ pageTitle:'My profile'
           },
           {
           tabText: "Diary",
-          classActive:""
+          classActive:"tab-active"
           },
           {
           tabText: "Channel",
@@ -42,13 +42,33 @@ pageTitle:'My profile'
           }])
         </ul>
 
-        @include('html/portfolio/_total-performance.html')
+        <ul class="profile-diary">
 
-        @include('html/portfolio/_distribution-block.html')
+          <li class="profile-diary-item trades-item">
+            @include("html/search/trades/_trades-block.html",{
+            longShort:"trade-long",
+            longShortText:"long",
+            dataNumber:"1"
+            })
+          </li>
 
-        @include('html/portfolio/_portfolio-chart.html')
+          <li class="profile-diary-item posts-item">
+            @include('html/_post.html',{
+            img:"",
+            dataUserLike:"unlike",
+            dataPath:"1",
+            shareId:"1"
+            })
+          </li>
 
-        @include('html/portfolio/_trading-data.html')
+          <li class="profile-diary-item trades-item">
+            @include("html/search/trades/_trades-block.html",{
+            longShort:"trade-long",
+            longShortText:"long",
+            dataNumber:"1"
+            })
+          </li>
+        </ul>
 
       </div>
 

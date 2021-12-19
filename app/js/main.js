@@ -585,35 +585,80 @@ if (sideBar) {
 "use strict";
 "use strict";
 
+var radioBtnSideProfile = Array.from(document.querySelectorAll('.portfolio-side-stat input'));
+var btcElements = Array.from(document.querySelectorAll('[data-side-item]'));
+
+if (radioBtnSideProfile.length > 0) {
+  btcElements.forEach(function (item) {
+    item.classList.remove('radio-show');
+
+    if (item.dataset.sideItem === 'btc') {
+      item.classList.add('radio-show');
+    }
+  });
+  radioBtnSideProfile.forEach(function (element) {
+    element.addEventListener('click', function () {
+      checkedInput(element);
+    });
+  });
+}
+
+function checkedInput(element) {
+  if (element.dataset.sideTarget === 'btc') {
+    btcElements.forEach(function (item) {
+      item.classList.remove('radio-show');
+
+      if (item.dataset.sideItem === 'btc') {
+        item.classList.add('radio-show');
+      }
+    });
+  } else {
+    btcElements.forEach(function (item) {
+      item.classList.remove('radio-show');
+
+      if (item.dataset.sideItem === 'usd') {
+        item.classList.add('radio-show');
+      }
+    });
+  }
+}
+"use strict";
+
 var contentSize = document.querySelector('.main');
 var headerHeight = document.querySelector('.header');
 var asideMenuWidth = document.querySelector('.aside-nav');
 var sideBarFeed = document.querySelector('.feed-side');
 var sideTabsFeed = document.querySelector('.feed-side .tabs');
 var searchTabsFeed = document.querySelector('.feed-side .search');
+var asideProfileWidth = document.querySelector('.portfolio-side');
 
 if (asideMenuWidth) {
-  var mainContentWidth = function mainContentWidth() {
-    contentSize.style.height = window.innerHeight - headerHeight.clientHeight + 'px';
+  window.addEventListener('resize', mainContentWidth(asideMenuWidth));
+  mainContentWidth(asideMenuWidth);
+} else if (asideMenuWidth && asideProfileWidth) {
+  window.addEventListener('resize', mainContentWidth(asideMenuWidth, asideProfileWidth));
+  mainContentWidth(asideMenuWidth, asideProfileWidth);
+}
 
-    if (window.innerWidth >= 768) {
-      if (sideBarFeed) {
-        contentSize.style.paddingLeft = asideMenuWidth.clientWidth + sideBarFeed.clientWidth + 'px';
-        sideBarFeed.style.left = asideMenuWidth.clientWidth + 'px';
-      } else {
-        contentSize.style.paddingLeft = asideMenuWidth.clientWidth + 5 + 'px';
-      }
+function mainContentWidth() {
+  contentSize.style.height = window.innerHeight - headerHeight.clientHeight + 'px';
+
+  if (window.innerWidth >= 768) {
+    if (sideBarFeed) {
+      contentSize.style.paddingLeft = asideMenuWidth.clientWidth + sideBarFeed.clientWidth + 'px';
+      sideBarFeed.style.left = asideMenuWidth.clientWidth + 'px';
     } else {
-      if (sideBarFeed) {
-        sideBarFeed.style.left = 0 + 'px';
-      }
-
-      contentSize.style.paddingLeft = 0 + 'px';
+      contentSize.style.paddingLeft = asideMenuWidth.clientWidth + 5 + 'px';
+      contentSize.style.paddingRight = asideProfileWidth.clientWidth - 0 + 'px';
     }
-  };
+  } else {
+    if (sideBarFeed) {
+      sideBarFeed.style.left = 0 + 'px';
+    }
 
-  window.addEventListener('resize', mainContentWidth);
-  mainContentWidth();
+    contentSize.style.paddingLeft = 0 + 'px';
+    contentSize.style.paddingRight = 0 + 'px';
+  }
 }
 "use strict";
 
@@ -638,164 +683,154 @@ if (openTradeGraph.length > 0) {
     });
   });
 }
-"use strict";
-
-var tradeChart = document.querySelector('.myChart');
-var tradeCard = Array.from(document.querySelectorAll('.trader-card'));
-var barData = [12, -16, 13, 15, 120, 13];
-var dataChartLoss = [];
-var dataChartShadow = [];
-var dataChartLabels = [];
-var labelData = [];
-var data = [];
-var sumData = 0;
-var colorBorder;
-var D;
-
-if (tradeChart.length > 0) {
-  var drawGraph = function drawGraph(arr) {
-    if (arr.length > 0) {
-      arr.forEach(function callback(value, index) {
-        dataChartLabels.push(index);
-        dataChartShadow.push(Math.abs(value) - 0.5);
-        dataChartLoss.push(Math.abs(value));
-        sumData += value;
-
-        if (sumData > 0) {
-          data = dataChartLoss;
-          colorBorder = gradientGreen;
-        } else {
-          data = dataChartLoss;
-          colorBorder = gradientBrown;
-        }
-      });
-    }
-
-    var draw = Chart.controllers.line.prototype.draw;
-
-    Chart.controllers.line.prototype.draw = function () {
-      var chart = this.chart;
-      var ctx = chart.ctx;
-      var _stroke = ctx.stroke;
-
-      ctx.stroke = function () {
-        ctx.save();
-        ctx.shadowColor = "rgba(12,10,32,0.14)";
-        ctx.shadowBlur = 13;
-        ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 10;
-
-        _stroke.apply(this, arguments);
-
-        ctx.restore();
-      };
-
-      draw.apply(this, arguments);
-      ctx.stroke = _stroke;
-    };
-  };
-
-  var gradientGreen = document.querySelector('.myChart').getContext('2d').createLinearGradient(0, 0, 100, 100);
-  gradientGreen.addColorStop(0, 'rgba(193,247,147,0)');
-  gradientGreen.addColorStop(0.1, 'rgba(72,229,173,0.47)');
-  gradientGreen.addColorStop(1, 'rgba(132,227,153,1)');
-  var gradientBrown = document.querySelector('.myChart').getContext('2d').createLinearGradient(0, 0, 100, 100);
-  gradientBrown.addColorStop(0, 'rgba(193,247,147,0)');
-  gradientBrown.addColorStop(0.1, 'rgba(255,150,54,0.47)');
-  gradientBrown.addColorStop(1, 'rgba(203,79,79,1)');
-  drawGraph(dataChart);
-}
-
-var grapharea = tradeChart.getContext("2d");
-var myChart = new Chart(grapharea, {
-  type: 'bar',
-  data: barData,
-  options: barOptions
-});
-myChart.destroy();
-myChart = new Chart(grapharea, {
-  type: 'radar',
-  data: barData,
-  options: barOptions
-}); // fetch('../jsons/chart.json')
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((data) => {
-//     for (let dataItem of data) {
-//       dataItem.items.forEach(function (element, index) {
-//         moreDataBaby.push(element.y)
-//         labelData.push(index)
-//       });
-//       data.forEach(element => {
-//         console.log(element.items);
-//         tradeChart.forEach(element => {
-//           const chartEl = element.getContext('2d');
-//           const optionsChartTrade = {
-//             radius: 0,
-//             responsive: true,
-//             scales: {
-//               y: {
-//                 display: false,
-//                 type: 'linear'
-//               },
-//               x: {
-//                 display: false,
-//               }
-//             },
-//             plugins: {
-//               legend: false,
-//             },
-//             layout: {
-//               padding: 10
-//             },
-//             interaction: {
-//               intersect: false
-//             },
-//             // animations: {
-//             //   x: {
-//             //     duration: 10,
-//             //     easing: 'linear',
-//             //     from: NaN, // the point is initially skipped
-//             //     delay(element) {
-//             //       if (element.type !== 'data' || element.xStarted) {
-//             //         return 0;
-//             //       }
-//             //       element.xStarted = true;
-//             //       return element.index * delayBetweenPoints;
-//             //     }
-//             //   },
-//             // },
-//           }
-//           var boxShadow = chartEl.createLinearGradient(0, 0, 60, 60);
-//           boxShadow.addColorStop(0, 'rgba(12,10,32,0.14)');
-//           var myChart = new Chart(chartEl, {
-//             type: 'line',
-//             data: {
-//               labels: labelData,
-//               datasets: [{
-//                 data: element.items,
-//                 borderColor: colorBorder,
-//                 borderWidth: 5,
-//                 tension: 0.4,
-//               }]
-//             },
-//             options: optionsChartTrade
-//           });
-//           myChart.destroy();
-//           var myChart = new Chart(chartEl, {
-//             type: 'bar',
-//             data: {
-//               labels: labelData,
-//               datasets: [{
-//                 data: element.items,
-//               }]
-//             },
-//           });
-//         });
+// const tradeChart = document.querySelector('.myChart');
+// const tradeCard = Array.from(document.querySelectorAll('.trader-card'));
+// let barData = [12, -16, 13, 15, 120, 13];
+// let dataChartLoss = [];
+// let dataChartShadow = [];
+// let dataChartLabels = [];
+// let labelData = [];
+// let data = [];
+// let sumData = 0;
+// let colorBorder;
+// let D;
+// if (tradeChart.length > 0) {
+//   let gradientGreen = document.querySelector('.myChart').getContext('2d').createLinearGradient(0, 0, 100, 100);
+//   gradientGreen.addColorStop(0, 'rgba(193,247,147,0)');
+//   gradientGreen.addColorStop(0.1, 'rgba(72,229,173,0.47)');
+//   gradientGreen.addColorStop(1, 'rgba(132,227,153,1)');
+//   let gradientBrown = document.querySelector('.myChart').getContext('2d').createLinearGradient(0, 0, 100, 100);
+//   gradientBrown.addColorStop(0, 'rgba(193,247,147,0)');
+//   gradientBrown.addColorStop(0.1, 'rgba(255,150,54,0.47)');
+//   gradientBrown.addColorStop(1, 'rgba(203,79,79,1)');
+//   drawGraph(dataChart);
+//   function drawGraph(arr) {
+//     if (arr.length > 0) {
+//       arr.forEach(function callback(value, index) {
+//         dataChartLabels.push(index);
+//         dataChartShadow.push(Math.abs(value) - 0.5);
+//         dataChartLoss.push(Math.abs(value));
+//         sumData += value;
+//         if (sumData > 0) {
+//           data = dataChartLoss;
+//           colorBorder = gradientGreen;
+//         } else {
+//           data = dataChartLoss;
+//           colorBorder = gradientBrown;
+//         }
 //       });
 //     }
-//   })
+//     let draw = Chart.controllers.line.prototype.draw;
+//     Chart.controllers.line.prototype.draw = function () {
+//       let chart = this.chart;
+//       let ctx = chart.ctx;
+//       let _stroke = ctx.stroke;
+//       ctx.stroke = function () {
+//         ctx.save();
+//         ctx.shadowColor = "rgba(12,10,32,0.14)";
+//         ctx.shadowBlur = 13;
+//         ctx.shadowOffsetX = 0;
+//         ctx.shadowOffsetY = 10;
+//         _stroke.apply(this, arguments);
+//         ctx.restore();
+//       };
+//       draw.apply(this, arguments);
+//       ctx.stroke = _stroke;
+//     };
+//   }
+// }
+// var grapharea = tradeChart.getContext("2d");
+// var myChart = new Chart(grapharea, {
+//   type: 'bar',
+//   data: barData,
+//   options: barOptions
+// });
+// myChart.destroy();
+// myChart = new Chart(grapharea, {
+//   type: 'radar',
+//   data: barData,
+//   options: barOptions
+// });
+// // fetch('../jsons/chart.json')
+// //   .then((response) => {
+// //     return response.json();
+// //   })
+// //   .then((data) => {
+// //     for (let dataItem of data) {
+// //       dataItem.items.forEach(function (element, index) {
+// //         moreDataBaby.push(element.y)
+// //         labelData.push(index)
+// //       });
+// //       data.forEach(element => {
+// //         console.log(element.items);
+// //         tradeChart.forEach(element => {
+// //           const chartEl = element.getContext('2d');
+// //           const optionsChartTrade = {
+// //             radius: 0,
+// //             responsive: true,
+// //             scales: {
+// //               y: {
+// //                 display: false,
+// //                 type: 'linear'
+// //               },
+// //               x: {
+// //                 display: false,
+// //               }
+// //             },
+// //             plugins: {
+// //               legend: false,
+// //             },
+// //             layout: {
+// //               padding: 10
+// //             },
+// //             interaction: {
+// //               intersect: false
+// //             },
+// //             // animations: {
+// //             //   x: {
+// //             //     duration: 10,
+// //             //     easing: 'linear',
+// //             //     from: NaN, // the point is initially skipped
+// //             //     delay(element) {
+// //             //       if (element.type !== 'data' || element.xStarted) {
+// //             //         return 0;
+// //             //       }
+// //             //       element.xStarted = true;
+// //             //       return element.index * delayBetweenPoints;
+// //             //     }
+// //             //   },
+// //             // },
+// //           }
+// //           var boxShadow = chartEl.createLinearGradient(0, 0, 60, 60);
+// //           boxShadow.addColorStop(0, 'rgba(12,10,32,0.14)');
+// //           var myChart = new Chart(chartEl, {
+// //             type: 'line',
+// //             data: {
+// //               labels: labelData,
+// //               datasets: [{
+// //                 data: element.items,
+// //                 borderColor: colorBorder,
+// //                 borderWidth: 5,
+// //                 tension: 0.4,
+// //               }]
+// //             },
+// //             options: optionsChartTrade
+// //           });
+// //           myChart.destroy();
+// //           var myChart = new Chart(chartEl, {
+// //             type: 'bar',
+// //             data: {
+// //               labels: labelData,
+// //               datasets: [{
+// //                 data: element.items,
+// //               }]
+// //             },
+// //           });
+// //         });
+// //       });
+// //     }
+// //   })
+"use strict";
 "use strict";
 
 /**

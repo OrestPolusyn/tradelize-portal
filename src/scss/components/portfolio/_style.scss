@@ -2,9 +2,11 @@
 @import 'distribution';
 @import 'portfolio-charts';
 @import 'trading';
+@import 'portfolio-side';
 
 .profile {
   &-box {
+    flex-wrap: wrap;
     margin-bottom: rem(30);
     padding: rem(30) rem(40);
     background-color: var(--color-white);
@@ -12,6 +14,7 @@
 
   &-title {
     border-radius: var(--radius-main);
+    white-space: nowrap;
     text-transform: capitalize;
     color: var(--color-gray-400);
   }

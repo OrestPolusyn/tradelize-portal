@@ -7,6 +7,11 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: rem(30);
+
+    @include for-width(-tablet) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(20);
+    }
   }
 
   &-item {
@@ -26,6 +31,10 @@
       font-weight: 700;
       font-size: 17px;
       line-height: 1.6;
+
+      @include for-width(-desktop-med) {
+        font-size: 14px;
+      }
     }
 
     &-profit {
