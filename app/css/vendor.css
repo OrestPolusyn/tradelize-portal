@@ -118,6 +118,10 @@ a {
   color: inherit;
 }
 
+textarea {
+  font-family: inherit;
+}
+
 table,
 caption,
 tbody,
@@ -235,9 +239,6 @@ textarea {
   border-radius: 0;
   padding: 0;
   background-color: transparent;
-}
-
-textarea {
   resize: none;
 }
 
@@ -287,17 +288,17 @@ address {
   height: 0;
   background-repeat: no-repeat;
 }
-@media (max-width: 768px) {
-  ::-webkit-resizer {
-    width: 0;
-  }
-}
 
 ::-webkit-scrollbar {
   width: 7px;
 }
+
 @media (max-width: 768px) {
   ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  ::-webkit-resizer {
     width: 0;
   }
 }

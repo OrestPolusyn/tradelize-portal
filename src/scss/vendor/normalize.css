@@ -1,0 +1,299 @@
+html {
+  position: relative;
+  box-sizing: border-box;
+  line-height: 1.15;
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  word-wrap: break-word;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: block;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button,
+br {
+  vertical-align: baseline;
+  margin: 0;
+  outline: transparent;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 100%;
+  background: transparent;
+}
+
+img {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+sub,
+sup {
+  margin: 0;
+  outline: transparent;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+textarea {
+  font-family: inherit;
+}
+
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  outline: transparent;
+  border: 0;
+  padding: 0;
+  font-size: 100%;
+  background: transparent;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul,
+li {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+:focus {
+  outline: transparent;
+}
+
+ins {
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+a,
+button,
+input {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+button {
+  appearance: none;
+  overflow: visible;
+  margin: 0;
+  border: none;
+  padding: 0;
+  width: auto;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  line-height: normal;
+  background-color: transparent;
+}
+
+input,
+input:hover,
+input:focus,
+input:active,
+button,
+button:hover,
+button:focus,
+button:active {
+  outline: transparent;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+  resize: none;
+}
+
+address {
+  font-style: normal;
+}
+
+::-webkit-scrollbar-button {
+  width: 5px;
+  height: 0;
+  background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: transparent;
+  background-color: transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  background-color: #ccc;
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+}
+
+.scroll-mac::-webkit-scrollbar-thumb {
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  background-color: #ccc;
+  opacity: 1;
+  visibility: visible;
+  cursor: pointer;
+}
+
+::-webkit-resizer {
+  width: 7px;
+  height: 0;
+  background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  ::-webkit-resizer {
+    width: 0;
+  }
+}

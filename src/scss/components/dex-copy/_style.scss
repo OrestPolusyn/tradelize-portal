@@ -1,5 +1,5 @@
 .dex-copy {
-  padding: rem(120) 20px;
+  padding: rem(120) 20px 0;
 
   &-top {
     margin-bottom: rem(125);
@@ -101,6 +101,11 @@
       max-width: 180px;
       font-weight: 700;
       font-size: 13px;
+
+      @include for-width(-mobile-sl) {
+        min-height: auto;
+        max-width: 100%;
+      }
     }
 
     &-number {

@@ -1,0 +1,41 @@
+.trading-flow {
+
+  .profile-total-list {
+    justify-content: flex-start;
+  }
+
+  .profile-total-nav {
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &-switch {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 1px;
+      height: 12px;
+      background-color: var(--color-gray-300);
+      transform: translateY(-50%);
+    }
+
+    .modals-copy-filters-radiobtn {
+      padding: 9px 0;
+      line-height: 1.27;
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+    +.profile-total-nav {
+      margin-left: auto;
+    }
+  }
+}

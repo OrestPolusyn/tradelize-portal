@@ -1,7 +1,4 @@
 "use strict";
-
-var bodyStyles = window.getComputedStyle(document.body);
-var gap = parseInt(bodyStyles.getPropertyValue('--grid-gap'));
 "use strict";
 
 // const burger = document.querySelector('.burger');
@@ -34,7 +31,6 @@ var gap = parseInt(bodyStyles.getPropertyValue('--grid-gap'));
 //   }
 // });
 var burger = document.querySelector('.burger');
-var asideMobile = document.querySelector('.aside-nav');
 
 if (burger) {
   burger.addEventListener('click', function (e) {
@@ -59,39 +55,38 @@ var formPostWriteBtns = document.querySelector('.posts-publish-btns');
 
 if (formPostWriteSend) {
   var formPostSend = function formPostSend() {
-    var startNumber = formPostWriteSend.value.length;
     charactersNumber.textContent = 1000 - formPostWriteSend.value.length;
 
     if (formPostWriteSend.focus) {
-      formPostWriteNumberField.classList.add("visible");
-      formPostWriteBtns.classList.add("visible");
+      formPostWriteNumberField.classList.add('visible');
+      formPostWriteBtns.classList.add('visible');
     } else {
-      formPostWriteNumberField.classList.remove("visible");
-      formPostWriteBtns.classList.remove("visible");
-      document.querySelector(".posts-publish textarea").style.height = 45 + "px";
+      formPostWriteNumberField.classList.remove('visible');
+      formPostWriteBtns.classList.remove('visible');
+      document.querySelector('.posts-publish textarea').style.height = 45 + 'px';
     }
   };
 
-  formPostWriteSend.addEventListener("keyup", function () {
+  formPostWriteSend.addEventListener('keyup', function () {
     formPostSend();
   });
-  formPostWriteSend.addEventListener("input", function () {
+  formPostWriteSend.addEventListener('input', function () {
     formPostSend();
   });
-  formPostWriteSend.addEventListener("focus", function () {
+  formPostWriteSend.addEventListener('focus', function () {
     formPostSend();
   });
-  formPostWriteSend.addEventListener("keyup", function () {
+  formPostWriteSend.addEventListener('keyup', function () {
     if (formPostWriteSend.value.length > 0) {
       btnSubmitForm.classList.remove('disabled');
     } else {
       btnSubmitForm.classList.add('disabled');
     }
   });
-  btnPostReset.addEventListener("click", function () {
+  btnPostReset.addEventListener('click', function () {
     btnSubmitForm.classList.add('disabled');
-    formPostWriteNumberField.classList.remove("visible");
-    formPostWriteBtns.classList.remove("visible");
+    formPostWriteNumberField.classList.remove('visible');
+    formPostWriteBtns.classList.remove('visible');
   });
 }
 "use strict";
@@ -216,8 +211,6 @@ if (imageAdd) {
     btnDeleteImage.forEach(function (element) {
       element.addEventListener('click', function (e) {
         e.currentTarget.parentNode.remove();
-
-        if (document.querySelectorAll('.posts-publish-gallery-item').length === 0) {}
       });
     });
   };
@@ -234,14 +227,14 @@ var fitersCopyModal = Array.from(document.querySelectorAll('.modals-copy-content
 var fitersCopyModalBtn = Array.from(document.querySelectorAll('.modals-copy-filters .tab'));
 
 if (fitersCopyModal.length > 0) {
-  var openComment = function openComment(e) {
+  var openCopyTab = function openCopyTab(e) {
     var btnPath = e.currentTarget.firstElementChild.getAttribute('data-copy-filer');
     fitersCopyModalBtn.forEach(function (element) {
       element.classList.remove('tab-active');
     });
 
     if (e.currentTarget.firstElementChild.hasAttribute('data-copy-filer')) {
-      Array.from(document.querySelectorAll(".modals-copy-content")).forEach(function (element) {
+      Array.from(document.querySelectorAll('.modals-copy-content')).forEach(function (element) {
         element.classList.remove('modals-copy-content-open');
       });
       e.currentTarget.classList.add('tab-active');
@@ -251,14 +244,14 @@ if (fitersCopyModal.length > 0) {
 
   fitersCopyModalBtn.forEach(function (element) {
     element.addEventListener('click', function (e) {
-      openComment(e);
+      openCopyTab(e);
     });
   });
 }
 "use strict";
 
-var formComment = Array.from(document.querySelectorAll('.post-write')),
-    formTextarea = Array.from(document.querySelectorAll('textarea'));
+var formComment = Array.from(document.querySelectorAll('.post-write'));
+var formTextarea = Array.from(document.querySelectorAll('textarea'));
 
 if (formComment.length > 0) {
   var checkLenght = function checkLenght() {
@@ -283,9 +276,12 @@ if (formComment.length > 0) {
 }
 
 var textarea = Array.from(document.querySelectorAll('textarea'));
-textarea.forEach(function (element) {
-  element.addEventListener('keydown', autosize);
-});
+
+if (textarea.length > 0) {
+  textarea.forEach(function (element) {
+    element.addEventListener('keydown', autosize);
+  });
+}
 
 function autosize() {
   var el = this;
@@ -299,25 +295,25 @@ function autosize() {
 "use strict";
 
 var openModals = Array.from(document.querySelectorAll('.btn-modal'));
+var clodeModal = Array.from(document.querySelectorAll('[data-close="modals-close"]'));
 
 if (openModals.length > 0) {
   var openComment = function openComment(e) {
     var btnModOut = e.currentTarget.getAttribute('data-modals');
     var btnModIn = e.currentTarget.getAttribute('data-modal-filter');
-    console.log(btnModIn);
 
     if (e.currentTarget.hasAttribute('data-modals')) {
-      Array.from(document.querySelectorAll(".modals")).forEach(function (element) {
+      Array.from(document.querySelectorAll('.modals')).forEach(function (element) {
         element.classList.remove('modals-open');
       });
-      document.querySelector("[data-modal=\"".concat(btnModOut, "\"]")).classList.add('modals-open');
+      document.querySelector("[data-modal='".concat(btnModOut, "']")).classList.add('modals-open');
     }
 
     if (e.currentTarget.hasAttribute('data-modal-filter')) {
-      Array.from(document.querySelectorAll(".modal")).forEach(function (element) {
+      Array.from(document.querySelectorAll('.modal')).forEach(function (element) {
         element.classList.remove('modal-open');
       });
-      document.querySelector("[data-target-filter=\"".concat(btnModIn, "\"]")).classList.add('modal-open');
+      document.querySelector("[data-target-filter='".concat(btnModIn, "']")).classList.add('modal-open');
     }
   };
 
@@ -326,17 +322,19 @@ if (openModals.length > 0) {
       openComment(e);
     });
   });
-}
 
-if (document.querySelector('[data-close="modals-copy-filters"]')) {
-  document.querySelector('[data-close="modals-copy-filters"]').addEventListener("click", function () {
-    Array.from(document.querySelectorAll(".modals")).forEach(function (element) {
-      element.classList.remove('modals-open');
+  if (clodeModal.length > 0) {
+    clodeModal.forEach(function (element) {
+      element.addEventListener('click', function () {
+        Array.from(document.querySelectorAll('.modals')).forEach(function (element) {
+          element.classList.remove('modals-open');
+        });
+        Array.from(document.querySelectorAll('.modal')).forEach(function (element) {
+          element.classList.remove('modal-open');
+        });
+      });
     });
-    Array.from(document.querySelectorAll(".modal")).forEach(function (element) {
-      element.classList.remove('modal-open');
-    });
-  });
+  }
 }
 "use strict";
 
@@ -351,8 +349,8 @@ if (dropDownWritePostForm) {
       dropDownWritePost.classList.remove('posts-publish-dropdown-open');
     }
   });
-  dropDownWritePost.addEventListener("click", function (e) {
-    document.querySelector(".posts-publish-dropdown-text").innerText = e.target.textContent;
+  dropDownWritePost.addEventListener('click', function (e) {
+    document.querySelector('.posts-publish-dropdown-text').innerText = e.target.textContent;
   });
 }
 "use strict";
@@ -364,14 +362,30 @@ if (passwordBtnChange.length > 0) {
     el.addEventListener('click', function () {
       if (!this.classList.contains('field-btn-show')) {
         this.classList.add('field-btn-show');
-        this.previousElementSibling.setAttribute("type", "text");
+        this.previousElementSibling.setAttribute('type', 'text');
       } else {
         this.classList.remove('field-btn-show');
-        this.previousElementSibling.setAttribute("type", "password");
+        this.previousElementSibling.setAttribute('type', 'password');
       }
     });
   });
 }
+// var readURL = function (input) {
+//   if (input.files && input.files[0]) {
+//     var reader = new FileReader();
+//     reader.onload = function (e) {
+//       $('.profile-pic').attr('src', e.target.result);
+//     }
+//     reader.readAsDataURL(input.files[0]);
+//   }
+// }
+// $(".file-upload").on('change', function () {
+//   readURL(this);
+// });
+// $(".upload-button").on('click', function () {
+//   $(".file-upload").click();
+// });
+"use strict";
 "use strict";
 
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
@@ -470,15 +484,28 @@ fetch('../jsons/chart.json').then(function (response) {
             intersect: true
           }
         };
-        Array.from(document.querySelectorAll("[data-chart]")).forEach(function (element) {
+        Array.from(document.querySelectorAll('[data-chart]')).forEach(function (element) {
           element.addEventListener('click', function () {
             updateChartType(element.dataset.chart);
           });
         }); // Default chart defined with type: 'line'
 
-        ctx = document.querySelector('.profile-chartic').getContext('2d');
-        myChart = new Chart(ctx, {
-          type: 'line',
+        var ctx = document.querySelector('.profile-chartic').getContext('2d');
+
+        if (document.querySelector('.profile-chartic-trading')) {
+          var ctxTrading = document.querySelector('.profile-chartic-trading').getContext('2d');
+        }
+
+        var typeChart = 'line';
+
+        if (!document.querySelector('.profile-chartic').classList.contains('profile-chartic-trading')) {
+          typeChart = 'line';
+        } else {
+          typeChart = 'bar';
+        }
+
+        var myChart = new Chart(ctx, {
+          type: typeChart,
           data: myDataLine,
           options: optionsCharts
         }); // Function runs on chart type select update
@@ -497,9 +524,6 @@ fetch('../jsons/chart.json').then(function (response) {
       };
 
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var ctx;
-        var myChart;
-
         _loop();
       }
     } catch (err) {
@@ -527,23 +551,49 @@ if (postOpenCommentsBtn.length > 0) {
     var btnPathReply = e.currentTarget.getAttribute('data-path-reply');
 
     if (e.currentTarget.hasAttribute('data-path')) {
-      Array.from(document.querySelectorAll(".comments")).forEach(function (element) {
+      Array.from(document.querySelectorAll('.comments')).forEach(function (element) {
         element.classList.remove('comments-open');
       });
-      document.querySelector("[data-target=\"".concat(btnPath, "\"]")).classList.add('comments-open');
+      document.querySelector("[data-target=\"".concat(btnPath, "\"]")).classList.toggle('comments-open');
     }
 
     if (e.currentTarget.hasAttribute('data-path-reply')) {
-      Array.from(document.querySelectorAll(".post-write-reply")).forEach(function (element) {
+      Array.from(document.querySelectorAll('.post-write-reply')).forEach(function (element) {
         element.classList.remove('comments-open');
       });
-      document.querySelector("[data-target-reply=\"".concat(btnPathReply, "\"]")).classList.add('comments-open');
+      document.querySelector("[data-target-reply=\"".concat(btnPathReply, "\"]")).classList.toggle('comments-open');
     }
   };
 
   postOpenCommentsBtn.forEach(function (element) {
     element.addEventListener('click', function (e) {
       openComment(e);
+    });
+  });
+}
+"use strict";
+
+var btnSideNav = Array.from(document.querySelectorAll('.profile-side .btn'));
+var btnCloseSideEdit = Array.from(document.querySelectorAll('[data-side="normal"]'));
+
+if (btnSideNav.length > 0) {
+  btnSideNav.forEach(function (element) {
+    element.addEventListener('click', function (e) {
+      var openSideBarNav = e.currentTarget.getAttribute('data-side-path');
+
+      if (e.currentTarget.hasAttribute('data-side-path')) {
+        document.querySelector("[data-side-target=\"".concat(openSideBarNav, "\"]")).classList.add('profile-side-edit-open');
+      }
+    });
+  });
+}
+
+if (btnCloseSideEdit.length > 0) {
+  btnCloseSideEdit.forEach(function (element) {
+    element.addEventListener('click', function () {
+      document.querySelectorAll('[data-side-target]').forEach(function (item) {
+        item.classList.remove('profile-side-edit-open');
+      });
     });
   });
 }
@@ -583,12 +633,31 @@ if (sideBar) {
   })();
 }
 "use strict";
-"use strict";
 
-var radioBtnSideProfile = Array.from(document.querySelectorAll('.portfolio-side-stat input'));
+var radioBtnSideProfile = Array.from(document.querySelectorAll('.profile-side-stat input'));
 var btcElements = Array.from(document.querySelectorAll('[data-side-item]'));
 
 if (radioBtnSideProfile.length > 0) {
+  var checkedInput = function checkedInput(element) {
+    if (element.dataset.sideTarget === 'btc') {
+      btcElements.forEach(function (item) {
+        item.classList.remove('radio-show');
+
+        if (item.dataset.sideItem === 'btc') {
+          item.classList.add('radio-show');
+        }
+      });
+    } else {
+      btcElements.forEach(function (item) {
+        item.classList.remove('radio-show');
+
+        if (item.dataset.sideItem === 'usd') {
+          item.classList.add('radio-show');
+        }
+      });
+    }
+  };
+
   btcElements.forEach(function (item) {
     item.classList.remove('radio-show');
 
@@ -602,42 +671,40 @@ if (radioBtnSideProfile.length > 0) {
     });
   });
 }
-
-function checkedInput(element) {
-  if (element.dataset.sideTarget === 'btc') {
-    btcElements.forEach(function (item) {
-      item.classList.remove('radio-show');
-
-      if (item.dataset.sideItem === 'btc') {
-        item.classList.add('radio-show');
-      }
-    });
-  } else {
-    btcElements.forEach(function (item) {
-      item.classList.remove('radio-show');
-
-      if (item.dataset.sideItem === 'usd') {
-        item.classList.add('radio-show');
-      }
-    });
-  }
-}
 "use strict";
 
 var contentSize = document.querySelector('.main');
 var headerHeight = document.querySelector('.header');
 var asideMenuWidth = document.querySelector('.aside-nav');
 var sideBarFeed = document.querySelector('.feed-side');
-var sideTabsFeed = document.querySelector('.feed-side .tabs');
-var searchTabsFeed = document.querySelector('.feed-side .search');
-var asideProfileWidth = document.querySelector('.portfolio-side');
+var asideProfileWidth = document.querySelector('.profile-side');
+var sidePortfolioBox = document.querySelectorAll('.profile-side-box');
 
 if (asideMenuWidth) {
-  window.addEventListener('resize', mainContentWidth(asideMenuWidth));
+  window.addEventListener('resize', function () {
+    mainContentWidth(asideMenuWidth);
+  });
   mainContentWidth(asideMenuWidth);
 } else if (asideMenuWidth && asideProfileWidth) {
-  window.addEventListener('resize', mainContentWidth(asideMenuWidth, asideProfileWidth));
+  window.addEventListener('resize', function () {
+    mainContentWidth(asideMenuWidth, asideProfileWidth);
+  });
   mainContentWidth(asideMenuWidth, asideProfileWidth);
+}
+
+if (sidePortfolioBox.length > 0) {
+  if (window.innerWidth > 768) {
+    window.addEventListener('resize', function () {
+      sidePortfolio(sidePortfolioBox);
+    });
+    sidePortfolio(sidePortfolioBox);
+  }
+}
+
+function sidePortfolio() {
+  sidePortfolioBox.forEach(function (element) {
+    element.style.height = window.innerHeight - headerHeight.clientHeight + 'px';
+  });
 }
 
 function mainContentWidth() {
@@ -649,7 +716,10 @@ function mainContentWidth() {
       sideBarFeed.style.left = asideMenuWidth.clientWidth + 'px';
     } else {
       contentSize.style.paddingLeft = asideMenuWidth.clientWidth + 5 + 'px';
-      contentSize.style.paddingRight = asideProfileWidth.clientWidth - 0 + 'px';
+
+      if (asideProfileWidth) {
+        contentSize.style.paddingRight = asideProfileWidth.clientWidth - 0 + 'px';
+      }
     }
   } else {
     if (sideBarFeed) {
@@ -662,175 +732,250 @@ function mainContentWidth() {
 }
 "use strict";
 
-var openTradeGraph = Array.from(document.querySelectorAll('.trades-item'));
+var x, i, j, l, ll, selElmnt, a, b, c;
+/* Look for any elements with the class "profile-select": */
+
+x = document.getElementsByClassName("profile-select");
+l = x.length;
+
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  /* For each element, create a new DIV that will act as the selected item: */
+
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  /* For each element, create a new DIV that will contain the option list: */
+
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+
+  for (j = 1; j < ll; j++) {
+    /* For each option in the original select element,
+    create a new DIV that will act as an option item: */
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function (e) {
+      /* When an item is clicked, update the original select box,
+      and the selected item: */
+      var y, i, k, s, h, sl, yl;
+      s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+      sl = s.length;
+      h = this.parentNode.previousSibling;
+
+      for (i = 0; i < sl; i++) {
+        if (s.options[i].innerHTML == this.innerHTML) {
+          s.selectedIndex = i;
+          h.innerHTML = this.innerHTML;
+          y = this.parentNode.getElementsByClassName("same-as-selected");
+          yl = y.length;
+
+          for (k = 0; k < yl; k++) {
+            y[k].removeAttribute("class");
+          }
+
+          this.setAttribute("class", "same-as-selected");
+          break;
+        }
+      }
+
+      h.click();
+    });
+    b.appendChild(c);
+  }
+
+  x[i].appendChild(b);
+  a.addEventListener("click", function (e) {
+    /* When the select box is clicked, close any other select boxes,
+    and open/close the current select box: */
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
+}
+
+function closeAllSelect(elmnt) {
+  /* A function that will close all select boxes in the document,
+  except the current select box: */
+  var x,
+      y,
+      i,
+      xl,
+      yl,
+      arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i);
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+/* If the user clicks anywhere outside the select box,
+then close all select boxes: */
+
+
+document.addEventListener("click", closeAllSelect);
+"use strict";
+
+var openTradeGraph = Array.from(document.querySelectorAll('.trade-finance-btn'));
 
 if (openTradeGraph.length > 0) {
-  var openComment = function openComment(e) {
+  var openGraph = function openGraph(e) {
     var btnPath = e.target.getAttribute('data-table');
 
     if (e.target.hasAttribute('data-table')) {
-      Array.from(document.querySelectorAll(".trade-graph")).forEach(function (element) {
-        element.classList.remove('trade-graph-open');
-      });
+      document.querySelector("[data-graph=\"".concat(btnPath, "\"]")).classList.toggle('trade-graph-open');
     }
-
-    document.querySelector("[data-graph=\"".concat(btnPath, "\"]")).classList.add('trade-graph-open');
   };
 
   openTradeGraph.forEach(function (element) {
     element.addEventListener('click', function (e) {
-      openComment(e);
+      Array.from(document.querySelectorAll('.trade-graph')).forEach(function (element) {
+        element.classList.remove('trade-graph-open');
+      });
+      openGraph(e);
     });
   });
 }
-// const tradeChart = document.querySelector('.myChart');
-// const tradeCard = Array.from(document.querySelectorAll('.trader-card'));
-// let barData = [12, -16, 13, 15, 120, 13];
-// let dataChartLoss = [];
-// let dataChartShadow = [];
-// let dataChartLabels = [];
-// let labelData = [];
-// let data = [];
-// let sumData = 0;
-// let colorBorder;
-// let D;
-// if (tradeChart.length > 0) {
-//   let gradientGreen = document.querySelector('.myChart').getContext('2d').createLinearGradient(0, 0, 100, 100);
-//   gradientGreen.addColorStop(0, 'rgba(193,247,147,0)');
-//   gradientGreen.addColorStop(0.1, 'rgba(72,229,173,0.47)');
-//   gradientGreen.addColorStop(1, 'rgba(132,227,153,1)');
-//   let gradientBrown = document.querySelector('.myChart').getContext('2d').createLinearGradient(0, 0, 100, 100);
-//   gradientBrown.addColorStop(0, 'rgba(193,247,147,0)');
-//   gradientBrown.addColorStop(0.1, 'rgba(255,150,54,0.47)');
-//   gradientBrown.addColorStop(1, 'rgba(203,79,79,1)');
-//   drawGraph(dataChart);
-//   function drawGraph(arr) {
-//     if (arr.length > 0) {
-//       arr.forEach(function callback(value, index) {
-//         dataChartLabels.push(index);
-//         dataChartShadow.push(Math.abs(value) - 0.5);
-//         dataChartLoss.push(Math.abs(value));
-//         sumData += value;
-//         if (sumData > 0) {
-//           data = dataChartLoss;
-//           colorBorder = gradientGreen;
-//         } else {
-//           data = dataChartLoss;
-//           colorBorder = gradientBrown;
-//         }
-//       });
-//     }
-//     let draw = Chart.controllers.line.prototype.draw;
-//     Chart.controllers.line.prototype.draw = function () {
-//       let chart = this.chart;
-//       let ctx = chart.ctx;
-//       let _stroke = ctx.stroke;
-//       ctx.stroke = function () {
-//         ctx.save();
-//         ctx.shadowColor = "rgba(12,10,32,0.14)";
-//         ctx.shadowBlur = 13;
-//         ctx.shadowOffsetX = 0;
-//         ctx.shadowOffsetY = 10;
-//         _stroke.apply(this, arguments);
-//         ctx.restore();
-//       };
-//       draw.apply(this, arguments);
-//       ctx.stroke = _stroke;
-//     };
-//   }
-// }
-// var grapharea = tradeChart.getContext("2d");
-// var myChart = new Chart(grapharea, {
-//   type: 'bar',
-//   data: barData,
-//   options: barOptions
-// });
-// myChart.destroy();
-// myChart = new Chart(grapharea, {
-//   type: 'radar',
-//   data: barData,
-//   options: barOptions
-// });
-// // fetch('../jsons/chart.json')
-// //   .then((response) => {
-// //     return response.json();
-// //   })
-// //   .then((data) => {
-// //     for (let dataItem of data) {
-// //       dataItem.items.forEach(function (element, index) {
-// //         moreDataBaby.push(element.y)
-// //         labelData.push(index)
-// //       });
-// //       data.forEach(element => {
-// //         console.log(element.items);
-// //         tradeChart.forEach(element => {
-// //           const chartEl = element.getContext('2d');
-// //           const optionsChartTrade = {
-// //             radius: 0,
-// //             responsive: true,
-// //             scales: {
-// //               y: {
-// //                 display: false,
-// //                 type: 'linear'
-// //               },
-// //               x: {
-// //                 display: false,
-// //               }
-// //             },
-// //             plugins: {
-// //               legend: false,
-// //             },
-// //             layout: {
-// //               padding: 10
-// //             },
-// //             interaction: {
-// //               intersect: false
-// //             },
-// //             // animations: {
-// //             //   x: {
-// //             //     duration: 10,
-// //             //     easing: 'linear',
-// //             //     from: NaN, // the point is initially skipped
-// //             //     delay(element) {
-// //             //       if (element.type !== 'data' || element.xStarted) {
-// //             //         return 0;
-// //             //       }
-// //             //       element.xStarted = true;
-// //             //       return element.index * delayBetweenPoints;
-// //             //     }
-// //             //   },
-// //             // },
-// //           }
-// //           var boxShadow = chartEl.createLinearGradient(0, 0, 60, 60);
-// //           boxShadow.addColorStop(0, 'rgba(12,10,32,0.14)');
-// //           var myChart = new Chart(chartEl, {
-// //             type: 'line',
-// //             data: {
-// //               labels: labelData,
-// //               datasets: [{
-// //                 data: element.items,
-// //                 borderColor: colorBorder,
-// //                 borderWidth: 5,
-// //                 tension: 0.4,
-// //               }]
-// //             },
-// //             options: optionsChartTrade
-// //           });
-// //           myChart.destroy();
-// //           var myChart = new Chart(chartEl, {
-// //             type: 'bar',
-// //             data: {
-// //               labels: labelData,
-// //               datasets: [{
-// //                 data: element.items,
-// //               }]
-// //             },
-// //           });
-// //         });
-// //       });
-// //     }
-// //   })
 "use strict";
+
+var tradeChart = Array.from(document.querySelectorAll('.myChart'));
+var tradeCard = Array.from(document.querySelectorAll('.trader-card'));
+
+if (tradeChart.length > 0) {
+  var drawGraph = function drawGraph(arr) {
+    if (arr.length > 0) {
+      arr.forEach(function callback(value, index) {
+        dataChartLabels.push(index);
+        dataChartShadow.push(Math.abs(value) - 0.5);
+        dataChartLoss.push(Math.abs(value));
+        sumData += value;
+
+        if (sumData > 0) {
+          data = dataChartLoss;
+          colorBorder = gradientGreen;
+        } else {
+          data = dataChartLoss;
+          colorBorder = gradientBrown;
+        }
+      });
+    }
+
+    var draw = Chart.controllers.line.prototype.draw;
+
+    Chart.controllers.line.prototype.draw = function () {
+      var chart = this.chart;
+      var ctx = chart.ctx;
+      var _stroke = ctx.stroke;
+
+      ctx.stroke = function () {
+        ctx.save();
+        ctx.shadowColor = "rgba(12,10,32,0.14)";
+        ctx.shadowBlur = 13;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 10;
+
+        _stroke.apply(this, arguments);
+
+        ctx.restore();
+      };
+
+      draw.apply(this, arguments);
+      ctx.stroke = _stroke;
+    };
+
+    tradeChart.forEach(function (element) {
+      var chartEl = element.getContext('2d');
+      var totalDuration = arr.length * 100;
+      var delayBetweenPoints = totalDuration / arr.length;
+      var boxShadow = chartEl.createLinearGradient(0, 0, 60, 60);
+      boxShadow.addColorStop(0, 'rgba(12,10,32,0.14)');
+      new Chart(element, {
+        type: 'line',
+        data: {
+          labels: data,
+          datasets: [{
+            data: arr,
+            borderColor: colorBorder,
+            borderWidth: 5,
+            tension: 0.4
+          }]
+        },
+        options: {
+          radius: 0,
+          responsive: true,
+          scales: {
+            y: {
+              display: false,
+              type: 'linear'
+            },
+            x: {
+              display: false
+            }
+          },
+          plugins: {
+            legend: false
+          },
+          layout: {
+            padding: 10
+          },
+          interaction: {
+            intersect: false
+          },
+          animations: {
+            x: {
+              duration: 10,
+              easing: 'linear',
+              from: NaN,
+              // the point is initially skipped
+              delay: function delay(element) {
+                if (element.type !== 'data' || element.xStarted) {
+                  return 0;
+                }
+
+                element.xStarted = true;
+                return element.index * delayBetweenPoints;
+              }
+            }
+          }
+        }
+      });
+    });
+  };
+
+  var gradientGreen = document.querySelector('.myChart').getContext('2d').createLinearGradient(0, 0, 100, 100);
+  gradientGreen.addColorStop(0, 'rgba(193,247,147,0)');
+  gradientGreen.addColorStop(0.1, 'rgba(72,229,173,0.47)');
+  gradientGreen.addColorStop(1, 'rgba(132,227,153,1)');
+  var gradientBrown = document.querySelector('.myChart').getContext('2d').createLinearGradient(0, 0, 100, 100);
+  gradientBrown.addColorStop(0, 'rgba(193,247,147,0)');
+  gradientBrown.addColorStop(0.1, 'rgba(255,150,54,0.47)');
+  gradientBrown.addColorStop(1, 'rgba(203,79,79,1)');
+  var dataChart = [12, -16, 13, 15, 120, 13];
+  var dataChartLoss = [];
+  var dataChartShadow = [];
+  var dataChartLabels = [];
+  var data = [];
+  var sumData = 0;
+  var colorBorder;
+  var D;
+  drawGraph(dataChart);
+}
 "use strict";
 
 /**
@@ -839,8 +984,25 @@ if (openTradeGraph.length > 0) {
  * @param {number} first - первое число
  * @returns {number}
  */
-document.querySelector('.aside-nav').addEventListener('click', function (e) {
-  document.querySelector('body').classList.remove('open-mobile');
-  document.querySelector('.burger').classList.remove('burger--active');
-});
+if (document.querySelector('.aside-nav')) {
+  document.querySelector('.aside-nav').addEventListener('click', function (e) {
+    document.querySelector('body').classList.remove('open-mobile');
+    document.querySelector('.burger').classList.remove('burger--active');
+  });
+}
+
+var btnTableShow = document.querySelector('.table-btn-show');
+var tableTradingFlow = document.querySelector('.trading-flow-table');
+
+if (btnTableShow) {
+  btnTableShow.addEventListener('click', function () {
+    tableTradingFlow.classList.toggle('trading-flow-table-show');
+
+    if (tableTradingFlow.classList.contains('trading-flow-table-show')) {
+      btnTableShow.textContent = 'Show less';
+    } else {
+      btnTableShow.textContent = 'Show more';
+    }
+  });
+}
 //# sourceMappingURL=main.js.map

@@ -2,12 +2,10 @@ const doghnutExchange = document.querySelector('.profile-distribution-exchange')
 const doghnutContracts = document.querySelector('.profile-distribution-contracts')
 const doghnutCurrencies = document.querySelector('.profile-distribution-currencies')
 
-
 if (doghnutCurrencies || doghnutContracts || doghnutExchange) {
   doghnutExchange.getContext("2d")
   doghnutContracts.getContext("2d")
   doghnutCurrencies.getContext("2d")
-
 
   const arrayDoghnutExchange = [{
     value: 40,

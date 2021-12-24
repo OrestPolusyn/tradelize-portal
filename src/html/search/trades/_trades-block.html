@@ -4,7 +4,7 @@
     <div class="trade-owner">
 
       <div class="trade-avatar">
-        <img class="trade-img" src="img/avatar.png" alt="nathan mckinney profile avatar">
+        <img class="trade-img" src="img/avatar.png" alt="nathan mckinney profile avatar" width="45" height="45">
       </div>
 
       <div class="trade-owner-text">
@@ -14,7 +14,7 @@
           </a>
         </h3>
 
-        <time class="trade-owner-time" datetime="30.09.2021">
+        <time class="trade-owner-time" datetime="2021-09-30">
           30.09.2021
         </time>
       </div>
@@ -22,13 +22,13 @@
 
     <ul class="trade-list trade-results">
 
-      <li class="trade-result  @longShort">
+      <li class="trade-result trade-result-tooltip @longShort" title="Verified">
         <svg class="trade-icon check-icon">
           <use xlink:href="img/sprite.svg#check-green"></use>
         </svg>
       </li>
 
-      <li class="trade-result trade-result-percent @longShort">
+      <li class="trade-result trade-result-percent @longShort" >
         118.54
       </li>
 
@@ -73,7 +73,7 @@
           time:
         </span>
 
-        <time class="trade-finance-date" datetime="2021-08-18 00:05:82">
+        <time class="trade-finance-date" datetime="2021-08-18 00:05:02">
           2021-08-18 00:05:82
         </time>
       </li>
@@ -90,7 +90,7 @@
           time:
         </span>
 
-        <time class="trade-finance-date" datetime="2021-08-18 00:05:82">
+        <time class="trade-finance-date" datetime="2021-08-18 00:05:02">
           2021-08-18 00:05:82
         </time>
       </li>
@@ -98,7 +98,8 @@
 
     <ul class="trade-finance-btns">
       <li class="trade-finance-btns-item">
-        <button class="trade-finance-btn btn btn-gray" type="button" data-share-trade="share-id">
+        <button class="trade-finance-btn btn btn-gray btn-modal" type="button" data-share-trade="share-id"
+          data-modals="modals" data-modal-filter="modal-share">
           <svg class="post-icon icon">
             <use xlink:href="img/sprite.svg#share"></use>
           </svg>
@@ -119,18 +120,20 @@
   <div class="trade-graph" data-graph="@dataNumber">
 
     <div class="trade-graph-box">
-      <img src="img/graph-trade.png" alt="">
+      <img src="img/graph-trade.png" alt="Graph" width="965" height="375">
     </div>
 
     <table class="trade-table">
 
       <thead>
-        <th>time</th>
-        <th>pair</th>
-        <th>side</th>
-        <th>price</th>
-        <th>size</th>
-        <th>realize</th>
+        <tr>
+          <th>time</th>
+          <th>pair</th>
+          <th>side</th>
+          <th>price</th>
+          <th>size</th>
+          <th>realize</th>
+        </tr>
       </thead>
 
       <tbody>

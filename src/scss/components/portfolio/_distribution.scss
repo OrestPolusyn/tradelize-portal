@@ -8,12 +8,12 @@
 
     border-bottom: 1px solid var(--color-gray-200);
     padding: rem(30) rem(40);
-    font-size: 15px;
+    @include adaptive_size("font-size", 15, 12);
     line-height: 1.7;
     color: var(--color-gray-400);
 
-    @include for-width(-mobile-l) {
-      padding: rem(20) rem(40);
+    @include for-width(-mobile-md) {
+      padding: rem(20);
     }
   }
 
@@ -44,8 +44,8 @@
   &-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: rem(45) rem(90);
-    gap: 0 rem(130);
+    padding: rem(35) rem(90) rem(50);
+    gap: 0 rem(120);
 
     canvas {
       width: 100% !important;
@@ -54,6 +54,7 @@
 
     @include for-width(-tablet) {
       padding: rem(30);
+      gap: 0 rem(60);
     }
 
     @include for-width(-mobile-l) {
@@ -67,12 +68,14 @@
   }
 
   &-doghnut {
-    margin-bottom: rem(20);
+    margin-bottom: rem(22);
 
     &-title {
+      margin-bottom: 3px;
       font-weight: 700;
       font-size: 14px;
       line-height: 2;
+      letter-spacing: 0;
       color: var(--color-dark);
 
       &::before {

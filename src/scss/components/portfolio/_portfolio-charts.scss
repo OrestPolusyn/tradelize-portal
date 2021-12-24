@@ -9,6 +9,8 @@
 
   &-switch {
     position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-main);
     background-color: var(--color-gray-100);
 
     &::before {
@@ -25,13 +27,21 @@
     &-label {
       position: relative;
       display: inline-block;
-      padding: 9px 17px;
+      padding: 11px 20px;
       font-size: 12px;
       line-height: 1;
       letter-spacing: 0;
       text-transform: capitalize;
       color: var(--color-gray-400);
       cursor: pointer;
+
+      &-balance {
+        padding: 10px 30px;
+      }
+
+      @include for-width(-mobile-sl) {
+        padding: 11px 15px;
+      }
     }
 
     &-btn[type="radio"] {
@@ -40,6 +50,10 @@
       &:checked+.profile-chart-switch-label {
         font-weight: 400;
         color: var(--color-dark);
+
+        @include for-width(-mobile-sl) {
+          font-weight: 500;
+        }
       }
     }
 
@@ -47,7 +61,15 @@
       margin-right: rem(40);
 
       &::before {
-        left: 56%;
+        left: 50%;
+
+        @include for-width(-mobile-sl) {
+          left: 55%;
+        }
+      }
+
+      @include for-width(-mobile-sl) {
+        margin-right: 10px;
       }
     }
   }

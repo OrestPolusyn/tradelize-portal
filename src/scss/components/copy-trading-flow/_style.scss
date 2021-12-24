@@ -1,0 +1,15 @@
+@import "top";
+@import "data";
+@import "copy";
+
+.trading-flow {
+  &-table {
+    overflow: hidden;
+    height: 140px;
+
+    &-show {
+      overflow: visible;
+      height: 100%;
+    }
+  }
+}

@@ -1,42 +1,44 @@
-let formComment = Array.from(document.querySelectorAll('.post-write')),
-  formTextarea = Array.from(document.querySelectorAll('textarea'));
+const formComment = Array.from(document.querySelectorAll('.post-write'))
+const formTextarea = Array.from(document.querySelectorAll('textarea'))
 
 if (formComment.length > 0) {
   formComment.forEach(element => {
     element.addEventListener('submit', (e) => {
-      e.preventDefault();
-      checkLenght();
+      e.preventDefault()
+      checkLenght()
     })
 
     element.addEventListener('keyup', (e) => {
-      checkLenght();
+      checkLenght()
     })
-  });
+  })
 
-
-  function checkLenght() {
+  function checkLenght () {
     formTextarea.forEach(item => {
       if (item.value.length === 800) {
-        item.nextElementSibling.classList.add('post-write-warning-active');
+        item.nextElementSibling.classList.add('post-write-warning-active')
       } else {
-        item.nextElementSibling.classList.remove('post-write-warning-active');
+        item.nextElementSibling.classList.remove('post-write-warning-active')
       }
-    });
+    })
   }
 }
 
-const textarea = Array.from(document.querySelectorAll('textarea'));
+const textarea = Array.from(document.querySelectorAll('textarea'))
 
-textarea.forEach(element => {
-  element.addEventListener('keydown', autosize);
-});
+if (textarea.length > 0) {
+  textarea.forEach(element => {
+    element.addEventListener('keydown', autosize)
+  })
+}
 
-function autosize() {
-  var el = this;
+function autosize () {
+  const el = this
+
   setTimeout(function () {
-    el.style.cssText = 'height:auto; padding:0';
+    el.style.cssText = 'height:auto; padding:0'
     // for box-sizing other than "content-box" use:
-    el.style.cssText = '-moz-box-sizing:content-box';
-    el.style.cssText = 'height:' + el.scrollHeight + 'px';
-  }, 0);
+    el.style.cssText = '-moz-box-sizing:content-box'
+    el.style.cssText = 'height:' + el.scrollHeight + 'px'
+  }, 0)
 }

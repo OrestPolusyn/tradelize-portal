@@ -26,6 +26,10 @@
   &-list {
     grid-template-rows: repeat(1, 1fr);
 
+    &.tabs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     .tab-link {
       @include flex-all-center;
 

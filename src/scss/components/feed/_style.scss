@@ -114,6 +114,10 @@
           right: 4px;
           top: 50%;
           transform: translateY(-50%) rotate(-90deg);
+
+          @include for-width(-tablet) {
+            right: 3px;
+          }
         }
       }
     }

@@ -1,13 +1,11 @@
 .avatar {
   position: relative;
-  overflow: hidden;
   margin-right: rem(20);
   border-radius: var(--radius-main);
   width: 100%;
+  height: auto;
   min-width: 30px;
-  min-height: 30px;
   max-width: rem(46);
-  max-height: rem(46);
   background-color: var(--color-avatar);
 
   &[data-color] {
