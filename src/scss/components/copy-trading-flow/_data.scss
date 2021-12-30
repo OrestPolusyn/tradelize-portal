@@ -4,6 +4,14 @@
     grid-template-columns: repeat(4, 1fr);
     letter-spacing: 0;
     gap: rem(30);
+
+    @include for-width(-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include for-width(-mobile-sl) {
+      display: block;
+    }
   }
 
   &-profit {
@@ -16,7 +24,7 @@
 
   &-balance {
     position: relative;
-    padding: 0 rem(40) 0 10px;
+    padding: 0 0 0 10px;
 
     &::before {
       content: "<";
@@ -32,6 +40,47 @@
 
   .profile-title {
     margin-bottom: 20px;
+
+    @include for-width(-mobile-sl) {
+      font-weight: 500;
+      font-size: 17px;
+      color: var(--color-dark);
+    }
+  }
+
+  .profile-trading-item {
+    grid-column: auto;
+
+    p {
+      @include for-width(-mobile-sl) {
+        font-size: 13px;
+      }
+    }
+
+    span {
+      @include for-width(-mobile-sl) {
+        font-size: 13px;
+      }
+    }
+
+    @include for-width(-mobile-sl) {
+      @include flex-all-sb;
+
+      flex-direction: row;
+      border-color: transparent;
+      padding: 0 rem(10);
+
+    }
+
+    &-profit {
+      @include for-width(-mobile-sl) {
+        padding-right: rem(25);
+      }
+    }
+
+    @include for-width(-mobile-s) {
+      padding: 0;
+    }
   }
 
   .table {
@@ -51,3 +100,5 @@
     }
   }
 }
+
+

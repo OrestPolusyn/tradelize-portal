@@ -91,6 +91,34 @@ if (formPostWriteSend) {
 }
 "use strict";
 
+var valueProfitInput = document.querySelector('.trading-flow-label-calc input');
+var valueProfitCalc = document.querySelector('.trading-flow-label-profit input');
+
+if (valueProfitInput) {
+  valueProfitInput.addEventListener("keyup", function () {
+    calcProfitFlow();
+  });
+  calcProfitFlow();
+}
+
+function calcProfitFlow() {
+  var calcProfit;
+
+  if (+valueProfitInput.dataset.calc < 0) {
+    calcProfit = +valueProfitInput.value + valueProfitInput.value / 100 * valueProfitInput.dataset.calc;
+  } else if (+valueProfitInput.dataset.calc > 0) {
+    calcProfit = +valueProfitInput.value + valueProfitInput.value / 100 * valueProfitInput.dataset.calc;
+  }
+
+  valueProfitCalc.value = calcProfit;
+
+  if (valueProfitCalc.value < 1) {
+    valueProfitCalc.value = 1;
+    valueProfitInput.value = 0;
+  }
+}
+"use strict";
+
 var doghnutExchange = document.querySelector('.profile-distribution-exchange');
 var doghnutContracts = document.querySelector('.profile-distribution-contracts');
 var doghnutCurrencies = document.querySelector('.profile-distribution-currencies');
@@ -1005,4 +1033,14 @@ if (btnTableShow) {
     }
   });
 }
+
+document.querySelector('.trading-flow-choose-text').addEventListener('click', function () {
+  document.querySelector('.trading-flow-choose').classList.toggle('trading-flow-choose-open');
+});
+document.querySelectorAll('.trading-flow-choose-link').forEach(function (element) {
+  element.addEventListener('click', function (el) {
+    document.querySelector('.trading-flow-choose-text').innerHTML = el.currentTarget.innerText;
+    document.querySelector('.trading-flow-choose').classList.remove('trading-flow-choose-open');
+  });
+});
 //# sourceMappingURL=main.js.map

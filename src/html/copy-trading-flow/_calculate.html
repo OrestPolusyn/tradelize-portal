@@ -22,14 +22,35 @@
       Calculate the possible profit
     </h3>
 
-    <label class="trading-flow-label">
-      Calculate the possible profit
-      <input class="trading-flow-area" placeholder="1000" type="number"></input>
-    </label>
+    <div class="trading-flow-choose">
+      <label class="trading-flow-label trading-flow-label-calc">
+        Calculate the possible profit
+        <input class="trading-flow-area" value="1000" type="number" data-calc="-7.41">
+      </label>
 
-    <label class="trading-flow-label">
+      <div class="trading-flow-choose-text">
+        Month
+      </div>
+
+      <ul class="trading-flow-choose-list">
+
+        <li class="trading-flow-choose-item">
+          <a class="trading-flow-choose-link" href="#">
+            month
+          </a>
+        </li>
+
+        <li class="trading-flow-choose-item">
+          <a class="trading-flow-choose-link" href="#">
+            year
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <label class="trading-flow-label trading-flow-label-profit">
       You can get
-      <input class="trading-flow-area" readonly></input>
+      <input class="trading-flow-area" readonly value="2588">
     </label>
 
   </div>

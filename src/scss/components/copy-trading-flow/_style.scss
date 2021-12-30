@@ -4,12 +4,74 @@
 
 .trading-flow {
   &-table {
-    overflow: hidden;
+    overflow-y: hidden;
     height: 140px;
 
     &-show {
-      overflow: visible;
       height: 100%;
+    }
+
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+
+    &::-webkit-resizer {
+      height: 0;
+    }
+  }
+
+  @include for-width(-mobile-l) {
+    margin-top: rem(30);
+    padding: 0 rem(20);
+  }
+
+  @include for-width(-mobile-md) {
+    padding: 0;
+  }
+}
+
+.profile-table {
+  thead {
+    th {
+      @include for-width(-tablet) {
+        padding: rem(25) rem(30);
+      }
+
+      @include for-width(-mobile-sl) {
+        padding: rem(15) rem(20);
+      }
+    }
+  }
+
+  tbody {
+    td {
+      &:nth-child(4)::before {
+        content: "";
+      }
+
+      &:nth-child(2)::after {
+        content: "%";
+      }
+
+      &:nth-child(3) {
+        text-transform: uppercase;
+      }
+
+      &.profile-table-profit {
+        color: var(--color-green);
+      }
+
+      &.profile-table-loss {
+        color: var(--color-red);
+      }
+
+      @include for-width(-tablet) {
+        padding: rem(30);
+      }
+
+      @include for-width(-mobile-sl) {
+        padding: rem(15) rem(20);
+      }
     }
   }
 }

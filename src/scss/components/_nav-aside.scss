@@ -86,7 +86,10 @@
 
     &:not(:last-child) {
       margin-bottom: rem(40);
-      
+
+      @include for-width(-tablet) {
+        margin-bottom: rem(60);
+      }
     }
 
     &:last-child {
