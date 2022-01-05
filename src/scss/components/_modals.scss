@@ -64,6 +64,35 @@
         padding: 20px;
       }
     }
+
+    &-offer {
+      justify-content: space-between;
+    }
+
+    &-top-offer {
+      border-bottom: 1px solid var(--color-gray-100);
+    }
+  }
+
+  &-offer {
+    &-content {
+      margin: 0 auto;
+      padding: 0 10px;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+
+      .modals-title {
+        margin: 0 0 rem(15) 0;
+      }
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--color-gray-400);
+    }
   }
 
   &-copy-filters {
@@ -405,6 +434,28 @@
       .btn {
         margin: 0 auto;
       }
+    }
+  }
+
+  &-offer-btns {
+    @include flex-all-center;
+
+    padding: rem(30);
+    background-color: var(--color-gray-100);
+
+    .btn {
+      width: 100%;
+      max-width: 103px;
+
+      &:not(:last-child) {
+        margin-right: rem(20);
+      }
+    }
+
+    .btn-reverse {
+      border-color: var(--color-gray-400);
+      color: var(--color-gray-400);
+      background-color: transparent;
     }
   }
 }

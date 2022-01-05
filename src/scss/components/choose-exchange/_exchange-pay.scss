@@ -23,13 +23,148 @@
     background-color: var(--color-gray-100);
   }
 
-  &-tooltip {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
   &-icon {
     width: 12px;
     height: 12px;
+  }
+
+  &-top {
+    @include flex-v-center;
+
+    margin-bottom: rem(50);
+    font-size: 13px;
+
+    p {
+      &:last-child {
+        margin-left: rem(10);
+      }
+    }
+  }
+
+  &-text {
+    font-weight: 500;
+
+    &-weight {
+      font-size: 17px;
+    }
+
+    &-currency {
+      font-weight: 700;
+    }
+
+    &:first-child {
+      margin-right: rem(20);
+    }
+  }
+
+  &-color {
+    color: var(--color-main);
+  }
+
+  &-attention {
+    margin-bottom: rem(50);
+  }
+
+  &-disclaimer {
+    padding: rem(20);
+    background-color: var(--color-gray-100);
+
+    &-title {
+      text-transform: uppercase;
+    }
+
+    .text {
+      font-size: 13px;
+      color: var(--color-gray-400);
+    }
+  }
+
+  &-address {
+    @include flex-all-sb;
+
+    margin-bottom: rem(30);
+
+    &-label {
+      display: block;
+      font-size: 11px;
+      color: var(--color-dark);
+    }
+
+    &-area {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .wallet {
+      &-address {
+        padding: 10px rem(20);
+        width: 100%;
+        font-size: 12px;
+        line-height: 1.6;
+        background-color: var(--color-gray-100);
+
+        &-btn {
+          @include flex-all-center;
+
+          padding: 10px 10px 9px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      &-copy {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+      }
+    }
+
+    &-code {
+      width: 100%;
+      max-width: 85px;
+    }
+  }
+
+  &-tooltip {
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    vertical-align: middle;
+
+    &::after {
+      content: attr(title);
+      position: absolute;
+      border-radius: var(--radius-main);
+      padding: 0 12px;
+      width: max-content;
+      box-shadow: 0 0 4px rgb(0 0 0 / 25%);
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 2;
+      color: var(--color-dark);
+      background-color: var(--color-white);
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-10px, -13px);
+      transition: opacity 0.2s linear, visibility 0.2s linear;
+    }
+
+    &-right {
+      &::after {
+        right: 0;
+        top: 0;
+      }
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 }

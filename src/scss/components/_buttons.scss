@@ -12,7 +12,7 @@
   text-align: center;
   color: var(--color-white);
   background-color: var(--color-main);
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out, opacity 0.4s ease-in-out;
 
   &-reverse {
     border-color: var(--color-main);
@@ -105,6 +105,27 @@
     color: var(--color-gray-400);
     background-color: var(--color-gray-200);
     pointer-events: none;
+  }
+
+  &-red {
+    background-color: var(--color-red);
+
+    &:focus {
+      background-color: var(--color-red);
+      opacity: 1;
+      filter: brightness(0.95);
+    }
+
+    &:hover {
+      background-color: var(--color-red);
+      opacity: 0.8;
+    }
+
+    &:active {
+      background-color: var(--color-red);
+      opacity: 1;
+      filter: brightness(0.95);
+    }
   }
 
   &-gray {

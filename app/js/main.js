@@ -322,6 +322,21 @@ function autosize() {
 }
 "use strict";
 
+var moreNotifBtn = Array.from(document.querySelectorAll('.notifications-content-more-btn'));
+
+if (moreNotifBtn.length > 0) {
+  moreNotifBtn.forEach(function (element) {
+    element.addEventListener('click', function (e) {
+      var currentBtn = e.currentTarget;
+      document.querySelectorAll('.notifications-more-dropdown').forEach(function (item) {
+        item.classList.remove('notifications-more-dropdown-show');
+      });
+      currentBtn.nextElementSibling.classList.add('notifications-more-dropdown-show');
+    });
+  });
+}
+"use strict";
+
 var openModals = Array.from(document.querySelectorAll('.btn-modal'));
 var clodeModal = Array.from(document.querySelectorAll('[data-close="modals-close"]'));
 
@@ -329,6 +344,7 @@ if (openModals.length > 0) {
   var openComment = function openComment(e) {
     var btnModOut = e.currentTarget.getAttribute('data-modals');
     var btnModIn = e.currentTarget.getAttribute('data-modal-filter');
+    console.log(btnModOut);
 
     if (e.currentTarget.hasAttribute('data-modals')) {
       Array.from(document.querySelectorAll('.modals')).forEach(function (element) {
@@ -1034,13 +1050,24 @@ if (btnTableShow) {
   });
 }
 
-document.querySelector('.trading-flow-choose-text').addEventListener('click', function () {
-  document.querySelector('.trading-flow-choose').classList.toggle('trading-flow-choose-open');
-});
-document.querySelectorAll('.trading-flow-choose-link').forEach(function (element) {
-  element.addEventListener('click', function (el) {
-    document.querySelector('.trading-flow-choose-text').innerHTML = el.currentTarget.innerText;
-    document.querySelector('.trading-flow-choose').classList.remove('trading-flow-choose-open');
+if (document.querySelector('.trading-flow-choose-text')) {
+  document.querySelector('.trading-flow-choose-text').addEventListener('click', function () {
+    document.querySelector('.trading-flow-choose').classList.toggle('trading-flow-choose-open');
   });
-});
+}
+
+if (document.querySelectorAll('.trading-flow-choose-link').length > 0) {
+  document.querySelectorAll('.trading-flow-choose-link').forEach(function (element) {
+    element.addEventListener('click', function (el) {
+      document.querySelector('.trading-flow-choose-text').innerHTML = el.currentTarget.innerText;
+      document.querySelector('.trading-flow-choose').classList.remove('trading-flow-choose-open');
+    });
+  });
+}
+
+if (document.querySelector('.wallet-code')) {
+  document.querySelector('.wallet-address-btn').addEventListener('click', function () {
+    document.querySelector('.wallet-code').classList.add('wallet-code-show');
+  });
+}
 //# sourceMappingURL=main.js.map

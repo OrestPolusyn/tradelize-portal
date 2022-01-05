@@ -1,0 +1,55 @@
+@include('html/_head.html',{
+pageTitle:'Choose exchange'
+})
+
+<body>
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main profile">
+      <h1 class="sr-only">Choose exchange</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <aside class="aside-nav profile-side">
+        @include('html/copy-trading-flow/_portfolio-side-follow.html')
+      </aside>
+
+      <div class="main-content trading-exchange">
+
+        <h2 class="sr-only">
+          Choose your wallet
+        </h2>
+
+        <div class="trading-exchange-inner">
+
+          @include('html/choose-exchange/_exchange-all.html')
+
+        </div>
+
+        <div class="trading-exchange-inner trading-exchange-inner-success">
+
+          @include('html/choose-exchange/_exchange-success.html')
+
+        </div>
+
+        <div class="trading-exchange-inner trading-exchange-inner-attention">
+
+          @include('html/choose-exchange/_exchange-attention.html')
+
+        </div>
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')
+
+  </div>
+  <script src="js/vendor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

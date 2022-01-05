@@ -61,7 +61,7 @@
     overflow: hidden;
     margin-bottom: rem(30);
     border-radius: var(--radius-main);
-    padding: 13px rem(0) 11px 70px;
+    padding: 13px 0 11px 70px;
     background-color: var(--color-orange-500);
 
     &::before {
@@ -93,6 +93,10 @@
         width: 20px;
         height: 20px;
         background-color: var(--color-orange-800);
+
+        @include for-width(-mobile-l) {
+          left: -25px;
+        }
       }
     }
 
@@ -112,6 +116,14 @@
         width: 8px;
         height: 8px;
       }
+
+      @include for-width(-mobile-l) {
+        top: 20px;
+      }
+    }
+
+    @include for-width(-mobile-l) {
+      padding: rem(10) rem(50);
     }
   }
 

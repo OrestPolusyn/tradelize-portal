@@ -8,9 +8,10 @@ if (openModals.length > 0) {
     })
   })
 
-  function openComment(e) {
+  function openComment (e) {
     const btnModOut = e.currentTarget.getAttribute('data-modals')
     const btnModIn = e.currentTarget.getAttribute('data-modal-filter')
+    console.log(btnModOut);
 
     if (e.currentTarget.hasAttribute('data-modals')) {
       Array.from(document.querySelectorAll('.modals')).forEach(element => {
