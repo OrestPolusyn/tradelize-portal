@@ -1,4 +1,3 @@
-const contentSize = document.querySelector('.main')
 const headerHeight = document.querySelector('.header')
 const asideMenuWidth = document.querySelector('.aside-nav')
 const sideBarFeed = document.querySelector('.feed-side')
@@ -33,6 +32,8 @@ function sidePortfolio() {
 }
 
 function mainContentWidth() {
+  const contentSize = document.querySelector('.main')
+
   contentSize.style.height = window.innerHeight - headerHeight.clientHeight + 'px'
 
   if (window.innerWidth >= 768) {
