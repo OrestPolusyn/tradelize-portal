@@ -76,6 +76,7 @@
 
     &-text {
       position: relative;
+      padding-right: rem(70);
       font-size: 11px;
       line-height: 1.7;
       color: var(--color-dark);
@@ -97,6 +98,10 @@
         @include for-width(-mobile-l) {
           left: -25px;
         }
+      }
+
+      @include for-width(-mobile-l) {
+        padding-right: rem(30);
       }
     }
 

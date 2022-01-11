@@ -16,6 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
+    "@popperjs/core": "^2.11.2",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.27.5",
     "chart.js": "^3.6.1",
@@ -48,6 +49,7 @@
     "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.21.0",
-    "sugarss": "^4.0.1"
+    "sugarss": "^4.0.1",
+    "swiper": "^7.4.1"
   }
 }

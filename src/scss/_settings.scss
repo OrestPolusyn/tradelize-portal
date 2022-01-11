@@ -59,6 +59,10 @@ body {
       }
     }
 
+    @include for-width(-tablet) {
+      padding: 10px;
+    }
+
     @include for-width(-mobile-md) {
       padding: 0;
     }
@@ -132,8 +136,12 @@ body {
     transform: scale(0);
   }
 
+  .main {
+    overflow: hidden;
+  }
+
   .aside-nav {
-    height: 100%;
+    z-index: 5;
 
     &::before {
       right: 0;
@@ -154,7 +162,6 @@ body {
   height: 100% !important;
   pointer-events: none;
 }
-
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

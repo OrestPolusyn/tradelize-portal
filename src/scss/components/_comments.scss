@@ -79,6 +79,16 @@
   .post-action {
     &:not(:last-child) {
       margin-right: rem(28);
+
+      @include for-width(-mobile-sl) {
+        margin-right: rem(20);
+      }
+    }
+
+    &-text {
+      @include for-width(-mobile-sl) {
+        font-size: 12px;
+      }
     }
   }
 }

@@ -384,14 +384,6 @@
       }
     }
 
-    &-check {
-      .custom-checkbox {
-        position: absolute;
-        right: 0;
-        top: 5px;
-      }
-    }
-
     &-exgenge.profile-side-channel-label {
       margin-bottom: 12px;
     }
@@ -506,4 +498,20 @@
 .select-items div:hover,
 .same-as-selected {
   background-color: var(--color-gray-100);
+}
+
+.channel-check-box {
+  @include flex-all-sb;
+
+  .custom-checkbox {
+    margin-bottom: 0;
+
+    @include for-width(-tablet) {
+      margin-left: auto;
+    }
+  }
+
+  @include for-width(-tablet) {
+    flex-wrap: wrap-reverse;
+  }
 }

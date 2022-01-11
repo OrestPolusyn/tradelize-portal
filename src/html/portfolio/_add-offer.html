@@ -22,23 +22,26 @@
 
       <label class="profile-side-channel-label">
         Description
-        <textarea class="profile-side-channel-area profile-side-textarea field-area"
-          placeholder="Enter description"></textarea>
+        <textarea class="profile-side-channel-area profile-side-textarea field-area" placeholder="Enter description"></textarea>
       </label>
 
       <div class="profile-side-channel-label profile-side-channel-check">
-        <label class="custom-checkbox">
-          <input class="custom-checkbox-field field-area" type="checkbox">
-          <span class="custom-checkbox-content">
-            Free
-          </span>
-        </label>
 
-        <label>
-          Subscription cost (fixed)
-          <input class="profile-side-channel-area field-area" type="text" placeholder="Enter amount">
-        </label>
-        
+        <div class="channel-check-box">
+          <label for="channel-area">
+            Subscription cost (fixed)
+          </label>
+
+          <label class="custom-checkbox">
+            <input class="custom-checkbox-field field-area" type="checkbox">
+            <span class="custom-checkbox-content">
+              Free
+            </span>
+          </label>
+        </div>
+
+        <input class="profile-side-channel-area field-area" id="channel-area" type="text" placeholder="Enter amount">
+
         <span class="profile-side-channel-amount">
           BTC
         </span>

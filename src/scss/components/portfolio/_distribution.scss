@@ -61,10 +61,30 @@
       padding: rem(20) rem(40);
       gap: 0 rem(40);
     }
+
+    @include for-width(-mobile-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   &-item {
     text-align: center;
+
+    @include for-width(-mobile-md) {
+      width: 100% !important;
+      max-width: 350px;
+    }
+  }
+
+  &-color-title {
+    font-weight: 500;
+    color: var(--color-main);
+
+    button {
+      font-weight: 500;
+      font-size: 15px;
+      color: inherit;
+    }
   }
 
   &-doghnut {

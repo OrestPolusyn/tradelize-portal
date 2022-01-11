@@ -2,12 +2,15 @@
   &-nav {
     @include flex-all-sb;
 
-    padding-bottom: 20px;
-
     .tabs {
       margin-bottom: 0;
 
       &.tabs-filter {
+        @include for-width(-mobile-md) {
+          padding: 0 5px;
+          gap: 0 8px;
+        }
+
         @include for-width(-mobile-sl) {
           margin-bottom: 20px;
         }
