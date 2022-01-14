@@ -13,7 +13,7 @@ if (tradeChart.length > 0) {
   gradientBrown.addColorStop(0.1, 'rgba(255,150,54,0.47)');
   gradientBrown.addColorStop(1, 'rgba(203,79,79,1)');
 
-  let dataChart = [12, -16, 13, 15, 120, 13];
+  let dataChart = [1, 3, 5, 5, 1, 6];
 
   let dataChartLoss = [];
   let dataChartShadow = [];
@@ -57,7 +57,7 @@ if (tradeChart.length > 0) {
         ctx.shadowColor = "rgba(12,10,32,0.14)";
         ctx.shadowBlur = 13;
         ctx.shadowOffsetX = 0;
-        ctx.shadowOffsetY = 10;
+        ctx.shadowOffsetY = 0;
         _stroke.apply(this, arguments);
         ctx.restore();
       };
@@ -81,8 +81,8 @@ if (tradeChart.length > 0) {
           datasets: [{
             data: arr,
             borderColor: colorBorder,
-            borderWidth: 5,
-            tension: 0.4,
+            borderWidth: 6,
+            tension: 0.3,
           }]
         },
 

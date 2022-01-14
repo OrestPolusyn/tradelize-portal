@@ -10,17 +10,20 @@
   height: 100vh;
   text-align: center;
   background-color: transparent;
+  transition: 0.1s linear;
+  animation: move 0.1s linear;
 
   &::before {
     content: "";
     position: fixed;
-    right: -100%;
+    right: 0;
     top: -50%;
     bottom: 0;
     width: 0;
     background-color: var(--color-black);
-    opacity: 0.4;
-    transition: right 0.15s ease-in;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.1s linear, visibility 0.1s linear;
 
     @include for-width(-mobile-l) {
       width: calc(100% - var(--mobile-width));
@@ -164,5 +167,15 @@
     margin-left: 0;
     min-width: 20px;
     min-height: 20px;
+  }
+}
+
+@keyframes move {
+  from {
+    z-index: -1;
+  }
+
+  to {
+    z-index: 5;
   }
 }

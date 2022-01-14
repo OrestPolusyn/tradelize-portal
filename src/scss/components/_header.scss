@@ -7,10 +7,11 @@
   background-color: var(--color-white);
 
   .logo {
-    @include adaptive_size("max-width", 150, 110);
-    @include adaptive_size("height", 20, 15);
-
     width: 100%;
+    height: rem(20);
+    min-width: 110px;
+    min-height: 14px;
+    max-width: rem(150);
     line-height: 1;
 
     @include for-width(-mobile-md) {

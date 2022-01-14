@@ -58,19 +58,16 @@
     }
 
     @include for-width(-mobile-l) {
-      padding: rem(20) rem(40);
-      gap: 0 rem(40);
-    }
-
-    @include for-width(-mobile-md) {
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      padding: 0;
+      gap: 0;
     }
   }
 
   &-item {
     text-align: center;
 
-    @include for-width(-mobile-md) {
+    @include for-width(-mobile-l) {
       width: 100% !important;
       max-width: 350px;
     }

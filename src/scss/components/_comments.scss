@@ -1,6 +1,6 @@
 .comments {
   overflow: hidden;
-  margin-bottom: rem(38);
+  margin-bottom: rem(34);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   max-height: 0;
   box-sizing: content-box;
@@ -11,15 +11,19 @@
   will-change: max-height;
 
   &-open {
-    padding-top: rem(35);
+    padding-top: rem(60);
     max-height: 100%;
     opacity: 1;
     visibility: visible;
+
+    @include for-width(-tablet) {
+      padding-top: rem(40);
+    }
   }
 
   &-item {
     position: relative;
-    margin-bottom: rem(20);
+    margin-bottom: rem(40);
 
     &-top {
       @include flex-s;
@@ -33,12 +37,13 @@
     }
 
     &-box {
-      padding: rem(18) rem(20) rem(28);
-      background-color: var(--color-gray-50);
+      @include for-width(-mobile-l) {
+        padding: rem(28);
+        background-color: var(--color-gray-50);
+      }
 
       @include for-width(-mobile-md) {
         display: block;
-        padding: rem(15);
       }
     }
 
@@ -52,7 +57,16 @@
 
     .post-title {
       margin-bottom: 0;
-      font-size: 13px;
+      padding-top: 0;
+
+      .post-timer {
+        display: inline-block;
+        padding-top: 7px;
+      }
+    }
+
+    @include for-width(-tablet) {
+      margin-bottom: rem(40);
     }
   }
 
@@ -88,7 +102,12 @@
     &-text {
       @include for-width(-mobile-sl) {
         font-size: 12px;
+        white-space: nowrap;
       }
     }
+  }
+
+  @include for-width(-tablet) {
+    margin-bottom: rem(40);
   }
 }

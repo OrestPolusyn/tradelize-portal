@@ -39,7 +39,7 @@
 
     @include for-width(-mobile-l) {
       margin-top: rem(20);
-      padding: rem(20);
+      padding: rem(40) rem(20);
       height: auto;
       max-width: 100%;
     }

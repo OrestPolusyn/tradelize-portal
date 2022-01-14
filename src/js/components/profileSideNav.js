@@ -10,6 +10,7 @@ if (btnSideNav.length > 0) {
       if (e.currentTarget.hasAttribute('data-side-path')) {
         document.querySelector(`[data-side-target="${openSideBarNav}"]`).classList.add('profile-side-edit-open')
       }
+      document.querySelector('body').classList.toggle('side-open')
     })
   })
 }

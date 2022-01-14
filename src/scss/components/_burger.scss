@@ -6,7 +6,7 @@
   @include burger;
 
   display: none;
-  margin-right: rem(15);
+  margin-right: rem(25);
 
   @include for-width(-mobile-l) {
     display: flex;

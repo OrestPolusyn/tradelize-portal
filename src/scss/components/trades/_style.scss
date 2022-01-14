@@ -28,13 +28,16 @@
   &-avatar {
     @include flex-v-center;
 
-    margin-right: 12px;
+    margin-right: 20px;
     border-radius: var(--radius-main);
-    width: 45px;
-    height: 45px;
+    width: rem(46);
+    height: rem(46);
+    min-width: 35px;
+    min-height: 35px;
     background-color: var(--color-avatar);
 
     @include for-width(-mobile-l) {
+      margin-right: 10px;
       width: 33px;
       height: 33px;
     }
@@ -304,8 +307,8 @@
 
   .check-icon {
     margin-right: 5px;
-    width: 10px;
-    height: 10px;
+    width: 0;
+    height: 0;
     fill: var(--color-green);
     cursor: pointer;
   }
@@ -313,7 +316,7 @@
   &-finance {
     @include flex-all-sb;
 
-    padding: rem(27) rem(43) rem(30);
+    padding: rem(25) rem(45) rem(25);
 
     &-list {
       display: block;
@@ -341,6 +344,7 @@
 
     &-item {
       font-weight: 500;
+      font-size: var(--size-sl);
       letter-spacing: 0;
       color: var(--color-dark);
 
@@ -473,6 +477,10 @@
 
     @include for-width(-mobile-l) {
       padding: rem(20) rem(24);
+    }
+
+    @include for-width(-mobile-sl) {
+      border-bottom: none;
     }
   }
 

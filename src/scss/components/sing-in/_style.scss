@@ -74,10 +74,6 @@
     }
   }
 
-  &-form-in {
-    margin-top: auto;
-  }
-
   &-forgot {
     display: block;
     margin-bottom: 40px;
@@ -94,15 +90,13 @@
     }
 
     @include for-width(-tablet) {
-      padding: 0 rem(40);
-    }
-
-    @include for-width(-mobile-sl) {
-      padding: 0 rem(20);
+      padding: 0;
     }
   }
 
   &-contact {
+    position: absolute;
+    bottom: 0;
     font-size: 10px;
     letter-spacing: 0.02em;
     color: var(--color-gray-400);
@@ -134,6 +128,24 @@
 
     @include for-width(-tablet) {
       padding: rem(20);
+    }
+
+    @include for-width(-mobile-l) {
+      padding: rem(15);
+    }
+  }
+
+  .field-btn {
+    bottom: rem(12);
+    width: 18px;
+    height: 18px;
+
+    @include for-width(-tablet) {
+      bottom: rem(17);
+    }
+
+    @include for-width(-mobile-l) {
+      bottom: rem(13);
     }
   }
 }

@@ -1,6 +1,7 @@
 .tabs {
   display: grid;
   grid-template-columns: repeat(4, 110px);
+  overflow-x: auto;
   padding: 20px 0;
   gap: 0 rem(20);
 
@@ -19,13 +20,11 @@
         padding: 5px 8px;
       }
     }
+  }
 
-    @include for-width(-mobile-sl) {
-      flex-wrap: wrap;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(1, 1fr);
-      width: 100%;
-      gap: 0 rem(15);
+  &--feed {
+    @include for-width(-mobile-l) {
+      display: none;
     }
   }
 
@@ -36,11 +35,8 @@
   }
 
   @include for-width(-mobile-sl) {
-    display: grid;
-    column-count: 2;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: rem(20);
+    grid-template-columns: repeat(4, 120px);
+    gap: 0 rem(20);
   }
 }
 

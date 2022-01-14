@@ -83,7 +83,7 @@ if (doghnutCurrencies || doghnutContracts || doghnutExchange) {
           'rgba(15, 46, 97, 1)',
         ],
         hoverOffset: 10,
-
+        borderWidth: 0
       }]
     },
     options: {
@@ -105,7 +105,7 @@ if (doghnutCurrencies || doghnutContracts || doghnutExchange) {
           'rgba(176, 189, 184, 1)',
         ],
         hoverOffset: 10,
-
+        borderWidth: 0
       }]
     },
     options: {
@@ -127,6 +127,7 @@ if (doghnutCurrencies || doghnutContracts || doghnutExchange) {
           'rgba(176, 189, 184, 1)',
         ],
         hoverOffset: 10,
+        borderWidth: 0
       }]
     },
     options: {

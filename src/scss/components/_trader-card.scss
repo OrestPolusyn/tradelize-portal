@@ -10,8 +10,8 @@
   &-top {
     margin-bottom: rem(20);
 
-    @include for-width(-mobile-md) {
-      margin-bottom: 0;
+    @include for-width(-mobile-s) {
+      margin-bottom: rem(30);
     }
   }
 
@@ -48,6 +48,10 @@
 
     margin-bottom: rem(15);
     text-align: left;
+
+    @include for-width(-mobile-s) {
+      justify-content: space-evenly;
+    }
   }
 
   &-number {
@@ -151,6 +155,11 @@
 
   &-btn {
     margin-bottom: rem(20);
+
+    @include for-width(-mobile-s) {
+      margin: 0 auto rem(20);
+      width: 68%;
+    }
   }
 
   &-cost {

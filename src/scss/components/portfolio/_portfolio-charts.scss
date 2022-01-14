@@ -74,3 +74,9 @@
     }
   }
 }
+
+.profile-chartic {
+  @include for-width(-mobile-l) {
+    height: 290px !important;
+  }
+}

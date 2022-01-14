@@ -11,7 +11,6 @@
   }
 
   &-box {
-    flex-wrap: wrap;
     margin-bottom: rem(30);
     padding: rem(30) rem(44);
     background-color: var(--color-white);
@@ -35,24 +34,8 @@
   }
 
   .tabs {
-    @include for-width(-tablet) {
-      grid-template-columns: repeat(4, rem(250));
-      padding-top: 0;
-    }
-
-    @include for-width(-mobile-l) {
-      grid-template-columns: repeat(4, rem(150));
-    }
-
-    @include for-width(-mobile-md) {
-      grid-template-columns: repeat(4, rem(110));
-      padding-top: rem(20);
-    }
-
     @include for-width(-mobile-sl) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      padding-top: rem(20);
+      grid-template-columns: repeat(4, 100px);
     }
   }
 
@@ -135,10 +118,13 @@
   &-subscribe {
     &-block {
       text-align: center;
-    }
 
-    .btn {
-      display: inline-block;
+      .btn {
+        display: inline-block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 160px;
+      }
     }
   }
 

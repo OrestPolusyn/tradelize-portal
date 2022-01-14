@@ -21,6 +21,20 @@ body {
   letter-spacing: 0.03em;
   color: var(--color-black);
   background-color: var(--color-gray-100);
+
+  &::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: var(--color-dark);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+  }
 }
 
 .is-hidden {
@@ -44,8 +58,9 @@ body {
   scrollbar-width: thin;
 
   &-content {
+    z-index: 5;
     margin: 0 auto;
-    padding: 20px;
+    padding: rem(30);
     width: 100%;
     max-width: 1005px;
 
@@ -60,7 +75,7 @@ body {
     }
 
     @include for-width(-tablet) {
-      padding: 10px;
+      padding: 20px;
     }
 
     @include for-width(-mobile-md) {
@@ -131,25 +146,27 @@ body {
   transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
 }
 
-.open-mobile {
+.aside-nav {
+  &.aside-nav-open {
+    z-index: 5;
+
+    &::before {
+      opacity: 0.4;
+    }
+
+    .aside-nav-list {
+      transform: translateX(0);
+    }
+  }
+}
+
+.menu-open {
   .logo {
     transform: scale(0);
   }
 
-  .main {
-    overflow: hidden;
-  }
-
-  .aside-nav {
-    z-index: 5;
-
-    &::before {
-      right: 0;
-    }
-
-    &-list {
-      transform: translateX(0);
-    }
+  .header {
+    z-index: 0;
   }
 }
 
@@ -171,4 +188,13 @@ input[type="number"]::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.side-open {
+  @include for-width(-mobile-l) {
+    &::before {
+      opacity: 0.2;
+      visibility: visible;
+    }
+  }
 }

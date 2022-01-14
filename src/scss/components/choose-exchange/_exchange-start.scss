@@ -17,6 +17,10 @@
     line-height: 1.5;
     letter-spacing: 0;
     color: var(--color-dark);
+
+    @include for-width(-mobile-l) {
+      margin-bottom: rem(20);
+    }
   }
 
   &-choose {

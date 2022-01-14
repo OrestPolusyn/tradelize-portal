@@ -51,7 +51,7 @@
     width: 90%;
     height: calc(100vh - 10%);
     max-width: 540px;
-    max-height: 500px;
+    max-height: 560px;
     background-color: var(--color-white);
     transform: translate(-50%, -50%);
 
@@ -137,33 +137,19 @@
     }
 
     .tabs {
-      grid-template-columns: repeat(4, auto);
+      overflow-y: initial;
       margin: 0 2px;
       padding: rem(15) rem(20);
       background-color: var(--color-gray-100);
-      gap: 0 10px;
 
       @include for-width(-tablet) {
         padding: 15px 20px;
       }
-
-      @include for-width(-mobile-md) {
-        justify-content: center;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        text-align: center;
-        gap: 10px;
-      }
     }
 
     .tab-link {
-      padding: 5px 20px;
       width: 100%;
       white-space: nowrap;
-
-      @include for-width(-mobile-md) {
-        padding: 5px 12px;
-      }
     }
   }
 

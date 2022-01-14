@@ -13,7 +13,7 @@
 }
 
 .field-area {
-  @include adaptive_size("font-size", 13, 10);
+  @include adaptive_size("font-size", 13, 12);
 
   display: block;
   border-radius: var(--radius-main);
@@ -21,6 +21,10 @@
   max-width: 350px;
   color: var(--color-gray-400);
   background-color: var(--color-white);
+
+  &::placeholder {
+    color: var(--color-gray-400);
+  }
 
   &-colored {
     color: var(--color-gray-400);
@@ -44,7 +48,7 @@
   }
 
   &.disabled {
-    background-color: var(--color-gray--200);
+    background-color: var(--color-gray-200);
   }
 }
 
@@ -102,7 +106,7 @@
   visibility: hidden;
 }
 
-.custom-checkbox-field:not(:checked) ~ .field-error {
+.custom-checkbox-field:not(:checked)~.field-error {
   opacity: 1;
   visibility: visible;
 }
@@ -118,13 +122,13 @@
     content: "";
     position: absolute;
     right: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     background-image: url("../img/sprite.svg#eye-hidden");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    transform: translateY(-30%);
   }
 
   &-show {

@@ -8,28 +8,16 @@
     &-numbers {
       @include flex-all-sb;
 
+      margin-right: rem(20);
       font-size: 15px;
       line-height: 1.7;
       color: var(--color-dark);
-
-      @include for-width(-desktop-med) {
-        margin-bottom: rem(30);
-        width: 100%;
-      }
     }
 
     &-list {
       @include flex-all-sb;
 
-      &:not(.profile-total-performance) {
-        @include for-width(-desktop-med) {
-          width: 100%;
-        }
-      }
-
-      @include for-width(-mobile-md) {
-        flex-wrap: wrap;
-      }
+      justify-content: end;
     }
 
     &-performance {
@@ -152,12 +140,6 @@
 
         @include for-width(-mobile-md) {
           margin-bottom: 15px;
-        }
-      }
-
-      &:first-child {
-        @include for-width(-desktop-med) {
-          margin-right: auto;
         }
       }
     }
