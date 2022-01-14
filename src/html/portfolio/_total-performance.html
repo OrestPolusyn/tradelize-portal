@@ -17,7 +17,7 @@
     </ul>
   </div>
 
-  <ul class="profile-total-list">
+  <ul class="profile-total-list profile-total-list-btns">
 
     <li class="profile-total-nav">
 
@@ -31,9 +31,12 @@
     </li>
 
     <li class="profile-total-nav">
-      <label>
-        <input type="date">
+      <label class="profile-total-data" id="portfolio-datepicker-label">
+        <svg class="profile-total-data-icon">
+          <use xlink:href="img/sprite.svg#datarange"></use>
+        </svg>
 
+        <input class="profile-total-data-area" type="text" placeholder="Time range" readonly id="portfolio-datepicker">
       </label>
     </li>
 

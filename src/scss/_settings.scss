@@ -75,7 +75,7 @@ body {
     }
 
     @include for-width(-tablet) {
-      padding: 20px;
+      padding: rem(15);
     }
 
     @include for-width(-mobile-md) {
@@ -152,6 +152,7 @@ body {
 
     &::before {
       opacity: 0.4;
+      visibility: visible;
     }
 
     .aside-nav-list {
@@ -193,7 +194,7 @@ input[type="number"] {
 .side-open {
   @include for-width(-mobile-l) {
     &::before {
-      opacity: 0.2;
+      opacity: 0.4;
       visibility: visible;
     }
   }

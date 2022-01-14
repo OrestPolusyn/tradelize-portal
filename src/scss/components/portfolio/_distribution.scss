@@ -7,7 +7,7 @@
     @include flex-all-sb;
 
     border-bottom: 1px solid var(--color-gray-200);
-    padding: rem(30) rem(40);
+    padding: rem(30) rem(25) rem(30) rem(40);
     @include adaptive_size("font-size", 15, 12);
     line-height: 1.7;
     color: var(--color-gray-400);
@@ -53,13 +53,12 @@
     }
 
     @include for-width(-tablet) {
-      padding: rem(30);
+      padding: rem(30) 0;
       gap: 0 rem(60);
     }
 
     @include for-width(-mobile-l) {
       display: flex;
-      padding: 0;
       gap: 0;
     }
   }
@@ -139,6 +138,21 @@
       &::after {
         content: "k";
       }
+    }
+  }
+
+  .swiper {
+    @include for-width(-mobile-l) {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+
+  .profile-title {
+    @include for-width(-mobile-l) {
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--color-dark);
     }
   }
 }
