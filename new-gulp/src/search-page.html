@@ -1,0 +1,70 @@
+@include('html/_head.html',{
+pageTitle:'Advanced Search'
+})
+
+<body class="page__body">
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main">
+      <h1 class="sr-only">Advanced Search</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <div class="main-content">
+        @include('html/_search-line.html',{
+        placeholder:"Search..."
+        })
+
+        <h2 class="sr-only">
+          Posts of traders
+        </h2>
+
+        <ul class="tabs  tabs-traders">
+          @loop('html/_tabs.html',[{
+          tabText: "Posts",
+          classActive:"tab-active"
+          },
+          {
+          tabText: "Traders",
+          classActive:""
+          },
+          {
+          tabText: "Trades",
+          classActive:""
+          },
+          {
+          tabText: "Channels",
+          classActive:""
+          }])
+        </ul>
+
+        <div class="posts">
+
+          <ul class="posts-list">
+            <li class="posts-item">
+              @include('html/_post.html',{
+              img:"",
+              dataUserLike:"unlike",
+              dataPath:"1",
+              shareId:"1"
+              })
+            </li>
+            <li class="posts-item">
+              @include('html/_post.html',{
+              img:"<img class='post-img' src='img/trade-graph.jpg' alt='Post image' height='353' width='880'>",
+              dataUserLike:"unlike",
+              dataPath:"2",
+              shareId:"2"
+              })
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

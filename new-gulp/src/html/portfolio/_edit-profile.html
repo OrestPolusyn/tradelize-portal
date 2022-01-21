@@ -1,0 +1,67 @@
+<div class="profile-side-box profile-side-edit" data-side-target="edit">
+
+  <h2 class="profile-side-name">
+    Edit Profile
+  </h2>
+
+  <form class="profile-side-form" action="#">
+
+    <div class="profile-side-edit-avatar">
+      <div class="profile-side-edit-wrap">
+        <img class="profile-side-edit-img" src="" alt="Profile avatar" height="110" width="110">
+
+        <label class="profile-side-edit-choose">
+          <span>
+            Upload New
+          </span>
+
+          <input class="sr-only" type="file" accept="image/*">
+
+          <svg class="profile-side-edit-icon">
+            <use xlink:href="img/sprite.svg#photo"></use>
+          </svg>
+        </label>
+      </div>
+    </div>
+
+    <div class="profile-side-channel">
+
+      <label class="profile-side-channel-label">
+        Full Name
+        <input class="profile-side-channel-area field-area" type="text" placeholder="Enter full name">
+      </label>
+
+      <label class="profile-side-channel-label">
+        About
+        <textarea class="profile-side-channel-area field-area" placeholder="Enter description"></textarea>
+      </label>
+
+      <label class="profile-side-channel-label profile-side-channel-exgenge" for="profile-gender">
+        My Gender
+      </label>
+
+      <div class="profile-select">
+        <select id="profile-gender">
+          <option value="0">Unknown</option>
+          <option value="1">Binance</option>
+          <option value="2">BITMEX</option>
+        </select>
+      </div>
+      <label class="profile-side-channel-label">
+        Birth date
+        <input class="profile-side-channel-area field-area" type="text" placeholder="Choose date">
+      </label>
+    </div>
+
+    <div class="profile-side-btns">
+      <button class="btn btn-gray" type="button" data-side="normal">
+        Cancel
+      </button>
+
+      <button class="btn" type="submit">
+        save
+      </button>
+    </div>
+  </form>
+
+</div>

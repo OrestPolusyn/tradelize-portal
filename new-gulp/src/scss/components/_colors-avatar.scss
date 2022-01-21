@@ -1,0 +1,90 @@
+.avatar {
+  position: relative;
+  margin-right: rem(20);
+  border-radius: var(--radius-main);
+  width: 100%;
+  height: auto;
+  min-width: 30px;
+  max-width: rem(46);
+  background-color: var(--color-avatar);
+
+  &[data-color] {
+    color: var(--color-first);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: var(--color-bg-first);
+      opacity: 1;
+    }
+  }
+
+  &[data-color="1"] {
+    color: var(--color-first);
+
+    &::after {
+      background-color: var(--color-bg-first);
+      opacity: 0.12;
+    }
+  }
+
+  &[data-color="2"] {
+    color: var(--color-second);
+
+    &::after {
+      background-color: var(--color-bg-second);
+    }
+  }
+
+  &[data-color="3"] {
+    color: var(--color-third);
+
+    &::after {
+      background-color: var(--color-bg-third);
+    }
+  }
+
+  &[data-color="4"] {
+    color: var(--color-fourth);
+
+    &::after {
+      background-color: var(--color-bg-fourth);
+    }
+  }
+
+  &[data-color="5"] {
+    color: var(--color-five);
+
+    &::after {
+      background-color: var(--color-bg-five);
+    }
+  }
+
+  &[data-color="6"] {
+    color: var(--color-sixth);
+
+    &::after {
+      background-color: var(--color-bg-sixth);
+    }
+  }
+
+  &[data-color="7"] {
+    color: var(--color-seventh);
+
+    &::after {
+      background-color: var(--color-bg-seventh);
+    }
+  }
+
+  &[data-color="8"] {
+    color: var(--color-eight);
+
+    &::after {
+      background-color: var(--color-bg-eight);
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.comments {
+  overflow: hidden;
+  margin-bottom: rem(34);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  max-height: 0;
+  box-sizing: content-box;
+  font-size: 13px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  will-change: max-height;
+
+  &-open {
+    padding-top: rem(60);
+    max-height: 100%;
+    opacity: 1;
+    visibility: visible;
+
+    @include for-width(-tablet) {
+      padding-top: rem(40);
+    }
+  }
+
+  &-item {
+    position: relative;
+    margin-bottom: rem(40);
+
+    &-top {
+      @include flex-s;
+
+      position: relative;
+      margin-bottom: rem(23);
+
+      @include for-width(-mobile-l) {
+        margin-bottom: rem(17);
+      }
+    }
+
+    &-box {
+      @include for-width(-mobile-l) {
+        padding: rem(28);
+        background-color: var(--color-gray-50);
+      }
+
+      @include for-width(-mobile-md) {
+        display: block;
+      }
+    }
+
+    &-reply {
+      margin-left: rem(60);
+
+      @include for-width(-mobile-sl) {
+        margin-left: 0;
+      }
+    }
+
+    .post-title {
+      margin-bottom: 0;
+      padding-top: 0;
+
+      .post-timer {
+        display: inline-block;
+        padding-top: 7px;
+      }
+    }
+
+    @include for-width(-tablet) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  .post-text {
+    margin-bottom: rem(18);
+    letter-spacing: 0;
+  }
+
+  .post-comments-link {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      min-width: 30px;
+      min-height: 30px;
+      max-width: rem(44);
+      max-height: rem(44);
+    }
+  }
+
+  .post-action {
+    &:not(:last-child) {
+      margin-right: rem(28);
+
+      @include for-width(-mobile-sl) {
+        margin-right: rem(20);
+      }
+    }
+
+    &-text {
+      @include for-width(-mobile-sl) {
+        font-size: 12px;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  @include for-width(-tablet) {
+    margin-bottom: rem(40);
+  }
+}

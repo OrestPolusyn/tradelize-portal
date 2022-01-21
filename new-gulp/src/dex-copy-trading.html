@@ -1,0 +1,45 @@
+@include('html/_head.html',{
+pageTitle:'Dex copy trading'
+})
+
+<body class="page__body">
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main">
+      <h1 class="sr-only">Dex copy trading</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <div class="main-content dex-copy">
+
+        <div class="dex-copy-top">
+
+          <h2 class="dex-copy-title">
+            Copy any BSC wallet
+          </h2>
+
+          @include('html/_search-line.html',{
+          placeholder:"Insert address only from the BSC blockchain"
+          })
+        </div>
+
+        <div class="dex-copy-nav">
+          <h2 class="dex-copy-title dex-copy-title-subtitle">
+            How does Tradelize DEX Copy Trading work?
+          </h2>
+
+          <a class="dex-copy-link" href="https://tradelize.com/mirroring-guides">
+            Guides
+          </a>
+        </div>
+
+
+        @include('html/dex/_dex-list.html')
+
+      </div>
+    </main>
+
+    @include('html/_footer.html')

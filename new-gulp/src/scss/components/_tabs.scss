@@ -1,0 +1,79 @@
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 110px);
+  overflow-x: auto;
+  padding: 20px 0;
+  gap: 0 rem(20);
+
+  &::-webkit-scrollbar {
+    height: 0;
+  }
+
+  &-filter {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 10px;
+
+    .tab-link {
+      padding: 5px 15px;
+
+      @include for-width(-mobile-md) {
+        padding: 5px 8px;
+      }
+    }
+  }
+
+  &--feed {
+    @include for-width(-mobile-l) {
+      display: none;
+    }
+  }
+
+  @include for-width(-mobile-md) {
+    margin-bottom: 0;
+    padding: 20px rem(24);
+    gap: 0 rem(10);
+  }
+
+  @include for-width(-mobile-sl) {
+    grid-template-columns: repeat(4, 120px);
+    gap: 0 rem(20);
+  }
+}
+
+.tabs-traders {
+  @include for-width(-mobile-md) {
+    margin-bottom: 0;
+    padding: 20px 15px;
+  }
+}
+
+.tab {
+  text-align: center;
+
+  &-link {
+    display: block;
+    border-radius: var(--radius-main);
+    padding: 5px 0;
+    font-size: var(--size-m);
+    line-height: 1.8;
+    letter-spacing: 0;
+    white-space: nowrap;
+    text-align: center;
+    color: var(--color-gray-400);
+    transition: color 0.3s ease, font 0.2s ease-in;
+
+    &:hover {
+      font-weight: 500;
+      color: var(--color-dark);
+    }
+  }
+
+  &-active {
+    .tab-link {
+      font-weight: 500;
+      letter-spacing: 0;
+      color: var(--color-dark);
+      background-color: #fff;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@include('html/_head.html',{
+pageTitle:'Advanced Traders Search'
+})
+
+<body class="page__body">
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main">
+      <h1 class="sr-only">Traders page</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <div class="main-content main-content-traders">
+
+        @include('html/_search-line.html',{
+        placeholder:"Search..."
+        })
+
+
+        <h2 class="sr-only">
+          Cards of traders
+        </h2>
+
+        <ul class="tabs ">
+          @loop('html/_tabs.html',[{
+          tabText: "Posts",
+          classActive:""
+          },
+          {
+          tabText: "Traders",
+          classActive:"tab-active"
+          },
+          {
+          tabText: "Trades",
+          classActive:""
+          },
+          {
+          tabText: "Channels",
+          classActive:""
+          }])
+        </ul>
+
+        <ul class="trader-list">
+          <li class="trader-item">
+            @include('html/_trader-card.html',{
+            subscribe:"",
+            idGraph:"1",
+            logoIcon:"<svg class='trader-card-icon'><use xlink:href='img/sprite.svg#binance-icon'></use></svg>"
+            })
+          </li>
+
+          <li class="trader-item">
+            @include('html/_trader-card.html',{
+            subscribe:"",
+            idGraph:"2",
+            logoIcon:"<svg class='trader-card-icon'><use xlink:href='img/sprite.svg#binance-icon'></use></svg>"
+            })
+          </li>
+
+          <li class="trader-item">
+            @include('html/_trader-card.html',{
+            subscribe:"",
+            idGraph:"3",
+            logoIcon:"<svg class='trader-card-icon'><use xlink:href='img/sprite.svg#binance-icon'></use></svg>"
+            })
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    @include('html/_footer.html')

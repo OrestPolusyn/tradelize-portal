@@ -1,0 +1,64 @@
+.profile-diary {
+  &-item {
+    .trade-list {
+      margin-left: auto;
+    }
+
+    .trade-results {
+      margin-right: 0;
+    }
+
+    .trade-finance-list {
+      @include for-width(-tablet) {
+        column-count: 1;
+      }
+
+      @include for-width(-mobile-l) {
+        column-count: 2;
+      }
+    }
+
+    .trade-finance-item {
+      &:nth-child(2) {
+        @include for-width(-tablet) {
+          margin-bottom: rem(20);
+        }
+
+        @include for-width(-mobile-l) {
+          margin-bottom: 0;
+        }
+      }
+
+      &:nth-child(-2n+3) {
+        @include for-width(-mobile-l) {
+          margin-bottom: rem(20);
+        }
+      }
+    }
+
+    .trade-finance-btns {
+      &-item {
+        &:not(:last-child) {
+          @include for-width(-tablet) {
+            margin-right: 0;
+            margin-bottom: rem(50);
+          }
+
+          @include for-width(-mobile-l) {
+            margin-bottom: rem(15);
+          }
+        }
+
+        .btn {
+          @include for-width(-tablet) {
+            width: 100%;
+          }
+        }
+      }
+
+      @include for-width(-tablet) {
+        display: block;
+      }
+    }
+  }
+}

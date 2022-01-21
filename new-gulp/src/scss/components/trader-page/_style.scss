@@ -1,0 +1,32 @@
+.trader {
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(30);
+
+    @include for-width(-mobile-l) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(20);
+    }
+
+    @include for-width(-mobile-s) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+
+    }
+  }
+
+  // &-card {
+  //   width: 100%;
+  //   max-width: 310px;
+
+  //   @include for-width(-mobile-l) {
+  //     width: 100%;
+  //     max-width: 360px;
+  //   }
+
+  //   @include for-width(-mobile-s) {
+  //     max-width: 100%;
+  //   }
+  // }
+}

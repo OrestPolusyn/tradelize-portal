@@ -1,0 +1,239 @@
+<div class="modals-copy-filters modals-box modal" data-target-filter="modal-filter">
+  <div class="modals-box-top">
+    <h3 class="modals-title">
+      Filters
+    </h3>
+
+    <div class="modals-copy-filters-radio">
+
+      <input class="modals-copy-filters-switch" type="radio" name="currency" id="btc" checked>
+      <label class="modals-copy-filters-radiobtn modals-copy-filters-bts" for="btc">
+        btc
+      </label>
+
+      <input class="modals-copy-filters-switch" type="radio" name="currency" id="usd">
+      <label class="modals-copy-filters-radiobtn modals-copy-filters-usd" for="usd">
+        usd
+      </label>
+
+    </div>
+
+    <button class="modals-close" type="button" data-close="modals-close">
+      <svg class='icon'>
+        <use xlink:href='img/sprite.svg#close'></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="modals-copy-tabs">
+    <ul class="tabs">
+      <li class="tab tab-active">
+        <button class="tab-link" type="button" data-copy-filer="exchange">
+          Exchange
+        </button>
+      </li>
+
+      <li class="tab">
+        <button class="tab-link" type="button" data-copy-filer="perfomance">
+          Perfomance
+        </button>
+      </li>
+
+      <li class="tab">
+        <button class="tab-link" type="button" data-copy-filer="copy_trading">
+          Copy trading
+        </button>
+      </li>
+
+      <li class="tab">
+        <button class="tab-link" type="button" data-copy-filer="channel">
+          Channel
+        </button>
+      </li>
+    </ul>
+  </div>
+  
+  <form class="modals-copy-form">
+    <ul class="modals-copy-contents">
+      <li class="modals-copy-content modals-copy-content-open" data-content-filer="exchange">
+
+        <label class="modals-copy-choose">
+
+          <input class="modals-copy-check" type="checkbox" name="Binance">
+          <span class="modals-copy-check-content">Binance</span>
+        </label>
+
+
+        <label class="modals-copy-choose">
+
+          <input class="modals-copy-check" type="checkbox" name="Bitmex">
+          <span class="modals-copy-check-content">Bitmex</span>
+        </label>
+
+
+
+        <label class="modals-copy-choose">
+
+          <input class="modals-copy-check" type="checkbox" name="BuyBit">
+          <span class="modals-copy-check-content">BuyBit</span>
+        </label>
+
+
+      </li>
+
+      <li class="modals-copy-content" data-content-filer="perfomance">
+
+        <div class="modals-copy-content-perfomance">
+          <span class="modals-copy-content-title">
+            Monthly P/L, %
+          </span>
+
+          <div class="modals-copy-content-fromto">
+            <label class="modals-copy-content-label">
+              <span>From</span>
+              <input class="modals-copy-content-input" type="text" id="m_from" value="0">
+            </label>
+
+            <label class="modals-copy-content-label">
+              <span>to</span>
+              <input class="modals-copy-content-input" type="text" id="m_to" value="0">
+            </label>
+          </div>
+
+        </div>
+
+        <div class="modals-copy-content-perfomance">
+          <span class="modals-copy-content-title">
+            Yearly P/L, %
+          </span>
+
+          <div class="modals-copy-content-fromto">
+            <label class="modals-copy-content-label">
+              <span>From</span>
+              <input class="modals-copy-content-input" type="text" id="y_from" value="0">
+            </label>
+
+            <label class="modals-copy-content-label">
+              <span>to</span>
+              <input class="modals-copy-content-input" type="text" id="y_to" value="0">
+            </label>
+          </div>
+
+        </div>
+
+        <div class="modals-copy-content-perfomance">
+          <span class="modals-copy-content-title">
+            Balance
+          </span>
+
+          <div class="modals-copy-content-fromto">
+            <label class="modals-copy-content-label">
+              <span>From</span>
+              <input class="modals-copy-content-input" type="text" id="b_from" value="0">
+            </label>
+
+            <label class="modals-copy-content-label">
+              <span>to</span>
+              <input class="modals-copy-content-input" type="text" id="b_to" value="0">
+            </label>
+          </div>
+
+        </div>
+
+      </li>
+
+      <li class="modals-copy-content" data-content-filer="copy_trading">
+
+        <div class="modals-copy-content-perfomance">
+          <span class="modals-copy-content-title">
+            Followers
+          </span>
+
+          <div class="modals-copy-content-fromto">
+            <label class="modals-copy-content-label">
+              <span>From</span>
+              <input class="modals-copy-content-input" type="text" id="f_from" value="0">
+            </label>
+
+            <label class="modals-copy-content-label">
+              <span>to</span>
+              <input class="modals-copy-content-input" type="text" id="f_to" value="0">
+            </label>
+          </div>
+
+        </div>
+
+        <div class="modals-copy-content-perfomance">
+          <span class="modals-copy-content-title">
+            Offer Price (BTC)
+          </span>
+
+          <div class="modals-copy-content-fromto">
+            <label class="modals-copy-content-label">
+              <span>From</span>
+              <input class="modals-copy-content-input" type="text" id="offer_from" value="0">
+            </label>
+
+            <label class="modals-copy-content-label">
+              <span>to</span>
+              <input class="modals-copy-content-input" type="text" id="offer_to" value="0">
+            </label>
+          </div>
+        </div>
+      </li>
+
+      <li class="modals-copy-content" data-content-filer="channel">
+
+        <div class="modals-copy-content-perfomance">
+          <span class="modals-copy-content-title">
+            Subscribers
+          </span>
+
+          <div class="modals-copy-content-fromto">
+            <label class="modals-copy-content-label">
+              <span>From</span>
+              <input class="modals-copy-content-input" type="text" id="ss_from" value="0">
+            </label>
+
+            <label class="modals-copy-content-label">
+              <span>to</span>
+              <input class="modals-copy-content-input" type="text" id="ss_to" value="1">
+            </label>
+          </div>
+
+        </div>
+        <div class="modals-copy-content-perfomance">
+          <span class="modals-copy-content-title">
+            Offer Price (BTC)
+          </span>
+
+          <div class="modals-copy-content-fromto">
+            <label class="modals-copy-content-label">
+              <span>From</span>
+              <input class="modals-copy-content-input" type="text" id="offer_s_from" value="0">
+            </label>
+
+            <label class="modals-copy-content-label">
+              <span>to</span>
+              <input class="modals-copy-content-input" type="text" id="offer_s_to" value="100">
+            </label>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+
+
+    <div class="modals-copy-form-btns">
+      <button class="modals-copy-form-btn btn btn-gray" type="reset">
+        Clear filters
+      </button>
+
+      <button class="modals-copy-form-btn btn " type="submit">
+        Apply
+      </button>
+    </div>
+
+  </form>
+
+</div>

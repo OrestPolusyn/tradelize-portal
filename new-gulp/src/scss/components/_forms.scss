@@ -1,0 +1,66 @@
+.form-in {
+  &-btn {
+    margin-bottom: 20px;
+    padding: rem(14) rem(20);
+    width: 100%;
+
+    @include for-width(-tablet) {
+      @include adaptive_size("font-size", 14, 12);
+
+      padding: rem(17);
+    }
+
+    @include for-width(-mobile-l) {
+      padding: rem(13);
+    }
+  }
+}
+
+.search {
+  position: relative;
+  width: 100%;
+
+  &-area {
+    padding: rem(12) rem(20);
+    max-width: 100%;
+    font-size: 13px;
+
+    @include for-width(-desktop-sm) {
+      padding: rem(15) rem(20);
+    }
+
+    @include for-width(-mobile-md) {
+      background-color: var(--color-gray-100);
+    }
+  }
+
+  &-btn {
+    @include flex-all-sb;
+
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    padding: rem(10);
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    .icon {
+      width: 14px;
+      height: 14px;
+
+      @include for-width(-desktop-med) {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    @include for-width(-mobile-md) {
+      right: 30px;
+    }
+  }
+
+  @include for-width(-mobile-md) {
+    padding: rem(20);
+    background-color: var(--color-white);
+  }
+}

@@ -1,0 +1,85 @@
+@include('html/_head.html',{
+pageTitle:'My profile statistics page'
+})
+
+<body class="page__body">
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main profile">
+      <h1 class="sr-only">Profile statistics page</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <aside class="aside-nav profile-side">
+        @include('html/portfolio/_portfolio-side-follow.html')
+      </aside>
+
+      <div class="main-content">
+
+        <h2 class="sr-only">
+          Profile statistics content
+        </h2>
+
+        <ul class="tabs">
+          @loop('html/_tabs.html',[{
+          tabText: "Statistics",
+          classActive:"tab-active"
+          },
+          {
+          tabText: "Copy trading",
+          classActive:""
+          },
+          {
+          tabText: "Diary",
+          classActive:""
+          },
+          {
+          tabText: "Channel",
+          classActive:""
+          }])
+        </ul>
+
+        @include('html/portfolio/_total-performance.html')
+
+        <div class="profile-alert">
+          <p class="profile-alert-text">
+            All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, the first true
+            generator on the Internet.
+          </p>
+
+          <button class="profile-alert-btn" type="button">
+            <svg class="profile-alert-btn-icon">
+              <use xlink:href="img/sprite.svg#close"></use>
+            </svg>
+          </button>
+        </div>
+
+        @include('html/portfolio/_portfolio-chart.html')
+
+        @include('html/portfolio/_distribution-block.html')
+
+        @include('html/portfolio/_trading-data.html')
+
+        <div class="profile-subscribe-block profile-box">
+          <h3 class="profile-subtitle">
+            Do you want earn with me?
+          </h3>
+
+          <p class="profile-subtext">
+            All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, the first true
+            generator on the Internet.
+          </p>
+
+          <a class="btn " href="#">
+            Subscribe to copy trading
+          </a>
+        </div>
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

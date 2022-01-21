@@ -1,0 +1,68 @@
+@include('html/_head.html',{
+pageTitle:'Advanced Channels Search'
+})
+
+<body class="page__body">
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main">
+      <h1 class="sr-only">Channels page</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <div class="main-content">
+
+        <h2 class="sr-only">
+          Cards of traders
+        </h2>
+
+        <ul class="tabs">
+          @loop('html/_tabs.html',[{
+          tabText: "Posts",
+          classActive:""
+          },
+          {
+          tabText: "Traders",
+          classActive:""
+          },
+          {
+          tabText: "Trades",
+          classActive:""
+          },
+          {
+          tabText: "Channels",
+          classActive:"tab-active"
+          }])
+        </ul>
+
+        <ul class="trader-list">
+          <li class="trader-item">
+            @include('html/_trader-card.html',{
+            subscribe:"<span class='trader-card-text trader-card-text-subscribers'><span>5900</span>Subscribers</span>",
+            logoIcon:""
+            })
+          </li>
+
+          <li class="trader-item">
+            @include('html/_trader-card.html',{
+            subscribe:"<span class='trader-card-text trader-card-text-subscribers'><span>5900</span>Subscribers</span>",
+            logoIcon:""
+            })
+          </li>
+
+          <li class="trader-item">
+            @include('html/_trader-card.html',{
+            subscribe:"<span class='trader-card-text trader-card-text-subscribers'><span>5900</span>Subscribers</span>",
+            logoIcon:""
+            })
+          </li>
+        </ul>
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

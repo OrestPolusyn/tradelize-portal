@@ -1,0 +1,19 @@
+.wallet-code {
+  margin: 0 auto;
+  padding: rem(20) 0;
+  width: 100%;
+  max-width: 162px;
+  opacity: 0;
+  visibility: hidden;
+  transform: opacity 0.3s linear, visibility 0.3s linear;
+
+  &-show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@import "exchange-start";
+@import "exchange-pay";
+@import "trading-exchange";
+@import "exchange-success";
+@import "exchange-attention";

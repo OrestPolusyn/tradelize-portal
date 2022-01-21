@@ -1,0 +1,83 @@
+@include('html/_head.html',{
+pageTitle:'Sing in'
+})
+
+<body class="scroller page__body">
+  <div class="site-container">
+    <main class="main main-wellcome" style="background-image: url('img/sing-bg.svg');">
+
+      <div class="wellcome container container-sing">
+
+        <a class="logo" href="#">
+          <img class="logo-img" src="img/logo.svg" alt="Tradelize porlal" width="150" height="20">
+        </a>
+
+        <h1 class="sr-only">
+          Sing in to portal Tradelize
+        </h1>
+
+        <div class="wellcome-inner">
+
+          <div class="wellcome-img">
+            <img class="wellcome-picture" src="img/wellcome.jpg" alt="Trade portal app" height="365" width="575">
+          </div>
+
+          <div class="wellcome-form wellcome-form-in">
+            <h2 class="wellcome-title">
+              Welcome to <span class="wellcome-title-color">Tradelize</span>
+            </h2>
+
+            <form class="form-in" action="#">
+
+              @loop("html/parts/_input.html",[ {
+              id:"login",
+              text:"login",
+              type:"text",
+              name:"login",
+              placeholder:"Enter your login",
+              required:"required",
+              btn:''
+              },{
+              id:"password",
+              text:"password",
+              type:"password",
+              name:"password",
+              placeholder:"Enter your password",
+              required:"required",
+              btn:''
+              }])
+
+              <button class="btn form-in-btn" type="submit">
+                Sign in
+              </button>
+
+            </form>
+
+            <a class="wellcome-forgot link" href="#">
+              Forgor password?
+            </a>
+
+
+            @include('html/parts/_social.html',{
+            text:"Don`t have an account?",
+            link:"Sign Up"
+            })
+
+            <p class="wellcome-contact">
+              If you have some problems, please contact us:
+              <a class="wellcome-contact-link" href="mailto:support@tradelize.com">
+                support@tradelize.com
+              </a>
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </main>
+    
+    @include('html/_footer.html')

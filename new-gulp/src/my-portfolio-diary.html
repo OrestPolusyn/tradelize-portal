@@ -1,0 +1,77 @@
+@include('html/_head.html',{
+pageTitle:'Profile Diary'
+})
+
+<body class="page__body">
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main profile">
+      <h1 class="sr-only">Profile diary page</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <aside class="aside-nav profile-side">
+        @include('html/portfolio/_portfolio-side-follow.html')
+      </aside>
+
+      <div class="main-content">
+
+        <h2 class="sr-only">
+          Profile diary content
+        </h2>
+
+        <ul class="tabs">
+          @loop('html/_tabs.html',[{
+          tabText: "Statistics",
+          classActive:""
+          },
+          {
+          tabText: "Copy trading",
+          classActive:""
+          },
+          {
+          tabText: "Diary",
+          classActive:"tab-active"
+          },
+          {
+          tabText: "Channel",
+          classActive:""
+          }])
+        </ul>
+
+        <ul class="profile-diary">
+
+          <li class="profile-diary-item trades-item">
+            @include("html/search/trades/_trades-block.html",{
+            longShort:"trade-long",
+            longShortText:"long",
+            dataNumber:"1"
+            })
+          </li>
+
+          <li class="profile-diary-item posts-item">
+            @include('html/_post.html',{
+            img:"",
+            dataUserLike:"unlike",
+            dataPath:"1",
+            shareId:"1"
+            })
+          </li>
+
+          <li class="profile-diary-item trades-item">
+            @include("html/search/trades/_trades-block.html",{
+            longShort:"trade-long",
+            longShortText:"long",
+            dataNumber:"1"
+            })
+          </li>
+        </ul>
+
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

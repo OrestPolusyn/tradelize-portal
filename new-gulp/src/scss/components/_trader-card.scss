@@ -1,0 +1,181 @@
+.trader-card {
+  border-radius: var(--radius-main);
+  padding: rem(30) rem(45) rem(35);
+  box-shadow: 0 0 30px rgba(24, 0, 174, 0.05);
+  text-align: center;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+
+  &-top {
+    margin-bottom: rem(20);
+
+    @include for-width(-mobile-s) {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &-avatar {
+    margin: 0 auto 11px;
+    border-radius: var(--radius-main);
+    width: 100%;
+    height: 45px;
+    max-width: 45px;
+    background-color: var(--color-avatar);
+
+    @include for-width(-tablet) {
+      height: 33px;
+      max-width: 33px;
+    }
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.7;
+    letter-spacing: 0;
+    text-transform: capitalize;
+  }
+
+  &-icon {
+    width: 100%;
+    height: 20px;
+    max-width: 60px;
+  }
+
+  &-numbers {
+    @include flex-all-sb;
+
+    text-align: left;
+
+    @include for-width(-mobile-s) {
+      justify-content: space-evenly;
+    }
+  }
+
+  &-number {
+    position: relative;
+    font-size: 17px;
+
+    .trader-card-symbol {
+      position: absolute;
+      left: -1px;
+      font-weight: 700;
+    }
+
+    &:last-child {
+      margin-right: 8px;
+
+      @include for-width(-mobile-md) {
+        margin-right: 5px;
+      }
+    }
+
+    @include for-width(-tablet) {
+      font-size: 13px;
+    }
+  }
+
+  &-number-item {
+    position: relative;
+    padding-left: 8px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      width: 8px;
+      height: 10px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      content: "%";
+    }
+
+    &-profit {
+      &::before {
+        background-image: url("../img/sprite.svg#arrow-profit");
+      }
+    }
+
+    &-loss {
+      &::before {
+        background-image: url("../img/sprite.svg#arrow-lose");
+      }
+    }
+  }
+
+  &-text {
+    display: block;
+    padding-top: 2px;
+    padding-left: 5px;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0;
+    color: var(--color-gray-400);
+
+    &-drawdown {
+      margin-bottom: rem(20);
+      padding: 0;
+    }
+
+    &-subscribers {
+      text-transform: capitalize;
+      color: var(--color-gray-400);
+    }
+  }
+
+  &-graph {
+    width: 100%;
+    height: 60px;
+  }
+
+  &-drawdown {
+    display: block;
+    line-height: 1.5;
+    letter-spacing: 0;
+
+    &-item {
+      @include adaptive_size("font-size", 17, 13);
+
+      &::after {
+        content: "%";
+      }
+    }
+  }
+
+  &-btn {
+    margin-bottom: rem(20);
+
+    @include for-width(-mobile-s) {
+      margin: 0 auto rem(20);
+      width: 68%;
+    }
+  }
+
+  &-cost {
+    font-size: 11px;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  &-canvas {
+    width: 100%;
+    height: inherit;
+  }
+
+  @include for-width(-desktop-med) {
+    padding: rem(40);
+  }
+
+  @include for-width(-mobile-md) {
+    padding: rem(20);
+  }
+}

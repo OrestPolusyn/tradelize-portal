@@ -1,0 +1,121 @@
+<ul class="comments" data-target="@dataPath">
+  <li class="comments-item">
+    <div class="comments-item-box">
+
+      <div class="comments-item-top">
+        <img class="comments-avatar avatar" src="img/post-avatar.png" alt="Comment avatar" height="45" width="45">
+
+        <h3 class="post-title">
+          <a class="post-title-link" href="#">
+            Priscilla Mckinney
+          </a>
+          <span class="post-timer">
+            10 may
+          </span>
+        </h3>
+
+        
+      </div>
+
+      <div class="comments-block">
+
+
+        <p class="post-text">
+          Interesting that the prior two cycles had the majority of our their run within a one year period. We’re past
+          that now
+          and hit a new high. Makes you wonder about the lengthening cycle. Interesting that the prior two cycles had
+          the
+          majority
+          of our their run within a one year period. We’re past that now and hit a new high. Makes you wonder about the
+          lengthening cycle.
+        </p>
+
+        @include("_post-comment-actions.html",{
+        dataUser:"1"
+        })
+      </div>
+    </div>
+
+    @include("_post-write.html", {
+    commentsReply:"post-write-reply",
+    dataReply:"1"
+    })
+
+  </li>
+
+  <li class="comments-item comments-item-reply">
+    <div class="comments-item-box">
+
+      <div class="comments-item-top">
+        <img class="comments-avatar avatar" src="img/post-avatar.png" alt="Comment avatar" height="45" width="45">
+
+        <h3 class="post-title">
+          <a class="post-comments-link" href="#">
+            Richard King
+          </a>
+        </h3>
+      </div>
+
+      <div class="comments-block">
+
+        <p class="post-text">
+          Interesting that the prior two cycles had the majority of our their run within a one year period. We’re past
+          that now
+          and hit a new high. Makes you wonder about the lengthening cycle. Interesting that the prior two cycles had
+          the
+          majority
+          of our their run within a one year period. We’re past that now and hit a new high. Makes you wonder about the
+          lengthening cycle.
+        </p>
+
+        @include("_post-comment-actions.html",{
+        dataUser:"2"
+        })
+
+      </div>
+    </div>
+
+    @include("_post-write.html", {
+    commentsReply:"post-write-reply",
+    dataReply:"2"
+    })
+  </li>
+
+  <li class="comments-item comments-item-reply">
+    <div class="comments-item-box">
+
+      <div class="comments-item-top">
+        <img class="comments-avatar avatar" src="img/post-avatar.png" alt="Comment avatar" height="45" width="45">
+
+        <h3 class="post-title">
+          <a class="post-comments-link" href="#">
+            Richard King
+          </a>
+        </h3>
+      </div>
+
+      <div class="comments-block">
+
+        <p class="post-text">
+          Interesting that the prior two cycles had the majority of our their run within a one year period. We’re past
+          that now
+          and hit a new high. Makes you wonder about the lengthening cycle. Interesting that the prior two cycles had
+          the
+          majority
+          of our their run within a one year period. We’re past that now and hit a new high. Makes you wonder about the
+          lengthening cycle.
+        </p>
+
+        @include("_post-comment-actions.html",{
+        dataUser:"3"
+        })
+
+      </div>
+    </div>
+
+    @include("_post-write.html", {
+    commentsReply:"post-write-reply",
+    dataReply:"3"
+    })
+  </li>
+</ul>

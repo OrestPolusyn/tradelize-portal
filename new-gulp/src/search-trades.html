@@ -1,0 +1,68 @@
+@include('html/_head.html',{
+pageTitle:'Advanced Trades Search'
+})
+
+<body class="page__body">
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main">
+      <h1 class="sr-only">Trades page</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <div class="main-content">
+
+        @include('html/_search-line.html',{
+        placeholder:"Search..."
+        })
+
+
+        <h2 class="sr-only">
+          Items of trades
+        </h2>
+
+        <ul class="tabs">
+          @loop('html/_tabs.html',[{
+          tabText: "Posts",
+          classActive:""
+          },
+          {
+          tabText: "Traders",
+          classActive:"tab-active"
+          },
+          {
+          tabText: "Trades",
+          classActive:""
+          },
+          {
+          tabText: "Channels",
+          classActive:""
+          }])
+        </ul>
+
+        <ul class="trades-list">
+
+          <li class="trades-item">
+            @include("html/search/trades/_trades-block.html",{
+            longShort:"trade-long",
+            longShortText:"long",
+            dataNumber:"1"
+            })
+          </li>
+
+          <li class="trades-item">
+            @include("html/search/trades/_trades-block.html",{
+            longShort:"trade-short",
+            longShortText:"short",
+            dataNumber:"2"
+            })
+          </li>
+
+        </ul>
+      </div>
+    </main>
+
+    @include('html/_footer.html')

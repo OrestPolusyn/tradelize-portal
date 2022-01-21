@@ -1,0 +1,52 @@
+@include('html/_head.html',{
+pageTitle:'Profile copy trading'
+})
+
+<body class="page__body">
+  <div class="site-container">
+    @include('html/_header.html')
+
+    <main class="main profile">
+      <h1 class="sr-only">Profile copy trading page</h1>
+
+      <aside class="aside-nav">
+        @include('html/_nav-side.html')
+      </aside>
+
+      <aside class="aside-nav profile-side">
+        @include('html/portfolio/_portfolio-side-follow.html')
+      </aside>
+
+      <div class="main-content">
+
+        <h2 class="sr-only">
+          Profile copy trading content
+        </h2>
+
+        <ul class="tabs">
+          @loop('html/_tabs.html',[{
+          tabText: "Statistics",
+          classActive:""
+          },
+          {
+          tabText: "Copy trading",
+          classActive:"tab-active"
+          },
+          {
+          tabText: "Diary",
+          classActive:""
+          },
+          {
+          tabText: "Channel",
+          classActive:""
+          }])
+        </ul>
+
+        @include('html/portfolio/_copy-trading-data.html')
+
+        @include('html/portfolio/_portfolio-table.html')
+      </div>
+
+    </main>
+
+    @include('html/_footer.html')

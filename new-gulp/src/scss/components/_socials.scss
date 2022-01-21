@@ -1,0 +1,60 @@
+.social {
+
+  &-text {
+    margin-bottom: rem(30);
+    border-top: 1px solid var(--color-gray-300);
+    padding-top: rem(40);
+    font-size: var(--size-m);
+    line-height: 1.5;
+    color: var(--color-gray-400);
+  }
+
+  &-text-link {
+    color: var(--color-main);
+  }
+
+  &-items {
+    display: grid;
+    gap: 0 rem(20);
+    grid-template-columns: repeat(3, 1fr);
+
+    @include for-width(-mobile-sm) {
+      gap: 0 rem(5);
+      grid-template-columns: repeat(3, 80px);
+    }
+  }
+
+  &-item {
+    border-radius: var(--radius-main);
+    background-color: var(--color-white);
+  }
+
+  &-link {
+    @include flex-all-center;
+
+    padding: 11px rem(16);
+    font-size: var(--size-s);
+    line-height: 1.2;
+    text-transform: capitalize;
+
+    &-facebook {
+      color: var(--color-facebook);
+    }
+
+    &-google {
+      color: var(--color-google);
+    }
+
+    &-wechat {
+      color: var(--color-wechat);
+    }
+
+    .icon {
+      margin-right: rem(5);
+    }
+  }
+
+  @include for-width(-mobile-l) {
+    margin-bottom: rem(100);
+  }
+}

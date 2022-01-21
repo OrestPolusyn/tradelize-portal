@@ -1,0 +1,160 @@
+.wellcome {
+  &-inner {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 590px 520px;
+    margin-bottom: rem(30);
+    min-height: calc(100vh - 135px);
+    gap: rem(40);
+
+    @include for-width(-desktop-med) {
+      grid-template-columns: 450px 450px;
+    }
+
+    @include for-width(-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include for-width(-mobile-l) {
+      grid-template-columns: 1fr;
+      padding-top: rem(50);
+    }
+  }
+
+  &-img {
+    margin: auto;
+    width: 100%;
+    max-width: 575px;
+
+    @include for-width(-mobile-l) {
+      display: none;
+    }
+  }
+
+  &-title {
+    @include adaptive_size("font-size", 29, 23);
+
+    margin-bottom: rem(60);
+
+    &-register {
+      @include adaptive_size("font-size", 24, 18);
+
+      margin-bottom: rem(40);
+    }
+
+    @include for-width(+desktop-xl) {
+      font-size: 32px;
+    }
+  }
+
+  &-title-color {
+    font-weight: 500;
+    color: var(--color-main);
+  }
+
+  &-text {
+    margin-bottom: 25px;
+    font-size: var(--size-m);
+  }
+
+  &-form {
+    @include flex-column;
+
+    align-self: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 350px;
+
+    @include for-width(-tablet) {
+      width: 70%;
+    }
+
+    @include for-width(-mobile-l) {
+      width: 100%;
+    }
+  }
+
+  &-forgot {
+    display: block;
+    margin-bottom: 40px;
+    font-size: var(--size-m);
+    letter-spacing: 0.015em;
+    color: var(--color-gray-400);
+
+    .wellcome-inner {
+      margin-bottom: 0;
+    }
+
+    .wellcome-form {
+      margin-bottom: rem(90);
+    }
+  }
+
+  &-contact {
+    position: absolute;
+    bottom: 0;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+    color: var(--color-gray-400);
+
+    @include for-width(-mobile-l) {
+      bottom: 20px;
+    }
+  }
+
+  &-contact-link {
+    display: inline;
+    font-size: var(--size-s);
+    text-transform: inherit;
+    color: var(--color-main);
+  }
+
+  &-register {
+    .social {
+      margin-bottom: rem(50);
+
+      @include for-width(-mobile-sl) {
+        margin-bottom: rem(50);
+      }
+    }
+  }
+
+  .field-area {
+    padding: rem(14) rem(20);
+
+    &:not(:last-child) {
+      margin-bottom: rem(40);
+    }
+
+    @include for-width(-tablet) {
+      padding: rem(20);
+    }
+
+    @include for-width(-mobile-l) {
+      padding: rem(15);
+    }
+  }
+
+  .field-btn {
+    right: 10px;
+    bottom: 0;
+    width: rem(43);
+    height: rem(45);
+
+    &::before {
+      background-size: 18px 18px;
+    }
+
+    @include for-width(-desktop-lg) {
+      bottom: 3px;
+    }
+
+    @include for-width(-tablet) {
+      bottom: rem(13);
+    }
+
+    @include for-width(-mobile-l) {
+      bottom: 2px;
+    }
+  }
+}
